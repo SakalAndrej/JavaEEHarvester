@@ -1,38 +1,59 @@
 package model;
 
+import org.eclipse.persistence.annotations.PrimaryKey;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Table(name="Product")
+@Entity
 public class Product
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     //Bild
+    @Column(name = "BASEIMAGE")
     private String _baseImage;
 
     //SmallBild
+    @Column(name = "SMALLIMAGE")
     private String _smallImage;
 
     //Beschreibung
+    @Column(name = "DESCRIPTION")
+    @Lob
     private String _description;
 
     //Marke & Model
+    @Column(name = "BRAND")
     private String _brand;
 
     //Titel des Produktes
+    @Column(name = "TITLE")
     private String _title;
 
     //Verfügbarkeit
+    @Column(name = "INSTOCK")
     private int _inStock;
 
     //Preis
+    @Column(name = "PRICE")
     private double _price;
 
     //Sku
+    @NotNull
+    @Column(name = "SKU")
     private String _sku;
 
     //Container
+    @Column(name = "CONTAINER")
     private double _container;
 
     @Override
     public String toString() {
-        return  "^"+_sku+"^;" + "^3^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ _description + "^"+ ";" + "^"+ _title + "^"+ ";" + "^"+ _inStock + "^"+ ";" + "^"+ _price+"^;^"+ _baseImage +"^;^" + _baseImage+"^;^" + _baseImage+"^;^" + _container + "^\n";
+        return  "^"+_sku+"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ _description + "^"+ ";" + "^"+ _title + "^"+ ";" + "^"+ _inStock + "^"+ ";" + "^"+ _price+"^;^"+ _baseImage +"^;^" + _baseImage+"^;^" + _baseImage+"^;^" + _container + "^\n";
     }
 
 //region Getter & Setter

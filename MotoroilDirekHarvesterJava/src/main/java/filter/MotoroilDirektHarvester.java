@@ -255,17 +255,22 @@ public class MotoroilDirektHarvester {
     }
 
     private static void WriteToCSV(HashMap<String, Product> c) {
-        try {
 
-            PrintWriter writer = new PrintWriter("the-file-name.csv", "UTF-8");
+        PrintWriter writer = null;
+
+        try {
+            writer = new PrintWriter("/Users/sakal_andrej/Desktop/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/test.csv", "UTF-8");
             writer.print("sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;short_description;description;name;qty;price;image;small_image;thumbnail;weight\n");
             for (int i = 0; i < c.size(); i++) {
-                writer.append(c.values().toArray()[i].toString());
+               writer.append(c.values().toArray()[i].toString());
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+        }
+        finally {
+            writer.close();
         }
     }
 }
