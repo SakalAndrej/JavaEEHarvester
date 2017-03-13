@@ -51,9 +51,15 @@ public class Product
     @Column(name = "CONTAINER")
     private double _container;
 
+    @Column(name ="METATITLE")
+    private String _metaTitle;
+
     @Override
     public String toString() {
-        return  "^"+_sku+"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ _description + "^"+ ";" + "^"+ _title + "^"+ ";" + "^"+ _inStock + "^"+ ";" + "^"+ _price+"^;^"+ _baseImage +"^;^" + _baseImage+"^;^" + _baseImage+"^;^" + _container + "^\n";
+        return  "^"+_sku+"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" /*+ "^"+ _description + "^"+ ";" + "^"+ _metaTitle + "^"+ ";"*/ + "^"+ _inStock + "^"+ ";" + "^"+ _price+"^;^"+ _baseImage +"^;^" + _baseImage+"^;^" + _baseImage+"^;^" + _container + "^\n";
+    }
+    public String toStringDefault() {
+        return  "^"+_sku+"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ _description + "^"+ ";" + "^"+ _metaTitle + "^"+ ";" + "^"+ _inStock + "^"+ ";" + "^"+ _price+"^;^"+ _baseImage +"^;^" + _baseImage+"^;^" + _baseImage+"^;^" + _container + "^\n";
     }
 
 //region Getter & Setter
@@ -126,5 +132,14 @@ public class Product
     public void set_description(String _description) {
         this._description = _description;
     }
+
+    public String get_metaTitle() {
+        return _metaTitle;
+    }
+
+    public void set_metaTitle(String _metaTitle) {
+        this._metaTitle = _metaTitle;
+    }
+
     //endregion
 }
