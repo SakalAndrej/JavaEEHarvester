@@ -5,13 +5,21 @@ import org.eclipse.persistence.annotations.PrimaryKey;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@NamedQueries({
+        @NamedQuery(name = "Product.getAll", query = "select p from Product p"),
+        @NamedQuery(name = "Product.getProductBySku", query = "select p from Product p where p._sku = :sku"),
+        @NamedQuery(name = "Product.NoCustomDescription", query = "select p from Product p where p._customDescription = false"),
+        @NamedQuery(name = "Product.UpdatePriceStock", query = "update Product SET _price = :price, _inStock = :inStock where _sku = :sku"),
+        @NamedQuery(name = "Product.GetMannolProducts", query = "select p from Product p where UPPER(p._title) LIKE '%MANNOL%'")
+}  )
+
 @Table(name="Product")
 @Entity
 public class Product
 {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;*/
 
     //Bild
     @Column(name = "BASEIMAGE")
@@ -22,7 +30,7 @@ public class Product
     private String _smallImage;
 
     //Beschreibung
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 100000)
     @Lob
     private String _description;
 
@@ -44,6 +52,7 @@ public class Product
 
     //Sku
     @NotNull
+    @Id
     @Column(name = "SKU")
     private String _sku;
 
@@ -53,6 +62,9 @@ public class Product
 
     @Column(name ="METATITLE")
     private String _metaTitle;
+
+    @Column(name ="CUSTOMDESCRIPTION")
+    private boolean _customDescription;
 
     @Override
     public String toString() {
@@ -64,6 +76,13 @@ public class Product
 
 //region Getter & Setter
 
+    public boolean is_customDescription() {
+        return _customDescription;
+    }
+
+    public void set_customDescription(boolean _customDescription) {
+        this._customDescription = _customDescription;
+    }
 
     public String get_smallImage() {
         return _smallImage;

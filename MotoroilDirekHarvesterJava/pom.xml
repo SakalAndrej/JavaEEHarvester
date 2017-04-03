@@ -23,16 +23,6 @@
             <version>1.9.2</version>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.5</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.5</version>
-        </dependency>
-        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -52,14 +42,9 @@
             <artifactId>derbyclient</artifactId>
             <version>10.13.1.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>RELEASE</version>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>carvago</finalName>
+        <finalName>motoroil</finalName>
     </build>
 </project>

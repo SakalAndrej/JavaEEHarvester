@@ -1,7 +1,7 @@
-Mon Mar 06 23:49:10 CET 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+Fri Mar 17 19:41:47 CET 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon Mar 06 23:49:18 CET 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015a-a5cf-d5cf-000006f15d58 
+Fri Mar 17 19:42:52 CET 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015a-dd93-3758-ffffe1669574 
 on database directory /Users/andrejsakal/Dokumente/Cloud Drive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/db/db with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/db/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -10,5 +10,5 @@ user.dir=/Users/andrejsakal/Dokumente/Cloud Drive/Git-Repository/MotoroilDirektH
 os.name=Mac OS X
 os.arch=x86_64
 os.version=10.12.3
-derby.system.home=null
+derby.system.home=/Users/andrejsakal/Dokumente/Cloud Drive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/db
 Database Class Loader started - derby.database.classpath=''
