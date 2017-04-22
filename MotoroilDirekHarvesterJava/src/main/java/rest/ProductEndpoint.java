@@ -1,6 +1,7 @@
 package rest;
 
 import filter.MotoroilDirektHarvester;
+import seo.SeoAudit;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -15,10 +16,19 @@ public class ProductEndpoint {
     @Inject
     MotoroilDirektHarvester md;
 
+    //@Inject
+    //SeoAudit seo;
+
     @Path("start")
     public Response startHarvest() {
         md.initializeLinks();
         System.out.println("works");
+        return Response.ok().build();
+    }
+
+    @Path("seo")
+    public Response seoAudit() {
+        SeoAudit.addOilFinderMannol(md.GetMannolProducts());
         return Response.ok().build();
     }
 }

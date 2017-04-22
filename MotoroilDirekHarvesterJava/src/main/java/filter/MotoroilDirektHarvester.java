@@ -1,20 +1,15 @@
 package filter;
-import model.Product;
+import model.Products;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.inject.Singleton;
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
+import javax.ws.rs.core.Cookie;
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
@@ -28,22 +23,22 @@ public class MotoroilDirektHarvester {
 
 
     public void initializeLinks() {
-        LinkedList<Product> products = new LinkedList<>();
+        LinkedList<Products> products = new LinkedList<>();
 
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
 
         //region Mannol
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=13443&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8352&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8353&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8344&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8350&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8340&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8338&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8339&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8397&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8342&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=13443&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8352&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8353&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8344&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8350&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8340&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8338&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8339&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8397&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8342&kategorieid=3995&source=2&refertype=1&referid=3995");
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8343&kategorieid=3995&source=2&refertype=1&referid=3995");
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8347&kategorieid=3995&source=2&refertype=1&referid=3995");
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8346&kategorieid=3995&source=2&refertype=1&referid=3995");
@@ -601,32 +596,41 @@ public class MotoroilDirektHarvester {
         //endregion
         this.HarvestAllSites(LiquiMolyAdditive);
 
-
         System.out.println("Complete End");
     }
 
-    //Harvest the given ad and then makes a car of this ad
-    private Product HarvestInnerProduct(String justLink) throws InterruptedException {
+    /**
+     * Harvest the given product in shape of a link and
+     * returns the finished product filled with all entities
+     * @param justLink ProductAd Link
+     * @return finished Products with all entities
+     * @throws InterruptedException
+     */
+    private Products HarvestInnerProduct(String justLink) throws InterruptedException {
 
 
         //region Build Connection
         String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36";
         Connection.Response res = null;
+        Connection.Response login;
         Document documentForLogin = null;
 
         try {
             //first connection with GET request
-            res = Jsoup.connect("http://www.motoroeldirekt.at/themes/user/index.php")
-                    .userAgent(USER_AGENT)
+            res = Jsoup.connect("https://www.motoroeldirekt.at/themes/user/index.php")
+                    //.userAgent(USER_AGENT)
                     .method(Connection.Method.GET)
                     .execute();
         } catch (Exception ex) {
-            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nError Message:" + ex.getMessage());
+            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + ex.getMessage());
         }
         try {
-            documentForLogin = Jsoup.connect("http://www.motoroeldirekt.at/themes/user/index.php")
-                    .userAgent(USER_AGENT)
+            CookieManager initalCookies = null;
+             login = Jsoup
+                    .connect("https://www.motoroeldirekt.at/themes/user/index.php")
+                    //.userAgent(USER_AGENT)
                     .cookies(res.cookies())
+                    //.cookies(initial.cookies)
                     .data("action", "login")
                     .data("formaction", "login")
                     .data("source", "post")
@@ -638,11 +642,12 @@ public class MotoroilDirektHarvester {
                     .data("email", "office@oel-billiger.at")
                     .data("passwort", "andiiana1")
                     .data("einloggen", "Login")
-                    .post();
+                     //.data("c_user","100001372713592")
+                    .method(Connection.Method.POST)
+                    .execute();
         } catch (Exception ex) {
-            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nError Message:" + ex.getMessage());
+            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + ex.getMessage());
         }
-
         //The downloaded Productpage
         Document doc = null;
         boolean success = false;
@@ -657,9 +662,11 @@ public class MotoroilDirektHarvester {
                 success = true;
             } while(doc.body()==null);
         } catch (IOException e) {
-            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nError Message:" + e.getMessage());
+            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + e.getMessage());
+            return null;
         } catch (NullPointerException e) {
-            System.out.println("Jsoup Null Pointer Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nError Message:" + e.getMessage());
+            System.out.println("Jsoup Null Pointer Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + e.getMessage());
+            return null;
         }
 
         //Filter the Information - Use the information of the Header to build my ad
@@ -669,12 +676,12 @@ public class MotoroilDirektHarvester {
         //endregion
 
         //Here I am going to save all infos ---------------------------------
-        Product p = new Product();
+        Products p = new Products();
         Elements title = artikelDetailBox;
         Elements pic = artikelDetailBox;
 
-        p.set_title(title.select("h1").text().replace("-","").replace(" ml","ml"));
-        p.set_metaTitle(p.get_title().replace("Motoröl","").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
+        p.setTitle(title.select("h1").text().replace("-","").replace(" ml","ml"));
+        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
 
 
         //region Save the pictures (SmallImage, BaseImage)
@@ -693,7 +700,7 @@ public class MotoroilDirektHarvester {
                 try {
 
                     //Making pretty filenames for the pictures
-                    String fileName = p.get_metaTitle().replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "") + ".jpg";
+                    String fileName = p.getMetaTitle().replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "") + ".jpg";
                     String filePath = "/Users/andrejsakal/Downloads/pictures/" + fileName;
 
                     if (!Files.exists(Paths.get(filePath)))
@@ -701,8 +708,8 @@ public class MotoroilDirektHarvester {
                     else
                         System.out.print("Picture already exists\n");
 
-                    p.set_baseImage(fileName);
-                    p.set_smallImage(fileName);
+                    p.setBaseImage(fileName);
+                    p.setSmallImage(fileName);
 
                 } catch (IOException e) {
                     System.out.println("Files Error IOException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
@@ -714,9 +721,9 @@ public class MotoroilDirektHarvester {
             }
         //endregion
 
-        //Save the artikelid from the imagename -----------------------------------------------------------------------------
+        //region Save the artikelid from the imagename -----------------------------------------------------------------------------
         if(justLink.contains("artikelid="))
-            p.set_sku(justLink.substring(justLink.indexOf("artikelid=") + 10, justLink.indexOf("&")));
+            p.setSku(justLink.substring(justLink.indexOf("artikelid=") + 10, justLink.indexOf("&")));
         else {
             baseImageForArtikelId = baseImageForArtikelId.substring(baseImageForArtikelId.indexOf("_")+1,baseImageForArtikelId.length());
             baseImageForArtikelId = baseImageForArtikelId.substring(0,baseImageForArtikelId.indexOf("_"));
@@ -731,10 +738,11 @@ public class MotoroilDirektHarvester {
                 }
             }
             baseImageForArtikelId = baseImageForArtikelId.substring(i,baseImageForArtikelId.length());
-            p.set_sku(baseImageForArtikelId);
+            p.setSku(baseImageForArtikelId);
         }
+        //endregion
 
-        //Save the price ---------------------------------------------------------------------------------
+        //region Save the price ---------------------------------------------------------------------------------
         double price = 0.0;
         try {
             price = Double.parseDouble(title.select("div.artikelDetailInfos").select("span#artikelPreis").text().replace(" €", "").replace(".", "").replace(",", "."));
@@ -759,25 +767,26 @@ public class MotoroilDirektHarvester {
                 System.out.println("------------------------------> ERROR IN PRICE CALC <---------------------------------\nThe Problematic Price: " + price);
                 return null;
             }
-            p.set_brand(String.valueOf(price-oldPrice));
+            p.setBrand(String.valueOf(price-oldPrice));
 
             int temp = (int) price;
             price = temp + 0.9;
-            p.set_price(price);
+            p.setPrice(price);
         } catch (NumberFormatException ex) {
             System.out.println("DoubleParse Error NumberFormatException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Calculate the price The Problematic Price: " + price + "\nError Message:" + ex.getMessage());
             return null;
         }
+        //endregion
 
-        //Calculating the Weight of the Product through the String
-        p.set_container(RecognationOfContainer(p));
+        //Calculating the Weight of the Products through the String
+        p.setContainer(RecognationOfContainer(p));
 
         //Save the description -------------------------------------------------------------------
-        p.set_description(descript.select("div.artikelDetailTabBox").html().replace("\n", ""));
+        p.setDescription(descript.select("div.artikelDetailTabBox").html().replace("\n", ""));
 
         //Edit the description ---------------------------------------------
-        String description = p.get_description();
-        String betweenStrong = p.get_metaTitle();
+        String description = p.getDescription();
+        String betweenStrong = p.getMetaTitle();
 
         //replace the first paragraph
         int startSplitter = description.indexOf("<strong>");
@@ -786,44 +795,45 @@ public class MotoroilDirektHarvester {
         if (startSplitter != -1) { //If strong element is in the descript
             String temp = description.substring(startSplitter, endSplitter - 1);
             temp = temp.substring(0, temp.indexOf("</strong>") + 9);
-            p.set_description(p.get_description().replace(temp, "<h1>" + betweenStrong + "</h1>"));
+            p.setDescription(p.getDescription().replace(temp, "<h1>" + betweenStrong + "</h1>"));
         }
         else {
-            p.set_description("<h1>"+p.get_metaTitle()+"</h1> <br>" + p.get_description());
+            p.setDescription("<h1>"+p.getMetaTitle()+"</h1> <br>" + p.getDescription());
         }
-        //--------------------------------------------------------------------
 
-        //Save the stock status ------------------------------------------------------------------
+        //region Save the stock status ------------------------------------------------------------------
         String stock = title.select("div.artikelDetailInfos").select("div#filialBestaende").text();
 
         if (stock.contains("0 Stk. verfügbar in Filiale Wr Neustadt") && stock.contains("0 Stk. verfügbar in Filiale Schwechat")) {
-            p.set_inStock(0);
+            p.setInStock(0);
         } else {
             //Go through the string an get the stock out
             String helper = stock.substring(stock.indexOf("Schwechat") + 10, stock.length());
             helper = helper.substring(0, helper.indexOf("Stk.") - 1);
 
             if (helper.contains("mehr als 100"))
-                p.set_inStock(100);
+                p.setInStock(100);
             else
-                p.set_inStock(Integer.parseInt(helper));
+                p.setInStock(Integer.parseInt(helper));
         }
+        //endregion
+
         return p;
     }
 
     /**
-     * Filtering the Weight of the Product
+     * Filtering the Weight of the Products
      *
-     * @param p Give the Product of which have to be calculated the Container
-     * @return The Weigth of the Product
+     * @param p Give the Products of which have to be calculated the Container
+     * @return The Weigth of the Products
      */
-    public double RecognationOfContainer(Product p) {
+    public double RecognationOfContainer(Products p) {
         double container = 0;
         int found = 0;
         boolean lastNumeric = false;
 
-        for (int i = 0; i < p.get_title().length(); i++) {
-            String test = String.valueOf(p.get_title().charAt(i));
+        for (int i = 0; i < p.getTitle().length(); i++) {
+            String test = String.valueOf(p.getTitle().charAt(i));
             if (isNumeric(test)) {
                 if (found == 0) {
                     container = Double.parseDouble(test) + container;
@@ -836,7 +846,7 @@ public class MotoroilDirektHarvester {
             } else if (lastNumeric) {
                 if (test.toLowerCase().equals("l")) {
                     break;
-                } else if (test.toLowerCase().equals("m") && String.valueOf(p.get_title().charAt(i + 1)).toLowerCase().equals("l")) {
+                } else if (test.toLowerCase().equals("m") && String.valueOf(p.getTitle().charAt(i + 1)).toLowerCase().equals("l")) {
                     container = container / 1000;
                 } else {
                     container = 0;
@@ -860,27 +870,26 @@ public class MotoroilDirektHarvester {
     }
 
     /**
-     * This Method harvest all Sites with the specific algorithm to get all of the ads in willhaben
-     * Then it gives one page to the other method -> the other method harvests all ads and gives the
-     * ads to another method -> the last method makes of the ads cars.
-     * So this methods gives all cars on willhaben
+     * This Method is the main heart of this programm. It calls all other important methods
+     * which do prework for Harvest the inner of a product and gives us the finished product
+     * then we are saving or updating it in our database and puting it out in a csv file
      *
-     * @return
+     * @return All Harvested Products
      * @throws IOException
      */
-    public List<Product> HarvestAllSites(LinkedList<String> allSites) {
+    public List<Products> HarvestAllSites(LinkedList<String> allSites) {
 
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         System.out.println("Start: " + sdf.format(cal.getTime()));
 
-        LinkedList<Product> allProducts = new LinkedList<>();
-        HashMap<String, Product> write = new HashMap<String, Product>();
+        LinkedList<Products> allProducts = new LinkedList<>();
+        HashMap<String, Products> write = new HashMap<String, Products>();
 
         for (int i = 0; i < allSites.size(); i++) {
 
             //Den aktuellen Link des Produktes hinschicken und dann den produkt des linkes zurückkriegen
-            Product p = null;
+            Products p = null;
             try {
                 p = HarvestInnerProduct(allSites.get(i));
             } catch (InterruptedException e) {
@@ -889,11 +898,15 @@ public class MotoroilDirektHarvester {
 
             if (p != null) {
                 allProducts.add(p);
-                if (GetProductBySKU(p.get_sku())==null)
-                    em.persist(p);
-                write.put(p.get_sku(),p);
-                WriteToCSV(write);
-                System.out.print("Waitin 5 Sec. - Did " + (i + 1) + " Products - Last Product: " + p.get_title() + " - Link to Pic: " + p.get_baseImage() + "\n");
+                int mode = 0;
+                if((mode = SaveToDatabase(p))==1) {
+                    WriteToCSV(p);
+                }
+                else if (mode == 2) {
+                    WriteChangedToCSV(p);
+                }
+
+                System.out.print("Waitin 4 Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + "\n");
                 write.clear();
             }
             try {
@@ -910,15 +923,19 @@ public class MotoroilDirektHarvester {
         return allProducts;
     }
 
-    private void WriteToCSV(HashMap<String, Product> c) {
+    /**
+     * Writing all new Products to the new.csv file
+     * @param c
+     */
+    private void WriteToCSV(Products c) {
 
         FileWriter writer = null;
-//sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;short_description;description;name;qty;price;image;small_image;thumbnail;weight
-        try(FileWriter fw = new FileWriter("/Users/andrejsakal/Dokumente/Cloud Drive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/test.csv", true);
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;short_description;description;name;qty;price;image;small_image;thumbnail;weight
+        try(FileWriter fw = new FileWriter("/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/New.csv", true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw))
         {
-            Product p = (Product) c.values().toArray()[0];
+            Products p = (Products) c;
             out.print(p.toString());
             //more code
         } catch (IOException e) {
@@ -926,52 +943,90 @@ public class MotoroilDirektHarvester {
         }
     }
 
-    public void SaveToDatabase(LinkedList<Product> products) {
-        for (int i = 0; i < products.size(); i++) {
-            if (GetProductBySKU(products.get(i).get_sku()) == null) {
-                Product p = (Product) products.get(i);
+    /**
+     * We are just printing the products which changed (for update/import purposes to magento)
+     * @param c
+     */
+    private void WriteChangedToCSV(Products c) {
+
+        FileWriter writer = null;
+       //sku;qty;price
+        try(FileWriter fw = new FileWriter("/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/Changed.csv", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter out = new PrintWriter(bw))
+        {
+            Products p = (Products) c;
+            out.print("^"+c.getSku()+"^;^"+c.getInStock()+"^;^"+c.getPrice()+"^\n");
+        } catch (IOException e) {
+            System.out.println("WriterChangedToCSV->IOException");
+        }
+    }
+
+    /**
+     * This method saves the given product to the database if it doesnt exists
+     * if it exists then we are lookin if something changed (import purposes)
+     * if exists and nothing changed we are doing nothing
+     * @param product
+     * @return
+     */
+    public int SaveToDatabase(Products product) {
+        Products p;
+            if ((p = GetProductBySKU(product.getSku())) == null) {
                 try {
-                    em.persist(p);
+                    em.persist(product);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                return 1;
             }
             else {
-                System.out.print("ALREADY IN DB");
+                if (p.getPrice()!=product.getPrice() || p.getInStock() != product.getInStock()) {
+                    p.setPrice(product.getPrice());
+                    p.setInStock(product.getInStock());
+                    return 2;
+                }
+                else {
+                    return 3;
+                }
             }
-        }
-        em.flush();
     }
 
-    public List<Product> GetProducts() {
-        TypedQuery<Product> query = em.createNamedQuery("Product.getAll", Product.class);
-        List<Product> test = query.getResultList();
+    public List<Products> GetProducts() {
+        TypedQuery<Products> query = em.createNamedQuery("Products.getAll", Products.class);
+        List<Products> test = query.getResultList();
         return test;
     }
 
-    public List<Product> GetMannolProducts() {
-        TypedQuery<Product> query = em.createNamedQuery("Product.GetMannolProducts", Product.class);
-        List<Product> test = query.getResultList();
+    public List<Products> GetMannolProducts() {
+        TypedQuery<Products> query = em.createNamedQuery("Products.GetMannolProducts", Products.class);
+        List<Products> test = query.getResultList();
         return test;
     }
 
-    public Product GetProductBySKU(String sku) {
-        TypedQuery<Product> query = em.createNamedQuery("Product.getProductBySku", Product.class).setParameter("sku",sku);
+    public Products GetProductBySKU(String sku) {
 
-        Product test = null;
         try {
-            test = query.getSingleResult();
+            //Products query = em.createNamedQuery("Products.getProductBySku", Products.class).setParameter("sku","'"+sku+"'").getSingleResult();
+            Products query = getSingleResultOrNull(em.createQuery("select p FROM Products p where p.sku = '"+sku+"'", Products.class));
+            return query;
         }
-        catch (NoResultException e) {
+        catch (Exception e) {
             System.out.println("SKU NOT EXISTING");
             return null;
         }
-        return test;
+
     }
 
-    public List<Product> GetProductsNoCustomDescription() {
-        TypedQuery<Product> query = em.createNamedQuery("Product.NoCustomDescription", Product.class);
-        List<Product> test = query.getResultList();
+    public static Products getSingleResultOrNull(Query query){
+        List<Products> results = query.getResultList();
+        if (results.isEmpty()) return null;
+        else if (results.size() == 1) return results.get(0);
+        throw new NonUniqueResultException();
+    }
+
+    public List<Products> GetProductsNoCustomDescription() {
+        TypedQuery<Products> query = em.createNamedQuery("Products.NoCustomDescription", Products.class);
+        List<Products> test = query.getResultList();
         return test;
     }
 }

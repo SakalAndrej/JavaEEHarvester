@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="db@localhost" uuid="024d0371-c327-4eae-abab-0df4a228fa0a">
+    <data-source name="jdbc:derby://localhost/db" uuid="024d0371-c327-4eae-abab-0df4a228fa0a">
       <database-info product="Apache Derby" version="10.11.1.2 - (1629631)" jdbc-version="4.2" driver-name="Apache Derby Network Client JDBC Driver" driver-version="10.13.1.1 - (1765088)">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
