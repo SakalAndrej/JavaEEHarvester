@@ -25,19 +25,25 @@ public class SeoAudit {
 
     public static void addOilFinderMannol(List<Products> allMannolProducts) {
 
+        int keywordCnt = 0;
+        LinkedList<String> title = ReadTags("/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/OilFinderMannolTitle.txt");
 
         for (int i = 0; i < allMannolProducts.size(); i++) {
             Products actProd = allMannolProducts.get(i);
-            String actString = "hi";
 
             if (actProd.isCustomDescription() == false) {
                 String descrip = actProd.getDescription();
 
                 descrip = descrip + "<center><br><br><h1>Mannol Ölfinder</h1><br><br><p>Sie wissen nicht genau welches Motor- oder Getriebelöl sie brauchen? Dann einfach kurz den Mannol Ölfinder öffnen, richtige Marke & Modell aussuchen und schon können Sie alle Informationen über Ihr geliebtes Auto nachlesen!" +
                         "<form action=\"http://sct-catalogue.de/?action=catalog\">\n" +
-                        "    <input type=\"submit\" value=\"Ölfinder Mannol\" alt=\""+ actProd.getMetaTitle() +"\" title=\"" + actProd.getBrand() + "\"/>\n" +
+                        "    <input type=\"submit\" value=\"Ölfinder Mannol\" alt=\""+ actProd.getMetaTitle() +"\" title=\"" + title.get(keywordCnt) + "\"/>\n" +
                         "</form></center>";
                 actProd.setDescription(descrip);
+
+                if (keywordCnt>=title.size()-1)
+                    keywordCnt = 0;
+                else
+                    keywordCnt++;
             }
         }
     }
@@ -62,7 +68,7 @@ public class SeoAudit {
     public static LinkedList<String> ReadTags(String csvFile) {
         BufferedReader br = null;
         String line = "";
-        String csvSplitBy = ",";
+        String csvSplitBy = "\n";
         LinkedList<String> tags = new LinkedList<String>();
 
 

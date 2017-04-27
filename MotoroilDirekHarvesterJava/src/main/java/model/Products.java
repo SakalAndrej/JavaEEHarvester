@@ -32,6 +32,10 @@ public class Products
     @Lob
     private String description;
 
+    //@Column(/*name = "DESCRIPTION", */length = 200)
+    //@Lob
+    //private String metaDescription;
+
     //Marke & Model
     //@Column(name = "BRAND")
     private String brand;
@@ -66,7 +70,7 @@ public class Products
 
     @Override
     public String toString() {
-        return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ description + "^"+ ";" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^\n";
+        return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ description + "^"+ ";" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand + "^\n";
     }
     public String toStringDefault() {
         return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ description + "^"+ ";" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^\n";
@@ -81,6 +85,14 @@ public class Products
     public void setCustomDescription(boolean _customDescription) {
         this.customDescription = _customDescription;
     }
+
+    //public String getMetaDescription() {
+    //    return metaDescription;
+    //}
+
+    //public void setMetaDescription(String metaDescription) {
+    //    this.metaDescription = metaDescription;
+    //}
 
     public String getSmallImage() {
         return smallImage;

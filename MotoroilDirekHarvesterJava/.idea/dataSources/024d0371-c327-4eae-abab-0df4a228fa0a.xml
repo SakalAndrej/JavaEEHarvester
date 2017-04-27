@@ -37,7 +37,7 @@
     </column>
     <column id="18" parent="13" name="CUSTOMDESCRIPTION">
       <Position>5</Position>
-      <DataType>BOOLEAN(1)|16</DataType>
+      <DataType>SMALLINT(5)|5</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="19" parent="13" name="DESCRIPTION">
@@ -66,7 +66,7 @@
       <Position>11</Position>
       <DataType>VARCHAR(255)|12</DataType>
     </column>
-    <key id="25" parent="13" name="SQL170410003301980">
+    <key id="25" parent="13" name="SQL170403211139640">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SKU</ColNames>
       <Primary>1</Primary>

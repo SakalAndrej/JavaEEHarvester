@@ -8,6 +8,7 @@ import org.jsoup.select.Elements;
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import javax.ws.rs.core.Cookie;
+import javax.ws.rs.core.Link;
 import java.io.*;
 import java.net.*;
 import java.nio.file.Files;
@@ -25,6 +26,7 @@ public class MotoroilDirektHarvester {
     public void initializeLinks() {
         LinkedList<Products> products = new LinkedList<>();
 
+        /*
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
 
@@ -39,46 +41,46 @@ public class MotoroilDirektHarvester {
         MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8339&kategorieid=3995&source=2&refertype=1&referid=3995");
         MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8397&kategorieid=3995&source=2&refertype=1&referid=3995");
         MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8342&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8343&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8347&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8346&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8354&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8355&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8341&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8349&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8348&kategorieid=3995&source=2&refertype=1&referid=3995");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8244&kategorieid=3960&source=2&refertype=1&referid=3960");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8242&kategorieid=3960&source=2&refertype=1&referid=3960");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8476&kategorieid=3960&source=2&refertype=1&referid=3960");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8243&kategorieid=3960&source=2&refertype=1&referid=3960");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8265&kategorieid=3961&source=2&refertype=1&referid=3961");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8266&kategorieid=3961&source=2&refertype=1&referid=3961");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8271&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8478&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8272&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8277&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8275&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=13544&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8479&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8276&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8270&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8269&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8114&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8115&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8113&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=13543&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8258&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8256&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8645&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8480&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8257&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8112&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8280&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8278&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8477&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8279&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8254&kategorieid=3962&source=2&refertype=1&referid=3962");
-        MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8251&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8343&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8347&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8346&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8354&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8355&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8341&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8349&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8348&kategorieid=3995&source=2&refertype=1&referid=3995");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8244&kategorieid=3960&source=2&refertype=1&referid=3960");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8242&kategorieid=3960&source=2&refertype=1&referid=3960");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8476&kategorieid=3960&source=2&refertype=1&referid=3960");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8243&kategorieid=3960&source=2&refertype=1&referid=3960");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8265&kategorieid=3961&source=2&refertype=1&referid=3961");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8266&kategorieid=3961&source=2&refertype=1&referid=3961");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8271&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8478&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8272&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8277&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8275&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=13544&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8479&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8276&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8270&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8269&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8114&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8115&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8113&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=13543&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8258&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8256&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8645&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8480&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8257&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8112&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8280&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8278&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8477&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8279&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8254&kategorieid=3962&source=2&refertype=1&referid=3962");
+        MotoroilAndAdditives.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8251&kategorieid=3962&source=2&refertype=1&referid=3962");
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8255&kategorieid=3962&source=2&refertype=1&referid=3962");
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8253&kategorieid=3962&source=2&refertype=1&referid=3962");
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8252&kategorieid=3962&source=2&refertype=1&referid=3962");
@@ -594,7 +596,461 @@ public class MotoroilDirektHarvester {
         //endregion
         LiquiMolyAdditive.addAll(KraftstoffAdditiveDiesel);
         //endregion
+
         this.HarvestAllSites(LiquiMolyAdditive);
+
+        //region meguiars Pflegemittel
+        LinkedList<String> meguars = new LinkedList<>();
+
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Quik-Detailer-Spray-Sprayreiniger-%C3%A0-650ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Gold-Class-Endurance-Reifenpflege-Gel--%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Hot-Rims-Felgenreiniger--%C3%A0-710-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Gold-Class-Lederreiniger-%26--pflege-Spray-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Wash-%26-Wax-Anywhere-Trigger-768ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Natuerlicher-Glanzschutz-fuer-Vinyl-und-Gummi-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Quik-Detailer-Spray-Schnellreiniger-Innen-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Quik-Wax-Spruehwachs-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Auto-Shampoo-mit-Wachsschutz--%C3%A0-1.42-l?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Spray-Wax-SPRUeHWACHS--%C3%A0-450ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Quik-Detailer-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Waesche-Handschuh-Microfaser-Super-Dick-%28gestrickt%29?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Pure-Clarity-Class-Cleaner-%28aero%29-538g?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Paint-Protect-473ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Tyre-Dressing-Applicator-Pad?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Compound-%C3%A0-450-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Gold-Class-Tiefenpflege-fuer-Kunststoff-%28aussen%29-296ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-NXT-GENERATION-Politur-fuer-alle-Metalle-%C3%A0-148-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-SCRATCH-X-Kratzer-Entferner-%C3%A0-207-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Wax-Paste-%C3%A0-11-oz?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Polish-16oz473ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Gold-Class-Shampoo-und-Konditionierer-%C3%A0-473ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Polster-%2C-Teppich--%26-Innenraumreiniger--%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Auftragungsschwaemme-%282-Stueck%29?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Superabsorber-Wasser-Magnet-Meguiar%26%23039%3Bs-%28gewirkt%29?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-MOTORREINIGER-Engine-Clean-Spray--%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Swirl-Remover-Hologramm-%26-Wirbelkratzer-Entferner-450ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Wax-Liquid-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-One-Step-Headlight-Restoration-Kit?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-MOTORKONSERVIERER-Engine-Dressing-Spray--%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Supreme-Shine-Microfiber-3er-Pack-%28gestrickt%29?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Kalkflecken-Entferner-%C3%A0-473ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Gold-Class-Polish-Liquid-Wax-Fluessigwachs-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Bootswaschmittel--%C3%A0-1.89-l?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Flagship-Premium-Marine-Wachs-%C3%A0-946ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Flagship-Premium-Marine-Shampoo-%26-Conditioner?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Mittlere-Schleifpolitur-2-in-1-M-67-%C3%A0-945ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Even-Coat-Applicator-Pad-%282er-Pack%29?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Ultimate-Set-Gross?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Car-Wash-Set?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Set-Ultimate-klein?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-BootsRV-Hochglanz-Politur-M-45-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+        meguars.add("https://www.motoroeldirekt.at/Meguiars-Spray-Schnell-Wachs-M-59-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
+
+        //endregion
+
+        this.HarvestAllSites(meguars);
+
+        //region Sonax Pflegemittel
+
+        LinkedList<String> sonax = new LinkedList<>();
+
+        sonax.add("https://www.motoroeldirekt.at/SONAX-KlimaPowerCleaner-antibakteriell-150-ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Felgen-Reiniger-PLUS-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Reifen-Glanz-Spray-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Clean-%26-Drive-Turbo-InnenTuch?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Kunststoff-PflegeTuecher-glaenzend?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Microfaser-Tuecher-Aussen---der-Lackpflegeprofi-%282-St.%29?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Cockpit-Pfleger-Vanilla-fresh-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Polster--%26-Alcantara-Reiniger-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Leder-Pflege-Lotion-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Scheiben-Reiniger-Konzentrat-Citrus-2l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Chrom--%26-Alu-Paste-75ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Scheiben-Reiniger-Konzentrat-Red-Summer-2l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Cockpit-Reiniger-Matteffect-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Kunststoff-Gel-Aussen-NanoPro-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Scheiben-Klar-NanoPro-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Applikations-Schwamm?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Auto-Innen-Reiniger-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Cockpit-Pfleger-Apple-fresh-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Scheibenenteiser-500ml-%2B-250ml-Aktionsgroesse?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-AntiFrost-%26amp%3B-KlarSicht-gebrauchsfertig-5l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Smoke-Ex-Der-Geruchskiller-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Polish-%26-Wax-3-Hybrid-NPT-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Scheiben-Reinigungs-Tuecher-Box?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-FelgenReiniger-PLUS-750ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Polish-%26-Wax-2-Hybrid-NPT-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-Brilliant-Wax-1-Hybrid-NPT-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Polish-%26-Wax-Color-NanoPro-schwarz-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-CockpitPfleger-Matteffect-Red-Summer-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-GummiPfleger-100ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-FelgenReiniger-1l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Microfaser-Tuecher-PLUS-Innen-%26amp%3B-Scheibe-%282-St.%29?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-InnenReinigungstuecher-Box?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-FelgenReiniger-PLUS-500ml-%2BGratis-Reifen-Glanz-Spray-300-ML?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-AntiFrost-%26-KlarSicht-Konzentrat-5l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-GummiPfleger-100ml-610?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-TurboWaxTuch-Clean%26amp%3BDrive?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-FelgenBuerste-ultra-soft?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CockpitPflegeTuecher-Box-matteffect?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-XTREME-FelgenVersiegelung-NanoPro-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-Microfaser-Schwamm?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Premium-Class-Nano-Lackversiegelung?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ReifenPfleger-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Schleif-Paste-75ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CarShampoo-Konzentrat-RedSummer-3l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Polster-Schaum-Reiniger-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-ScheibenReiniger-gebrauchsfertig-Marillen-Duft-5l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-Polish-%26-Wax-2-Hybrid-NPT-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-KlimaPowerCleaner-GreenLemon-150ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-KlimaPowerCleaner-Tropical-Sun-150ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ScheibenReiniger-Gebrauchsfertig-Tropical-Sun-3l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-PolierVliesTuecher?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-BrillantShine-Detailer-750ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-Brillant-Wax-1-Hybrid-NPT-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-Polish-und-Wax-3-Hybrid-NPT-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-Polster---%26-AlcantaraReinige-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-ScheibenReiniger-1%3A100-NanoPro-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Motor--und-Kaltreiniger-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-MotorPlast?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-FelgenVersiegelung-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ColorWax-schwarz-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Scheinwerfer-AufbereitungsSet-75ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-InsektenStar-750ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CockpitPfleger-Vanille-Fresh-Mattef?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CockpitPfleger-Sport-Fresh-Matteffefect-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CockpitPfleger-NewCar-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-AntiFrost-%26-KlarSicht-Konzentrat-1l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-MultiSchwamm?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-AutoPflegeTuch-PLUS?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-P-Ball-Applikator?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Premium-Class-Lack-Cleaner-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Plasti-Dip-Felgenreiniger-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-Protect%2BShine-Hybrid-NPT-210ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-LederPflegerSchaum-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Silikon-Gleit--u.-Trennspray-EasySpray-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-GummiPfleger-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Lack-Reiniger-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-FlugrostEntferner-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Insekten-Entferner-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-TeerEntferner-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-BaumharzEntferner-100ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Polish-%26-Wax-COLOR-weiss-NanoPro-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Polish-%26-Wax-COLOR-NanoPro-blau-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Cabrio-Verdeck-%26-Textilimpraegnierung-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Tiefenpfleger-glaenzend-mit-Duft-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-LederPflegeTuecher-Box?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-PremiumClass-LederReiniger-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CockpitPfleger-Green-Lemon-Fresh-matteffect-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CockpitPfleger-Green-Lemon-Fresh-matteffect-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Fleck--und-KlebstoffrestEntferner-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Cockpitpfleger-Lemon-Fresh-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-LackInsektenSchwamm?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-PremiumLeder?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-SchwammApplikator--Super-Soft?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-MicrofaserTrockenTuch?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-SchmutzRadierer?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-Textil--%26amp%3B-LederBuerste?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-ScheibenSchwamm?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-SpezialBuerste-zur-Entfernung-von-Tierhaaren?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-FolienReiniger-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-MoS2-Oil-NanoPro-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-GlanzShampoo-Konzentrat-1l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Wasch-%26-Wax-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Auto-Politur-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Baumharz-Entferner-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Polish-%26-Wax-COLOR-NanoPro-rot-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Cabrio-Verdeck-Reiniger-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-KratzerEntfernerSet-Lack-2x25ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-KratzerEntferner-Kunststoff-75ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Kunststoff-Neu-Schwarz-100ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ScheibenStar-750ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-ScheibenReiniger-gebrauchsfertig-3l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-AutoInnenreiniger-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ScheibenKlar-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-LederPflegeLotion-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-PremiumClass-LederPflegeCreme-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Polster-Schaum-Reiniger-treibgasfrei-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Klarsicht-1%3A100-Konz.-Red-Summer-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-FlexiBlade?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-AutoPflegeTuch?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-MicrofaserTuch?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-InsektenSchwamm?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-AntiFrost-%26-KlarSicht-Blue-Energy-bis--20%C2%B0C-5l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-FelgenStar-Felgenreiniger-750ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-ActiveShampoo-2-in-1%2C-1l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-Spray-%26-Clay-LackReinigungsSet-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-Spray-%26-Clay-LackReinigungsSet-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-FolienPflege-%26--Versiegelung-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Kuehler-Dichtung-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SchnellRostLoeser-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SX-BIO90-EasySpray-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-MoS2-Oil-NanoPro-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SX-90-Plus-Easy-Spray-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ReifenFix-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ReifenFix-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Motor-Starthilfe-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Xtreme-FelgenReiniger-PLUS-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-FelgenReiniger-Gel-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-WaschPolitur-1l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-HighSpeedWax-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Turbo-LackSchutz-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Auto-Hart-Wax-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Metallic-Hochglanz-Politur-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Polish-%26-Wax-COLOR-Nanopro-silbergrau-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Tiefenpfleger-seidenmatt-mit-Duft-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-KunststoffPflege-Innen-und-Aussen-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-GFK-%2C-Boot--%26-CaravanReiniger?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-InnenReinigungsTuecher?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-KunststoffPflegeTuecher-glaenzend?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Cockpit-Pfleger-300ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Cockpitpfleger-Sport-Fresh-400ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Klarsicht-1%3A100-Konz.-GreenLemon-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-Klarsicht-1%3A100-Konz.-Tropical-Sun-250ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-ScheibenReiniger-Sommer-Gebrauchsfertig-Green-Lemon-3l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-IntensivReinigungsBuerste?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-Ersatzschwamm-fuer-P-Ball?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-MicrofaserTuch-ultrafein?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-Scheiben--%26-FensterTuch?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-SONAX-MicrofaserPflegePad?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-CockpitPfleger-Tropical-Sun-Matteff-500ml?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-CockpitPflegeTuecher-Matteffect-Green-Lemon-Box?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-AntiFrost-%26-KlarSicht-Ice-Fresh-bis--20%C2%B0C-5l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/Sonax-AutoShampoo-Konzentrat-Green-Lemon-2l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-LackReinigungsTuecher-Box?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Scheiben-Reinigungs-Tuecher-Box-%2B-Gratis-Microfasertuch-Plus?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-ScheibenReiniger-gebrauchsfertig-Red-Summer-5l?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-ScheibenReiniger-gebrauchsfertig-Citrus-5-L?source=2&refertype=5&referid=182240");
+        sonax.add("https://www.motoroeldirekt.at/SONAX-Felgen-Reiniger-Plus-1%2B1-Gratis?source=2&refertype=5&referid=182240");
+
+
+        //endregion
+
+        this.HarvestAllSites(sonax);*/
+
+        //region Nigrin Pflegemittel
+
+        LinkedList<String> nigrin = new LinkedList<>();
+
+
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lackspray-schwarz-matt-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Unterbodenschutz-Spray-500-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Reifen-Pflege-Spray-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lackspray-schwarz-glaenzend-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Felgen-Reiniger-1000ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-EvoTec-Felgenreiniger-500-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Insekten-Entferner-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Cockpit-Quick-Shine?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Unterbodenschutz-1000-ml%2C-Pistolendose?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Schnell-Trockentuch-Groesse-54-x-40-cm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Felgenbuerste%2C-runde-Form?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auto-Shampoo-Konzentrat-Orange-1000ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Cockpit-Spray-Apfel-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kettenreiniger%2C-500-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lackspray-silber-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Klarsichtkissen?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Reifendicht-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Scheiben-Reiniger-mit-Nikotinloeser-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Textil-Reinigung-und--Pflege-400ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Rostumwandler-200-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Cockpit-Spray-Vanille-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Unterbodenwachs-500-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Frischer-Duft-Vanille?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Leder-Pflege-Set-Seife%2BBalsam?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-EvoTec-Felgenreiniger-3-Liter?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Cockpit-Tuch-2-St.-Groesse-35-X-35-cm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Cockpit-Spray-Meeresbrise-400ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Klarlack-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoffpflege-Tuecher?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Haftgrund-grau-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-hitzebest.-Lackspray-bis-600-Grad-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Gummi-Pflegestift-75ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Flugrost-Entferner-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hohlraumkonservierer-500-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Frischer-Duft-Wildbeeren?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Textil-Reiniger-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Frischer-Duft-New-Car?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Felgenreiniger-Turbo--Doppelpack-2x500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Klimaanlagen-Desinfektion-150-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Cockpit-Spray-Neutral-400ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auto-Supertuch?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Autoleder-1858-qcm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Silikon-Trockner-%2B-Leder?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Gummi-Pflegespray-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Lufterfrischer-TUNING-New-Car?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Colorpolitur-schwarz-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Glasfaserspachtel-500-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Karosserie-Spachtelsatz%2C-4-teilig?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Reinigungs-Politur-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Politur-300-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kettenspruehfett-vollsynthetisch%2C-400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Schleifpapier-Sortiment-3%2C-Nassschliff?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auspuff-Kitt-200-ml%2C-asbestfrei?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Politurpaste-250-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Lufterfrischer-TUNING-Meeresbrise?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Frischer-Duft-Meeresfrische?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Wash-%26-Wax-Turbo-1000ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Profi-Poliertuecher-50-St.?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Lackschutz-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoff-Aufbereitung-Color-schwarz-300-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Autoschwamm-Super-Soft-Knochenform?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Insektenschwamm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Teer-und-Baumharz-Entferner-250ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lufterfrischer-AMBIENTE-Vanille?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Feinspachtel-250-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Schleifpapier-Sortiment-2%2C-Zwischenschliff?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auspuff-Montagepaste%2C-150-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-RepairTec-Kupferspray-500-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Frischer-Duft-Kirsche?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Brillant-Politur-Turbo-Set-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Lufterfrischer-TUNING-Vanille?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Felgenschwamm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Antibeschlag-Tuch?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Duftdose-regulierbar-Vanille?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Verdeck-Impraegnierer-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Frischer-Duft-Limone?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoff-Tiefenpflege-300-ml-seidenmatt?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Scheiben-Versiegelung-Set?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Rostprimer-Spray-grau---400-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Stossstangen-Schwarz-200-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Profi-Spachtel-500-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kontaktspray-250-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auto-Shampoo-Konzentrat-3-Liter?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Klarsichtkissen-mit-Microfaser?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Duftdose-regulierbar-Designer-Duft?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Turbo-Hartwachs-Lackschutz-Set-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Scheibenreiniger---200-mm-x-245-mm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Colorpolitur-silber-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kratzer-Entferner-150g?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Felgen-Versiegelung-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Minutenwaesche-Turbo-1000ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Scheibenreinigungs-Tuecher?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Anti-Beschlag-300ml-Pumpzerstaeuber?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Scheiben-Politur-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Steinschlagschutzgrund-500-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Tierhaar-Entferner-Handschuh-blau%2Cgrau%2Crot?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lufterfrischer-AMBIENTE-Zitrone?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lufterfrischer-AMBIENTE-New-Car?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Fuellspachtel-1000-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auspuff-Bandage-100-cm%2C-asbestfrei?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-74028-Metall-Politurpaste-75ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-RepairTec-Silikonentferner-500-ml-Trigger?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Unterbodenschutz-2%2C5-kg?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Cockpit-Lotion-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Rost-Bremse-200-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Haerter-30-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Hartwachs-Politur-Turbo-Set-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Polierwatte-380-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Ausgiesshilfe-fuer-Kanister?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lufterfrischer-AMBIENTE-Ocean?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lufterfrischer-AMBIENTE-Anti-Tabak?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoff-Versiegelung-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Reparatur-Box-250-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Leder-Pflege-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Polyesterharz-500-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Colorpolitur-blau-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoff-Reiniger-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-MoS2-Graphit-Hybrid-400ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lufterfrischer-Hawaii%2C-Vanille?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Performance-Silikon--Gleitspray-Hybrid?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Colorpolitur-rot-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoffscheiben-Politur-Set?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Metall-Pflege-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoff-Tiefenpflege-300-ml-glaenzend?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kombispachtel-100-Gramm-Tube?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/NIGRIN-Lufterfrischer-Membran?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auto-Allzwecktuch-5-St.-Groesse-40-x-38-cm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Auto-Vorwaesche-500ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Display-Reiniger-75ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Vignetten-und-Kleber-Entferner-8ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Glasfasermatte-0%2C5-qm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Glasfaservlies-0%2C8-qm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Glasfasergewebe-0%2C5-qm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Metallspachtel-500-Gramm?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Feinmechanik-Oel-100ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Lackreparatur-Set?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoff-Aufbereitung-Color-grau-300ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-GEL-Motorradreiniger-1000-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Kunststoff-Aufbereitung-Color-weiss-300-ml?source=2&refertype=5&referid=182269");
+        nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Colorpolitur-gruen-300ml?source=2&refertype=5&referid=182269");
+
+        //endregion
+
+        this.HarvestAllSites(nigrin);
+
+        //region Auto Finesse Pflegemittel
+        LinkedList<String> autoFinesse = new LinkedList<>();
+
+
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Spritz-500ml-%28Quick-Detailer-Innenraum%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Finale-500ml-%28glanzverstaerkender-Detailer%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Clay-Bar-Fine-%28Reinigungs-Knete%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Citrus-Power-1l-%28Reiniger-und-Insektenentferner%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Glisten-500ml-%28Sprueh-Wachs%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Imperial-500ml-%28Felgenreiniger-saeurefrei%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Glide-%28Gleitmittel-Knete%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Polishing-Compound-500ml-%28Politur%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Satin-500ml-%28Reifenpflege%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Crystal-500ml-%28Glasreiniger%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Revive-Trim-Dressing-250ml-%28KunststoffGummi-Dressing%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Total-500ml-%28Allzweckreiniger%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Temptation-200ml-%28Wachs%2C-Standard%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Dressle-500ml-%28Dressing-Innen-u.-aussen%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Lather-Shampoo-500ml?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Mercury-100ml-%28Metallpolish-Metallpolitur%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Restoring-Compound-500ml-%28Politur%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Power-Seal-500ml-%28Lackversiegelung%29?source=2&refertype=5&referid=182290");
+        autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Iron-Out-500ml-%28Reaktiver-Flugrostentferner%29?source=2&refertype=5&referid=182290");
+
+        //endregion
+
+        this.HarvestAllSites(autoFinesse);
+
+        //region armor all Pflegemittel
+        LinkedList<String> armorAll = new LinkedList<>();
+
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Extrem-Reifenglanz-Gel-530ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunstststoff-Tiefenpfleger-seidenmatt-300-ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Lederpflege-Gel-530ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunstststoff-Tiefenpfleger-glaenzend-300-ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunststoffpflege-Tuecher-seidenmatt-30-Stk?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Orangen-Reinigungstuecher-seidenmatt-30-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Reifenpfleger-500ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Lederpflege-Tuecher-24-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunststoffpflege-Tuecher-glaenzend-30-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunstststoff-Tiefenpfleger-glaenzend-500-ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Shield-Felgenversiegelung-300ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Scheibenreinigungs-Tuecher-30-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Lederpflege-Tuecher-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Extrem-Felgenreiniger-500-ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Display-%26amp%3B-Scheiben--Tuecher-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Reinigungs-Tuecher-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Shield-Lackversiegelung-500ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Anti-Beschlag-Tuecher-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Speed-Wax-Spray-500ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Hochglanzpflege-Tuecher-glaenzend-12-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunststoffpflege-Tuecher-seiden-matt-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunststoffpflege-Tuecher-glaenzend-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Car-Wash-Superkonzentrat-1000-ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Tuerdichtungs-Pflegetuecher-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Car-Cleaner-500ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Polsterreiniger-Tuecher-30-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Scheibenreiniger-500-ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Scheibenreinigungstuecher-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Kunststoffpflege-Aussen-Tuecher-30-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Polsterreiniger-Tuecher-20-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Insekten-Reinigungstuecher-30-Stk.?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Car-Wash-Speed-Dry-1000ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Shield-Autowaesche-520ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Wash-%26-Wax-Speed-Shine-1000ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Speed-Hard-Wax?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/ARMOR-ALL-Ultra-Lackreiniger-500ml?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Shield-Scheibenveriegelung?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Insektenentferner?source=2&refertype=5&referid=182292");
+        armorAll.add("https://www.motoroeldirekt.at/Armor-All-Heavy-Duty-Car-Wash-1000ml?source=2&refertype=5&referid=182292");
+
+        //endregion
+
+        this.HarvestAllSites(armorAll);
 
         System.out.println("Complete End");
     }
@@ -653,14 +1109,16 @@ public class MotoroilDirektHarvester {
         boolean success = false;
 
         try {
+
             do {
-                if (success)
+                if (success==true)
                     Thread.sleep(3000);
 
                 doc = Jsoup.connect(justLink).cookies(res.cookies()).get();
 
                 success = true;
             } while(doc.body()==null);
+
         } catch (IOException e) {
             System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + e.getMessage());
             return null;
@@ -684,6 +1142,40 @@ public class MotoroilDirektHarvester {
         p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
 
 
+        //region Get Brands
+        if(p.getTitle().toLowerCase().contains("mannol")) {
+            p.setBrand("Mannol");
+        }
+        else if (p.getTitle().toLowerCase().contains("meguin")) {
+            p.setBrand("Meguin Megol");
+        }
+        else if (p.getTitle().toLowerCase().contains("liqui moly")) {
+            p.setBrand("Liqui Moly");
+        }
+        else if (p.getTitle().toLowerCase().contains("sonax")) {
+            p.setBrand("Sonax");
+        }
+        else if (p.getTitle().toLowerCase().contains("meguiars")) {
+            p.setBrand("Meguiars");
+        }
+        else if (p.getTitle().toLowerCase().contains("nigrin")) {
+            p.setBrand("Nigrin");
+        }
+        else if (p.getTitle().toLowerCase().contains("auto finesse")) {
+            p.setBrand("Auto Finesse");
+        }
+        else if (p.getTitle().toLowerCase().contains("armor all")) {
+            p.setBrand("Armor All");
+        }
+        else if (p.getTitle().toLowerCase().contains("eurolub")) {
+            p.setBrand("Eurolub");
+        }
+        else {
+            System.out.print(p.getTitle());
+        }
+
+        //endregion
+
         //region Save the pictures (SmallImage, BaseImage)
 
         String imagePath = pic.select("div.artikelDetailBildBox").select("span#artikelDetailBild").outerHtml();
@@ -700,7 +1192,7 @@ public class MotoroilDirektHarvester {
                 try {
 
                     //Making pretty filenames for the pictures
-                    String fileName = p.getMetaTitle().replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "") + ".jpg";
+                    String fileName = p.getMetaTitle().replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à","a") + ".jpg";
                     String filePath = "/Users/andrejsakal/Downloads/pictures/" + fileName;
 
                     if (!Files.exists(Paths.get(filePath)))
@@ -767,7 +1259,6 @@ public class MotoroilDirektHarvester {
                 System.out.println("------------------------------> ERROR IN PRICE CALC <---------------------------------\nThe Problematic Price: " + price);
                 return null;
             }
-            p.setBrand(String.valueOf(price-oldPrice));
 
             int temp = (int) price;
             price = temp + 0.9;
@@ -927,7 +1418,7 @@ public class MotoroilDirektHarvester {
      * Writing all new Products to the new.csv file
      * @param c
      */
-    private void WriteToCSV(Products c) {
+    public void WriteToCSV(Products c) {
 
         FileWriter writer = null;
         //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;short_description;description;name;qty;price;image;small_image;thumbnail;weight
@@ -947,7 +1438,7 @@ public class MotoroilDirektHarvester {
      * We are just printing the products which changed (for update/import purposes to magento)
      * @param c
      */
-    private void WriteChangedToCSV(Products c) {
+    public void WriteChangedToCSV(Products c) {
 
         FileWriter writer = null;
        //sku;qty;price
@@ -991,9 +1482,9 @@ public class MotoroilDirektHarvester {
             }
     }
 
-    public List<Products> GetProducts() {
+    public ArrayList<Products> GetProducts() {
         TypedQuery<Products> query = em.createNamedQuery("Products.getAll", Products.class);
-        List<Products> test = query.getResultList();
+        ArrayList<Products> test = (ArrayList<Products>) query.getResultList();
         return test;
     }
 
@@ -1011,7 +1502,7 @@ public class MotoroilDirektHarvester {
             return query;
         }
         catch (Exception e) {
-            System.out.println("SKU NOT EXISTING");
+            System.out.println("SKU NOT EXISTING" + sku);
             return null;
         }
 
