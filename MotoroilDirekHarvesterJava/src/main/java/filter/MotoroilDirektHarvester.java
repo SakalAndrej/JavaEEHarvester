@@ -825,7 +825,7 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(sonax);*/
+        this.HarvestAllSites(sonax);
 
         //region Nigrin Pflegemittel
 
@@ -1050,7 +1050,147 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(armorAll);
+        this.HarvestAllSites(armorAll);*/
+
+        //region Bremsenreiniger
+        LinkedList<String> bremsenreiniger = new LinkedList<>();
+
+        bremsenreiniger.add("https://www.motoroeldirekt.at/Wuerth-saBesto-Bremsenreiniger-XXL-750ml?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/Eurolub-Bremsenreiniger-Spray-600ml?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/Mannol-Bremsenreiniger-Montage-Cleaner-600ml?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/CRC-Braklen-Bremsenreiniger-Spray-500ml-%28extrem-ergiebig%29?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/Eurolub-Bremsenreiniger-5l?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/Eurolub-Bremsenreiniger-60l-Fass?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/Eurolub-Bremsenreiniger-20l-Kanister?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/Wuerth-saBesto-Bremsenreiniger-500ml?source=2&refertype=5&referid=182294");
+        bremsenreiniger.add("https://www.motoroeldirekt.at/CRC-Braklen-Bremsenreiniger-20l-Kanister-%28extrem-ergiebig%29?source=2&refertype=5&referid=182294");
+
+        //endregion
+
+
+        //region Xenon
+
+
+        //region D1S
+        LinkedList<String> d1s = new LinkedList<>();
+
+        d1s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D1S/Gread-Xenon-Brenner-D1S-6000K?source=2&refertype=1&referid=3124");
+        d1s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D1S/PHILIPS-D1S-35W-PK32d-2-Vision-Xenon-4600K-1st?source=2&refertype=1&referid=3124");
+
+        //endregion
+
+        //region D1R
+        LinkedList<String> d1r = new LinkedList<>();
+
+        d1r.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D1R/Osram-D1R-XENARC-electronic-CLASSIC-66154CLC?source=2&refertype=1&referid=3123");
+
+        //endregion
+
+        //region D2S
+        LinkedList<String> d2s = new LinkedList<>();
+
+        d2s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D2S/Gread-Xenon-Brenner-D2S-6000K?source=2&refertype=1&referid=1896");
+        d2s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D2S/Xenon-Brenner-D2S-10.000K?source=2&refertype=1&referid=1896");
+
+        //endregion
+
+        //region d2r
+        LinkedList<String> d2r = new LinkedList<>();
+
+        d2r.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D2R/Osram-D2R-35-W-P32d-3-Xenarc-Classic-1st.-Osram?source=2&refertype=1&referid=1895");
+        d2r.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D2R/Xenon-Brenner-D2R-6000K?source=2&refertype=1&referid=1895");
+        d2r.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D2R/Xenon-Brenner-D2R-8000K?source=2&refertype=1&referid=1895");
+
+        //endregion
+
+        //region D3S
+        LinkedList<String> d3s = new LinkedList<>();
+        d3s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D3S/OSRAM-D3S-66340-Xenarc-electronic-Xenon-Brenner?source=2&refertype=1&referid=3706");
+        //endregion
+
+        //region d4s
+        LinkedList<String> d4s = new LinkedList<>();
+
+        d4s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D4S/OSRAM-D4S-66440-Xenarc-ORIGINAL-Xenon-Brenner?source=2&refertype=1&referid=3708");
+
+        //endregion
+
+        //region d4r
+        LinkedList<String> d4r = new LinkedList<>();
+
+        d4r.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D4R/PHILIPS-D4R-42406C1-XenEco-Standard-Essential-Xenon-Brenner?source=2&refertype=1&referid=3709");
+
+
+        //endregion
+
+        //region H7 HID Xenon
+        LinkedList<String> h7 = new LinkedList<>();
+
+        h7.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/H7/H7-4300K-35W-TC-Cristal-HID-Xenon-Ersatz-Brenner-1Stk.?source=2&refertype=1&referid=3720");
+        h7.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/H7/H7-6000K-35W-TC-Cristal-HID-Xenon-Ersatz-Brenner-1-Stk.?source=2&refertype=1&referid=3720");
+
+
+        //endregion
+
+        //endregion
+
+        //region LED
+
+        //region HB4
+        LinkedList<String> hb4 = new LinkedList<>();
+
+        hb4.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-HB4/LED-Nebelscheinwerfer-Birne-Lampe-HB4-100-Watt-Cree-LED-860-Lumen?source=2&refertype=1&referid=4399");
+        hb4.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-HB4/LED-Nebelscheinwerfer-Birne-Lampe-HB4-18x-5050-SMD-Xenon-Weiss?source=2&refertype=1&referid=4399");
+        hb4.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-HB4/LED-Nebelscheinwerfer-Birne-Lampe-HB4-24x-2835-SMD?source=2&refertype=1&referid=4399");
+        hb4.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-HB4/LED-Nebelscheinwerfer-Birne-Lampe-HB4-4G-Orange?source=2&refertype=1&referid=4399");
+        hb4.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-HB4/LED-Nebelscheinwerfer-Birne-Lampe-HB4-4G-Weiss?source=2&refertype=1&referid=4399");
+
+        //endregion
+
+        //region H6W
+        LinkedList<String> h6w = new LinkedList<>();
+        h6w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H6W/Metalsockel-H6W-Bax9s-8x-3030-SMD-Weiss-Canbus?source=2&refertype=1&referid=4119");
+        h6w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H6W/Metalsockel-T4W-Ba9s-8x-3030-SMD-Weiss-Canbus?source=2&refertype=1&referid=4119");
+
+        //endregion
+
+        //region LedH7
+        LinkedList<String> LedH7 = new LinkedList<>();
+
+        LedH7.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H7/LED-Nebelscheinwerfer-Birne-Lampe-H7-100-Watt-Cree-LED-860-Lumen?source=2&refertype=1&referid=4398");
+        LedH7.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H7/LED-Nebelscheinwerfer-Birne-Lampe-H7-18x-5050-SMD-Xenon-Weiss?source=2&refertype=1&referid=4398");
+        LedH7.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H7/LED-Nebelscheinwerfer-Birne-Lampe-H7-24x-2835-SMD?source=2&refertype=1&referid=4398");
+        LedH7.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H7/LED-Nebelscheinwerfer-Birne-Lampe-H7-4G-Orange?source=2&refertype=1&referid=4398");
+        LedH7.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H7/LED-Nebelscheinwerfer-Birne-Lampe-H7-4G-Weiss?source=2&refertype=1&referid=4398");
+        LedH7.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H7/LED-Nebelscheinwerfer-Birne-Lampe-H8-18x-5050-SMD-Xenon-Weiss?source=2&refertype=1&referid=4398");
+
+        //endregion
+
+        //region H8
+        LinkedList<String> h8 = new LinkedList<>();
+        h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-100-Watt-Cree-LED-860-Lumen?source=2&refertype=1&referid=4397");
+        h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-24x-2835-SMD?source=2&refertype=1&referid=4397");
+        h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-4G-Orange?source=2&refertype=1&referid=4397");
+        h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-4G-Weiss?source=2&refertype=1&referid=4397");
+
+        //endregion
+
+        //region H10
+        LinkedList<String> h10 = new LinkedList<>();
+
+        h10.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H10/LED-Nebelscheinwerfer-Birne-Lampe-H10-18x-5050-SMD-Xenon-Weiss?source=2&refertype=1&referid=4395");
+        h10.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H10/LED-Nebelscheinwerfer-Birne-Lampe-H10-24x-2835-SMD?source=2&refertype=1&referid=4395");
+        h10.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H10/LED-Nebelscheinwerfer-Birne-Lampe-H10-4G-Orange?source=2&refertype=1&referid=4395");
+        h10.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H10/LED-Nebelscheinwerfer-Birne-Lampe-H10-4G-Weiss?source=2&refertype=1&referid=4395");
+
+        //endregion
+
+
+        //region
+
+        
+
+        //endregion
 
         System.out.println("Complete End");
     }
