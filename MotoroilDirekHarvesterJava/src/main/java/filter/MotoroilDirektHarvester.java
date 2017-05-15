@@ -26,7 +26,7 @@ public class MotoroilDirektHarvester {
     public void initializeLinks() {
         LinkedList<Products> products = new LinkedList<>();
 
-        /*
+/*
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
 
@@ -282,7 +282,6 @@ public class MotoroilDirektHarvester {
         //endregion
         this.HarvestAllSites(Schaltgetriebe);
 
-
         //region TrektorBaumaschinen
         LinkedList<String> TraktorBaumaschinen = new LinkedList<>();
         TraktorBaumaschinen.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8462&kategorieid=3998&source=2&refertype=1&referid=3998");
@@ -330,6 +329,7 @@ public class MotoroilDirektHarvester {
         //endregion
         this.HarvestAllSites(Lkw);
 
+
         //region Motorrad/Motorroller
         LinkedList<String> Motorrad = new LinkedList<>();
         Motorrad.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8300&kategorieid=4010&source=2&refertype=1&referid=4010");
@@ -366,9 +366,6 @@ public class MotoroilDirektHarvester {
         Boot.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8520&kategorieid=4002&source=2&refertype=1&referid=4002");
         //endregion
         this.HarvestAllSites(Boot);
-        //SaveToDatabase(products);
-        //products.clear();
-
 
         //region Hydraulik
         LinkedList<String> Hydraulik = new LinkedList<>();
@@ -491,7 +488,7 @@ public class MotoroilDirektHarvester {
         Fahrzeugpflege.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8388&kategorieid=4006&source=2&refertype=1&referid=4006");
         Fahrzeugpflege.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8396&kategorieid=4006&source=2&refertype=1&referid=4006");
         //endregion
-        this.HarvestAllSites(Fahrzeugpflege);
+        //this.HarvestAllSites(Fahrzeugpflege);
 
         //region Kleben & Dichten
         LinkedList<String> KlebenDichte = new LinkedList<>();
@@ -596,8 +593,8 @@ public class MotoroilDirektHarvester {
         //endregion
         LiquiMolyAdditive.addAll(KraftstoffAdditiveDiesel);
         //endregion
-
         this.HarvestAllSites(LiquiMolyAdditive);
+
 
         //region meguiars Pflegemittel
         LinkedList<String> meguars = new LinkedList<>();
@@ -647,7 +644,6 @@ public class MotoroilDirektHarvester {
         meguars.add("https://www.motoroeldirekt.at/Meguiars-Spray-Schnell-Wachs-M-59-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
 
         //endregion
-
         this.HarvestAllSites(meguars);
 
         //region Sonax Pflegemittel
@@ -824,7 +820,6 @@ public class MotoroilDirektHarvester {
 
 
         //endregion
-
         this.HarvestAllSites(sonax);
 
         //region Nigrin Pflegemittel
@@ -974,7 +969,6 @@ public class MotoroilDirektHarvester {
         nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Colorpolitur-gruen-300ml?source=2&refertype=5&referid=182269");
 
         //endregion
-
         this.HarvestAllSites(nigrin);
 
         //region Auto Finesse Pflegemittel
@@ -1002,7 +996,6 @@ public class MotoroilDirektHarvester {
         autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Iron-Out-500ml-%28Reaktiver-Flugrostentferner%29?source=2&refertype=5&referid=182290");
 
         //endregion
-
         this.HarvestAllSites(autoFinesse);
 
         //region armor all Pflegemittel
@@ -1049,8 +1042,7 @@ public class MotoroilDirektHarvester {
         armorAll.add("https://www.motoroeldirekt.at/Armor-All-Heavy-Duty-Car-Wash-1000ml?source=2&refertype=5&referid=182292");
 
         //endregion
-
-        this.HarvestAllSites(armorAll);*/
+        this.HarvestAllSites(armorAll);
 
         //region Bremsenreiniger
         LinkedList<String> bremsenreiniger = new LinkedList<>();
@@ -1066,10 +1058,9 @@ public class MotoroilDirektHarvester {
         bremsenreiniger.add("https://www.motoroeldirekt.at/CRC-Braklen-Bremsenreiniger-20l-Kanister-%28extrem-ergiebig%29?source=2&refertype=5&referid=182294");
 
         //endregion
-
+        this.HarvestAllSites(bremsenreiniger);
 
         //region Xenon
-
 
         //region D1S
         LinkedList<String> d1s = new LinkedList<>();
@@ -1079,12 +1070,16 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        this.HarvestAllSites(d1s);
+
         //region D1R
         LinkedList<String> d1r = new LinkedList<>();
 
         d1r.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D1R/Osram-D1R-XENARC-electronic-CLASSIC-66154CLC?source=2&refertype=1&referid=3123");
 
         //endregion
+
+        this.HarvestAllSites(d1r);
 
         //region D2S
         LinkedList<String> d2s = new LinkedList<>();
@@ -1093,6 +1088,8 @@ public class MotoroilDirektHarvester {
         d2s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D2S/Xenon-Brenner-D2S-10.000K?source=2&refertype=1&referid=1896");
 
         //endregion
+
+        this.HarvestAllSites(d2s);
 
         //region d2r
         LinkedList<String> d2r = new LinkedList<>();
@@ -1103,10 +1100,14 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        this.HarvestAllSites(d2r);
+
         //region D3S
         LinkedList<String> d3s = new LinkedList<>();
         d3s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D3S/OSRAM-D3S-66340-Xenarc-electronic-Xenon-Brenner?source=2&refertype=1&referid=3706");
         //endregion
+
+        this.HarvestAllSites(d3s);
 
         //region d4s
         LinkedList<String> d4s = new LinkedList<>();
@@ -1114,6 +1115,8 @@ public class MotoroilDirektHarvester {
         d4s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D4S/OSRAM-D4S-66440-Xenarc-ORIGINAL-Xenon-Brenner?source=2&refertype=1&referid=3708");
 
         //endregion
+
+        this.HarvestAllSites(d4s);
 
         //region d4r
         LinkedList<String> d4r = new LinkedList<>();
@@ -1123,6 +1126,8 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        this.HarvestAllSites(d4r);
+
         //region H7 HID Xenon
         LinkedList<String> h7 = new LinkedList<>();
 
@@ -1131,6 +1136,8 @@ public class MotoroilDirektHarvester {
 
 
         //endregion
+
+        this.HarvestAllSites(h7);
 
         //endregion
 
@@ -1147,12 +1154,16 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        this.HarvestAllSites(hb4);
+
         //region H6W
         LinkedList<String> h6w = new LinkedList<>();
         h6w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H6W/Metalsockel-H6W-Bax9s-8x-3030-SMD-Weiss-Canbus?source=2&refertype=1&referid=4119");
         h6w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H6W/Metalsockel-T4W-Ba9s-8x-3030-SMD-Weiss-Canbus?source=2&refertype=1&referid=4119");
 
         //endregion
+
+        this.HarvestAllSites(h6w);
 
         //region LedH7
         LinkedList<String> LedH7 = new LinkedList<>();
@@ -1166,6 +1177,8 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        this.HarvestAllSites(LedH7);
+
         //region H8
         LinkedList<String> h8 = new LinkedList<>();
         h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-100-Watt-Cree-LED-860-Lumen?source=2&refertype=1&referid=4397");
@@ -1174,6 +1187,8 @@ public class MotoroilDirektHarvester {
         h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-4G-Weiss?source=2&refertype=1&referid=4397");
 
         //endregion
+
+        this.HarvestAllSites(h8);
 
         //region H10
         LinkedList<String> h10 = new LinkedList<>();
@@ -1185,12 +1200,312 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        this.HarvestAllSites(h10);
 
-        //region
+        //region H11
+        LinkedList<String> h11 = new LinkedList<>();
 
-        
+        h11.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H11/LED-Nebelscheinwerfer-Birne-Lampe-H11-100-Watt-Cree-LED-860-Lumen?source=2&refertype=1&referid=4396");
+        h11.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H11/LED-Nebelscheinwerfer-Birne-Lampe-H11-18x-5050-SMD-Xenon-Weiss?source=2&refertype=1&referid=4396");
+        h11.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H11/LED-Nebelscheinwerfer-Birne-Lampe-H11-24x-2835-SMD?source=2&refertype=1&referid=4396");
+        h11.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H11/LED-Nebelscheinwerfer-Birne-Lampe-H11-4G-Orange?source=2&refertype=1&referid=4396");
+        h11.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H11/LED-Nebelscheinwerfer-Birne-Lampe-H11-4G-Weiss?source=2&refertype=1&referid=4396");
+
 
         //endregion
+
+        this.HarvestAllSites(h11);
+
+        //region PY21W
+        LinkedList<String> py21w = new LinkedList<>();
+        py21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-PY21W/LED-Lampe-BAU15S-PY21W-4G-Technik-Orange?source=2&refertype=1&referid=4401");
+        //endregion
+
+        this.HarvestAllSites(py21w);
+
+        //region p21W
+        LinkedList<String> p21w = new LinkedList<>();
+
+        p21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-P21W/LED-Lampe-BA15S-P21W-4G-Technik-Orange?source=2&refertype=1&referid=4403");
+        p21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-P21W/LED-Signallampe-P21W-24x-2835-SMD-Weiss?source=2&refertype=1&referid=4403");
+        p21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-P21W/LED-Signallampe-P21W-BA15S-4G-Weiss?source=2&refertype=1&referid=4403");
+        p21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-P21W/LED-Signallampe-P21W5W-Rot?source=2&refertype=1&referid=4403");
+        p21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-P21W/LED-Signallampe-P21W5W-Weiss?source=2&refertype=1&referid=4403");
+        //endregion
+
+        this.HarvestAllSites(p21w);
+
+        //region T20 W21W
+        LinkedList<String> t20w21w = new LinkedList<>();
+
+        t20w21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-T20-W21W/LED-Lampe-T20-W21W-7440-4G-Technik-Orange?source=2&refertype=1&referid=4402");
+        t20w21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-T20-W21W/LED-Signallampe-T20-W215W-Weiss?source=2&refertype=1&referid=4402");
+        t20w21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-T20-W21W/LED-Signallampe-T20-W21W-Weiss?source=2&refertype=1&referid=4402");
+
+
+        //endregion
+
+        this.HarvestAllSites(t20w21w);
+
+        //region W5W
+        LinkedList<String> w5w = new LinkedList<>();
+
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Foliatec-SMD-LED-Cockpit-Light-ultraweiss%2C-T10%2C-160mA%2C-mit-Widerstand?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Foliatec-SMD-LED-Cockpit-Light%2C-ultraweiss%2C-T10%2C-150mA%2C-mit-Widerstand?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Foliatec-SMD-LED-Cockpit-Light%2C-ultraweiss%2C-T10%2C-170mA%2C-mit-Widerstand?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Foliatec-SMD-LED-Cockpit-Light%2C-ultraweiss%2C-T10%2C-40mA%2C-mit-Widerstand?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-12x-3030-SMD-Weiss-T10-Canbus?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-18x-3104-SMD-Weiss-T10-Canbus-Weiss?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-8x-3030-SMD-Weiss-T10-Canbus?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-9x-3030-SMD-Weiss-Canbus?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-10x-5630-LED-Canbus-Weiss?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-24x-3104-LED-Canbus-Weiss?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-3x-2835-LED-Canbus-Weiss?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-5x-5050-SMD-Blau?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-5x-5050-SMD-Gelb?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-5x-5050-SMD-Gruen?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-5x-5050-SMD-Rot?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-5x-5050-SMD-Weiss?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-6x-2835-LED-Canbus-Weiss-147?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-6x-2835-LED-Canbus-Weiss?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-8x-2835-SMD-Weiss-Canbus?source=2&refertype=1&referid=3127");
+        w5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-W5W/Glassockel-W5W-T10-9x-2835-LED-Canbus-Orange?source=2&refertype=1&referid=3127");
+
+
+        //endregion
+
+        //this.HarvestAllSites(w5w);
+
+        //region C5W
+        LinkedList<String> c5w = new LinkedList<>();
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Foliatec-SMD-LED-Cab-LightSoffitte%2C-ultraweiss%2C-mit-Widerstand?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Foliatec-SMD-LED-Cab-LightSoffitte%2C-ultraweiss%2C-mit-Widerstand-52?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Foliatec-SMD-LED-Cab-LightSoffitte%2C-ultraweiss%2C-mit-Widerstand-54?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Foliatec-SMD-LED-Cab-LightSoffitte%2C-ultraweiss%2C-mit-Widerstand-56?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Foliatec-SMD-LED-Cab-LightSoffitte%2C-ultraweiss%2C-mit-Widerstand-58?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Osram-C5W-12V-1W-SV8%2C-5-8-31mm-LEDriving-Cool-White-6000K?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Osram-C5W-12V-1W-SV8%2C-5-8-31mm-LEDriving-WarmWhite-4000K?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Osram-C5W-12V-1W-SV8%2C-5-8-36-38mm-LEDriving-Cool-White-6000K?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Osram-C5W-12V-1W-SV8%2C-5-8-36-38mm-LEDriving-Warm-White-4000K?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Osram-C5W-12V-1W-SV8%2C-5-8-41-mm-LEDriving-Cool-White-6000K?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Osram-C5W-12V-1W-SV8%2C-5-8-41-mm-LEDriving-Warm-White-4000K?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-31mm-3x-3030-SMD-Weiss?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-31mm-6x-2835-SMD-Weiss-250-Lumen?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-36mm-6x-2835-SMD-Weiss-250-Lumen?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-36mm-6x-3030-SMD-Weiss?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-36mm-6x-5630-SMD-Blau?source=2&refertype=1&referid=3128");
+        c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-36mm-6x-5630-SMD-Gelb?source=2&refertype=1&referid=3128");
+        //endregion
+
+        this.HarvestAllSites(c5w);
+
+        //endregion
+*/
+        //region castrol
+        LinkedList<String> castrol5w40 = new LinkedList<>();
+        LinkedList<String> castrol10w40 = new LinkedList<>();
+        LinkedList<String> castrol15w40 = new LinkedList<>();
+        LinkedList<String> castrol5w30 = new LinkedList<>();
+        LinkedList<String> castrol10w60 = new LinkedList<>();
+        LinkedList<String> castrol20w50 = new LinkedList<>();
+        LinkedList<String> castrol0w20 = new LinkedList<>();
+        LinkedList<String> castrol0w30 = new LinkedList<>();
+        LinkedList<String> castrol0w40 = new LinkedList<>();
+        LinkedList<String> castrol5w20 = new LinkedList<>();
+
+
+
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-4l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-5l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Turbo-Diesel-5W-40-Titanium-FST-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Turbo-Diesel-5W-40-Titanium-FST-Motoroel-208l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Turbo-Diesel-5W-40-Titanium-FST-Motoroel-20l-Kanister?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Turbo-Diesel-5W-40-Titanium-FST-Motoroel-4l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Turbo-Diesel-5W-40-Titanium-FST-Motoroel-60l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-GTX-5W-40-A3B4-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-GTX-5W-40-A3B4-Motoroel-5l-Kanne?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-GTX-High-Mileage-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-GTX-High-Mileage-5W-40-Motoroel-5l-Kanne?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-GTX-High-Mileage-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-5W-40-C3-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-5W-40-C3-Motoroel-208l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-5W-40-C3-Motoroel-20l-Kanister?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-5W-40-C3-Motoroel-4l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-5W-40-C3-Motoroel-5l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-5W-40-C3-Motoroel-60l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Diesel-5W-40-DPF-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Diesel-5W-40-DPF-Motoroel-208l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Diesel-5W-40-DPF-Motoroel-20l-Kanister?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Diesel-5W-40-DPF-Motoroel-5l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Professional-A3-5W-40-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Diesel-5W-40-DPF-Motoroel-60l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Professional-A3-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Professional-A3-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Professional-B4-5W-40-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Professional-OE-5W-40-Motoroel-1l?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Professional-OE-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=1987");
+        castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Magnatec-Professional-OE-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=1987");
+
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-GTX-10W-40-A3B4-Motoroel-1l?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-GTX-10W-40-A3B4-Motoroel-208l-Fass?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-GTX-10W-40-A3B4-Motoroel-20l-Kanister?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-GTX-10W-40-A3B4-Motoroel-5l?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-GTX-10W-40-A3B4-Motoroel-60l-Fass?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-GTX-Professional-A3-10W-40-Motoroel-1l?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-Magnatec-10W-40-A3B4-Motoroel-1l?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-Magnatec-10W-40-A3B4-Motoroel-208l-Fass?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-Magnatec-10W-40-A3B4-Motoroel-5l?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-Magnatec-10W-40-A3B4-Motoroel-60l-Fass?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-Magnatec-10W-40-B4-Diesel-Motoroel-1l?source=2&refertype=1&referid=1988");
+        castrol10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-40/Castrol-Magnatec-10W-40-B4-Diesel-Motoroel-5l-Kanne?source=2&refertype=1&referid=1988");
+
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-EDGE-10W-60-Supercar-Motoroel-208l-Fass?source=2&refertype=1&referid=1989");
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-EDGE-10W-60-Supercar-Motoroel-20l-Kanister?source=2&refertype=1&referid=1989");
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-EDGE-10W-60-Supercar-Motoroel-1l?source=2&refertype=1&referid=1989");
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-EDGE-10W-60-Supercar-Motoroel-5l-Kanister?source=2&refertype=1&referid=1989");
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-EDGE-10W-60-Supercar-Motoroel-60l-Fass?source=2&refertype=1&referid=1989");
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-Edge-Professional-10W-60-TWS-Motoroel-1l?source=2&refertype=1&referid=1989");
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-Edge-Titanium-FST-10W-60-Motoroel-208l-Fass?source=2&refertype=1&referid=1989");
+        castrol10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-10W-60/Castrol-Edge-Titanium-FST-10W-60-Motoroel-60l-Fass?source=2&refertype=1&referid=1989");
+
+        castrol15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-15W-40/Castrol-GTX-15W-40-A3B3-Motoroel-1l?source=2&refertype=1&referid=1990");
+        castrol15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-15W-40/Castrol-GTX-15W-40-A3B3-Motoroel-208l-Fass?source=2&refertype=1&referid=1990");
+        castrol15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-15W-40/Castrol-GTX-15W-40-A3B3-Motoroel-5l-Kanne?source=2&refertype=1&referid=1990");
+        castrol15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-15W-40/Castrol-Magnatec-15W-40-A3B4-Motoroel-1l?source=2&refertype=1&referid=1990");
+        castrol15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-15W-40/Castrol-Tection-Gas-15W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=1990");
+
+        castrol20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-20W-50/Castrol-Classic-XL-20W-50-Motoroel-5l?source=2&refertype=1&referid=1991");
+
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A3B4-5l-Kanne?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-C3-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-C3-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-C3-Motoroel-20l-Kanister?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-C3-Motoroel-4l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-C3-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-5W-30-FST-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-LL-Titanium-FST-Motoroel-LonglifeIII-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-LL-Titanium-FST-Motoroel-LonglifeIII-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-LL-Titanium-FST-Motoroel-LonglifeIII-20l-Kanister?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-LL-Titanium-FST-Motoroel-LonglifeIII-5l-Kanne?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-5W-30-LL-Titanium-FST-Motoroel-LonglifeIII-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-Professional-Longlife-III-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-Professional-Longlife-III-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-Professional-Longlife-III-Titanium-FST-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-EDGE-Professional-Longlife-III-Titanium-FST-5W-30-Motoroel-4l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-OE-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-OE-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-A5-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-A5-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-A5-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-BMW-LL04-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-C1-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-C1-5W-30-Motoroel-208l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-C4-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Edge-Professional-Titanium-C4-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-5W-30-A3B4-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-5W-30-A3B4-Motoroel-4l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-5W-30-A3B4-Motoroel-5l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-5W-30-A3B4-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-5W-30-C2-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-5W-30-C3-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-5W-30-C3-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A3-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A3-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A3-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A5-5W-30-Ford-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A5-5W-30-Ford-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A5-5W-30-Ford-Motoroel-5l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A5-5W-30-Ford-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-A5-5W-30-Ford-Motoroel-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-C2-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-C2-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-MP-5W-30-Motoroel-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Professional-MP-5W-30-Motoroel-1l-488?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A3B4-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A3B4-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A3B4-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A5-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A5-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A5-20l-Kanister?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A5-5l-Kanne?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-A5-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C2-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C2-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C2-20l-Kanister?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C2-5l-Kanne?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C2-60l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C3-1l?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C3-208l-Fass?source=2&refertype=1&referid=1986");
+        castrol5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-30/Castrol-Magnatec-Stop-Start-5W-30-C3-20l-Kanister?source=2&refertype=1&referid=1986");
+
+
+        castrol0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-20/Castrol-Edge-Professional-Titanium-FST-V-0W20-Motoroel-1l?source=2&refertype=1&referid=4483");
+        castrol0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-20/Castrol-Edge-Professional-Titanium-FST-E-0W20-Motoroel-1l?source=2&refertype=1&referid=4483");
+
+
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-0W-30-Titanium-FST-Motoroel-1l?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-0W-30-Titanium-FST-Motoroel-208l-Fass?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-0W-30-Titanium-FST-Motoroel-5l-Kanne?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-0W-30-Titanium-FST-Motoroel-20l-Kanister?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-0W-30-Titanium-FST-Motoroel-60l-Fass?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-EDGE-Longlife-II-0W-30-Titanium-FST-Motoroel-1l-%28VW-506.01%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-A5-0W-30-Titanium-FST-Motoroel-1l-%28for-VOLVO-A5B5%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-A5-0W-30-Titanium-FST-Motoroel-208l-Fass-%28for-VOLVO-A5B5%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-A5-0W-30-Titanium-FST-Motoroel-60l-Fass-%28for-VOLVO-A5B5%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-C3-0W-30-Motoroel-1l?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-C3-0W-30-Titanium-FST-Motoroel-1l?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-C3-0W-30-Titanium-FST-Motoroel-208l-Fass?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-C3-0W-30-Titanium-FST-Motoroel-60l-Fass?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-Titanium-A3-0W-30-Motoroel-1l?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-Titanium-A3-0W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-Titanium-A3-0W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Edge-Professional-Titanium-BMW-LL04-0W-30-Motoroel-1l?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Magnatec-Stop-Start-0W-30-D-1l-%28Ford-WSS-M2C950-A%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Magnatec-Stop-Start-0W-30-D-208l-Fass-%28Ford-WSS-M2C950-A%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Magnatec-Stop-Start-0W-30-D-20l-Kanister-%28Ford-WSS-M2C950-A%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Magnatec-Stop-Start-0W-30-D-5l-Kanne-%28Ford-WSS-M2C950-A%29?source=2&refertype=1&referid=1983");
+        castrol0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-30/Castrol-Magnatec-Stop-Start-0W-30-D-60l-Fass-%28Ford-WSS-M2C950-A%29?source=2&refertype=1&referid=1983");
+
+
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-FST-0W-40-A3B4-Motoroel-4l-Kanne?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Professional-A3-0W-40-Motoroel-1l?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Professional-Titanium-FST-A3-0W-40-Motoroel-1l?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Professional-Titanium-FST-A3-0W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Professional-Titanium-FST-A3-0W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Titanium-FST-0W-40-A3B4-Motoroel-1l?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Titanium-FST-0W-40-A3B4-Motoroel-208l-Fass?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Titanium-FST-0W-40-A3B4-Motoroel-20l-Kanister?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Titanium-FST-0W-40-A3B4-Motoroel-5l-Kanne?source=2&refertype=1&referid=1984");
+        castrol0w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-0W-40/Castrol-Edge-Titanium-FST-0W-40-A3B4-Motoroel-60l-Fass?source=2&refertype=1&referid=1984");
+
+
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Edge-Professional-Titanium-A1-5W-20-Motoroel-1l?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Professional-E-5W-20-Motoroel-1l-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Professional-E-5W-20-Motoroel-5l-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Professional-E-5W-20-Motoroel-60l-Fass-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Stop-Start-5W-20-E-Motoroel-1l-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Stop-Start-5W-20-E-Motoroel-208l-Fass-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Stop-Start-5W-20-E-Motoroel-20l-Kanister-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Stop-Start-5W-20-E-Motoroel-5l-Kanne-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+        castrol5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-20/Castrol-Magnatec-Stop-Start-5W-20-E-Motoroel-60l-Fass-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=1985");
+
+
+        //endregion
+
+        this.HarvestAllSites(castrol0w20);
+        this.HarvestAllSites(castrol0w30);
+        this.HarvestAllSites(castrol0w40);
+        this.HarvestAllSites(castrol5w20);
+        this.HarvestAllSites(castrol5w30);
+        this.HarvestAllSites(castrol5w40);
+        this.HarvestAllSites(castrol10w40);
+        this.HarvestAllSites(castrol15w40);
+        this.HarvestAllSites(castrol20w50);
+        this.HarvestAllSites(castrol10w60);
 
         System.out.println("Complete End");
     }
@@ -1278,8 +1593,8 @@ public class MotoroilDirektHarvester {
         Elements title = artikelDetailBox;
         Elements pic = artikelDetailBox;
 
-        p.setTitle(title.select("h1").text().replace("-","").replace(" ml","ml"));
-        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
+        p.setTitle(title.select("h1").text().replace("W-","W").replace(" ml","ml"));
+        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("SOFFITTE","Soffitte").replace("FOLIATEC","Foliatec").replace("OSRAM","Osram").replace("PHILIPS","Philips").replace("SONAX","Sonax").replace("NIGRIN","Nigrin").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
 
 
         //region Get Brands
@@ -1310,6 +1625,25 @@ public class MotoroilDirektHarvester {
         else if (p.getTitle().toLowerCase().contains("eurolub")) {
             p.setBrand("Eurolub");
         }
+        else if (p.getTitle().toLowerCase().contains("würth sabesto")) {
+            p.setBrand("Würth saBesto");
+        }
+        else if (p.getTitle().toLowerCase().contains("crc braklen")) {
+            p.setBrand("CRC Braklen");
+        }
+        else if (p.getTitle().toLowerCase().contains("osram")) {
+            p.setBrand("Osram");
+        }
+        else if (p.getTitle().toLowerCase().contains("gread")) {
+            p.setBrand("Gread");
+        }
+        else if (p.getTitle().toLowerCase().contains("foliatec")) {
+            p.setBrand("Foliatex");
+        }
+        else if (p.getTitle().toLowerCase().contains("soffitte")) {
+            p.setBrand("Soffitte");
+        }
+
         else {
             System.out.print(p.getTitle());
         }
@@ -1332,7 +1666,7 @@ public class MotoroilDirektHarvester {
                 try {
 
                     //Making pretty filenames for the pictures
-                    String fileName = p.getMetaTitle().replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à","a") + ".jpg";
+                    String fileName = MakeFileNamePretty(p.getMetaTitle());
                     String filePath = "/Users/andrejsakal/Downloads/pictures/" + fileName;
 
                     if (!Files.exists(Paths.get(filePath)))
@@ -1379,23 +1713,43 @@ public class MotoroilDirektHarvester {
         try {
             price = Double.parseDouble(title.select("div.artikelDetailInfos").select("span#artikelPreis").text().replace(" €", "").replace(".", "").replace(",", "."));
             double oldPrice = price;
-            if (price <= 3) {
-                price = price * 1.2 * 1.6;
-            } else if (price <= 9.9) {
-                price = price * 1.2 * 1.38;
-            } else if (price <= 20) {
+            if (price <= 1) {
+                price = price * 1.2 * 1.55;
+            }
+            else if (price <= 2) {
+                price = price * 1.2 * 1.50;
+            }
+            else if (price <= 3) {
+                price = price * 1.2 * 1.45;
+            }
+            else if (price <= 4) {
+                price = price * 1.2 * 1.40;
+            }
+            else if (price <= 5) {
+                price = price * 1.2 * 1.35;
+            }
+            else if (price <= 12) {
                 price = price * 1.2 * 1.33;
-            } else if (price <= 30) {
-                price = price * 1.2 * 1.30;
-            } else if (price <= 50) {
+            }
+            else if (price <= 20) {
+                price = price * 1.2 * 1.3;
+            }
+            else if (price <= 30) {
+                price = price * 1.2 * 1.27;
+            }
+            else if (price <= 50) {
                 price = price * 1.2 * 1.24;
-            } else if (price <= 100) {
-                price = price * 1.2 * 1.24;
-            } else if (price > 100) {
-                price = price * 1.2 * 1.22;
-            } else if (price > 1000) {
+            }
+            else if (price <= 100) {
+                price = price * 1.2 * 1.21;
+            }
+            else if (price > 100) {
+                price = price * 1.2 * 1.21;
+            }
+            else if (price > 1000) {
                 price = price * 1.2 * 1.20;
-            } else {
+            }
+            else {
                 System.out.println("------------------------------> ERROR IN PRICE CALC <---------------------------------\nThe Problematic Price: " + price);
                 return null;
             }
@@ -1567,7 +1921,7 @@ public class MotoroilDirektHarvester {
             PrintWriter out = new PrintWriter(bw))
         {
             Products p = (Products) c;
-            out.print(p.toString());
+            out.print(p.toStringShort());
             //more code
         } catch (IOException e) {
             //exception handling left as an exercise for the reader
@@ -1614,9 +1968,19 @@ public class MotoroilDirektHarvester {
                 if (p.getPrice()!=product.getPrice() || p.getInStock() != product.getInStock()) {
                     p.setPrice(product.getPrice());
                     p.setInStock(product.getInStock());
+                    p.setBaseImage(product.getBaseImage());
+                    p.setSmallImage(product.getBaseImage());
+                    //p.setMetaTitle(product.getMetaTitle());
+                    p.setTitle(product.getTitle());
+                    p.setBrand(product.getBrand());
                     return 2;
                 }
                 else {
+                    p.setBaseImage(product.getBaseImage());
+                    p.setSmallImage(product.getBaseImage());
+                    //p.setMetaTitle(product.getMetaTitle());
+                    p.setTitle(product.getTitle());
+                    p.setBrand(product.getBrand());
                     return 3;
                 }
             }
@@ -1659,5 +2023,19 @@ public class MotoroilDirektHarvester {
         TypedQuery<Products> query = em.createNamedQuery("Products.NoCustomDescription", Products.class);
         List<Products> test = query.getResultList();
         return test;
+    }
+
+    public String MakeFileNamePretty(String name) {
+        name = name.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à","a").replace("ß","ss") + ".jpg";
+        return name;
+    }
+
+    public void MakeFileNamePrettyDb() {
+        ArrayList<Products> all = GetProducts();
+        for (int i = 0; i < all.size(); i++) {
+            String filename = MakeFileNamePretty(all.get(i).getMetaTitle());
+            all.get(i).setSmallImage(filename);
+            all.get(i).setBaseImage(filename);
+        }
     }
 }

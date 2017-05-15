@@ -20,9 +20,6 @@ public class ProductEndpoint {
     @Inject
     MotoroilDirektHarvester md;
 
-    //@Inject
-    //SeoAudit seo;
-
     @Path("start")
     public Response startHarvest() {
         md.initializeLinks();
@@ -51,6 +48,12 @@ public class ProductEndpoint {
         for (int i = 0; i < all.size(); i++) {
             md.WriteChangedToCSV(all.get(i));
         }
+        return Response.ok().build();
+    }
+
+    @Path("imagename")
+    public Response imagename() {
+        md.MakeFileNamePrettyDb();
         return Response.ok().build();
     }
 }
