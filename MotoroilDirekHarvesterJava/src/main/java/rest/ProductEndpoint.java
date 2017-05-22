@@ -4,6 +4,7 @@ import filter.MotoroilDirektHarvester;
 import model.Products;
 import seo.SeoAudit;
 
+import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Link;
@@ -42,9 +43,27 @@ public class ProductEndpoint {
         return Response.ok().build();
     }
 
+    @Path("export/{brand}")
+    public Response exportByBrand(@PathParam("brand") String brand) {
+        ArrayList<Products> all = md.GetProductsByBrand(brand);
+        for (int i = 0; i < all.size(); i++) {
+            md.WriteToCSV(all.get(i));
+        }
+        return Response.ok().build();
+    }
+
     @Path("exportStock")
     public Response exportStock() {
         ArrayList<Products> all = md.GetProducts();
+        for (int i = 0; i < all.size(); i++) {
+            md.WriteChangedToCSV(all.get(i));
+        }
+        return Response.ok().build();
+    }
+
+    @Path("exportStock/{brand}")
+    public Response exportStockByBrand(@PathParam("brand") String brand) {
+        ArrayList<Products> all = md.GetProductsByBrand(brand);
         for (int i = 0; i < all.size(); i++) {
             md.WriteChangedToCSV(all.get(i));
         }

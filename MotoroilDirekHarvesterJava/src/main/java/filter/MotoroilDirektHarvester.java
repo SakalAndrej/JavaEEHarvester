@@ -2004,9 +2004,9 @@ public class MotoroilDirektHarvester {
         return test;
     }
 
-    public List<Products> GetProductsByBrand(String brand) {
-        TypedQuery<Products> query = em.createNamedQuery("Products.GetProductsByBrand", Products.class).setParameter(1,brand);
-        List<Products> test = query.getResultList();
+    public ArrayList<Products> GetProductsByBrand(String brand) {
+        TypedQuery<Products> query = em.createNamedQuery("Products.GetProductsByBrand", Products.class).setParameter("brand",brand.toUpperCase());
+        ArrayList<Products> test = (ArrayList<Products>) query.getResultList();
         return test;
     }
 
