@@ -8,7 +8,9 @@ import javax.validation.constraints.NotNull;
         @NamedQuery(name = "Products.getProductBySku", query = "select q from Products q where q.sku = :sku"),
         @NamedQuery(name = "Products.NoCustomDescription", query = "select p from Products p where p.customDescription = false"),
         @NamedQuery(name = "Products.UpdatePriceStock", query = "update Products SET price = :price, inStock = :inStock where sku = :sku"),
-        @NamedQuery(name = "Products.GetMannolProducts", query = "select p from Products p where UPPER(p.title) LIKE '%MANNOL%' and p.customDescription = false")
+        @NamedQuery(name = "Products.GetMannolProducts", query = "select p from Products p where UPPER(p.title) LIKE '%MANNOL%' and p.customDescription = false"),
+        @NamedQuery(name = "Products.GetProductsByBrand", query = "select p from Products p where UPPER(p.title) LIKE :brand")
+
 }  )
 
 @Table(name="Products")
