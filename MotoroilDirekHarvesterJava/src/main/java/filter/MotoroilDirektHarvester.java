@@ -26,7 +26,7 @@ public class MotoroilDirektHarvester {
     public void initializeLinks() {
         LinkedList<Products> products = new LinkedList<>();
 
-/*
+        //region Part 1
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
 
@@ -524,7 +524,9 @@ public class MotoroilDirektHarvester {
         FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8356&kategorieid=4009&source=2&refertype=1&referid=4009");
         //endregion
         this.HarvestAllSites(FettePasten);
+//endregion
 
+        //region Part 2
         //region Liqui Moly Additive
         LinkedList<String> LiquiMolyAdditive = new LinkedList<>();
         //region Öl Additive
@@ -997,7 +999,9 @@ public class MotoroilDirektHarvester {
 
         //endregion
         this.HarvestAllSites(autoFinesse);
+        //endregion
 
+        //region Part 3
         //region armor all Pflegemittel
         LinkedList<String> armorAll = new LinkedList<>();
 
@@ -1300,7 +1304,7 @@ public class MotoroilDirektHarvester {
         this.HarvestAllSites(c5w);
 
         //endregion
-*/
+
         //region castrol
         LinkedList<String> castrol5w40 = new LinkedList<>();
         LinkedList<String> castrol10w40 = new LinkedList<>();
@@ -1507,6 +1511,8 @@ public class MotoroilDirektHarvester {
         this.HarvestAllSites(castrol20w50);
         this.HarvestAllSites(castrol10w60);
 
+        //endregion
+
         System.out.println("Complete End");
     }
 
@@ -1518,7 +1524,6 @@ public class MotoroilDirektHarvester {
      * @throws InterruptedException
      */
     private Products HarvestInnerProduct(String justLink) throws InterruptedException {
-
 
         //region Build Connection
         String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36";
@@ -1588,14 +1593,13 @@ public class MotoroilDirektHarvester {
         Elements descript = doc.select("section.artikelDetailOther");
         //endregion
 
-        //Here I am going to save all infos ---------------------------------
+        //Here I am going to save all infos ------------------------------------------------------------------
         Products p = new Products();
         Elements title = artikelDetailBox;
         Elements pic = artikelDetailBox;
 
         p.setTitle(title.select("h1").text().replace("W-","W").replace(" ml","ml"));
-        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("SOFFITTE","Soffitte").replace("FOLIATEC","Foliatec").replace("OSRAM","Osram").replace("PHILIPS","Philips").replace("SONAX","Sonax").replace("NIGRIN","Nigrin").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
-
+        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("CASTROL","Castrol").replace("SOFFITTE","Soffitte").replace("FOLIATEC","Foliatec").replace("OSRAM","Osram").replace("PHILIPS","Philips").replace("SONAX","Sonax").replace("NIGRIN","Nigrin").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
 
         //region Get Brands
         if(p.getTitle().toLowerCase().contains("mannol")) {
@@ -1643,7 +1647,9 @@ public class MotoroilDirektHarvester {
         else if (p.getTitle().toLowerCase().contains("soffitte")) {
             p.setBrand("Soffitte");
         }
-
+        else if (p.getTitle().toLowerCase().contains("castrol")) {
+            p.setBrand("Castrol");
+        }
         else {
             System.out.print(p.getTitle());
         }
@@ -1782,9 +1788,9 @@ public class MotoroilDirektHarvester {
             temp = temp.substring(0, temp.indexOf("</strong>") + 9);
             p.setDescription(p.getDescription().replace(temp, "<h1>" + betweenStrong + "</h1>"));
         }
-        else {
+        else
             p.setDescription("<h1>"+p.getMetaTitle()+"</h1> <br>" + p.getDescription());
-        }
+
 
         //region Save the stock status ------------------------------------------------------------------
         String stock = title.select("div.artikelDetailInfos").select("div#filialBestaende").text();
