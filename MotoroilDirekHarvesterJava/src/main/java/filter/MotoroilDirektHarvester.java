@@ -25,7 +25,7 @@ public class MotoroilDirektHarvester {
 
     public void initializeLinks() {
         LinkedList<Products> products = new LinkedList<>();
-
+/*
         //region Part 1
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
@@ -1512,6 +1512,184 @@ public class MotoroilDirektHarvester {
         this.HarvestAllSites(castrol10w60);
 
         //endregion
+*/
+        //region Part 4
+
+            //region Eurolub Motoroil
+
+                //region 0W16
+                LinkedList<String> eurolub0w16 = new LinkedList<String>();
+                eurolub0w16.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-16/Eurolub-SUPER-ECO-SAE-0W-16-Motoroel-1l?source=2&refertype=1&referid=4114");
+                //endregion
+
+                this.HarvestAllSites(eurolub0w16);
+
+                //region 0W20
+                LinkedList<String> eurolub0w20 = new LinkedList<>();
+                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-ECO-VO-SAE-0W-20-Motoroel-1l?source=2&refertype=1&referid=2140");
+                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-1l-Flasche?source=2&refertype=1&referid=2140");
+                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-208l-Fass?source=2&refertype=1&referid=2140");
+                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-20l-Kanister?source=2&refertype=1&referid=2140");
+                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2140");
+                //endregion
+
+                this.HarvestAllSites(eurolub0w20);
+
+                //region 0W30
+                LinkedList<String> eurolub0w30 = new LinkedList<>();
+
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-1l-Flasche?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-ECO-LL-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-ECO-PS-C-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-1l?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-20l-Kanister?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-60l-Fass?source=2&refertype=1&referid=4111");
+                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-MULTITEC-FO-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
+
+
+                //endregion
+
+                this.HarvestAllSites(eurolub0w30);
+
+                //region 5W20
+                LinkedList<String> eurolub5w20 = new LinkedList<>();
+                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-1l?source=2&refertype=1&referid=2683");
+                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-208l-Fass?source=2&refertype=1&referid=2683");
+                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-20l-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=2683");
+                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2683");
+
+                //endregion
+
+                this.HarvestAllSites(eurolub5w20);
+
+                //region 5W30
+                LinkedList<String> eurolub5w30 = new LinkedList<>();
+
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-1l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+
+                //endregion
+
+                this.HarvestAllSites(eurolub5w30);
+
+                //region 5W40
+                LinkedList<String> eurolub5w40 = new LinkedList<>();
+
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-1l?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-1l?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
+                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
+
+
+                //endregion
+
+                this.HarvestAllSites(eurolub5w40);
+
+                //region 10W40
+                LinkedList<String> eurolub10w40 = new LinkedList<>();
+
+
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-5l?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-1l?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-5l?source=2&refertype=1&referid=2143");
+                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2143");
+
+                //endregion
+
+                this.HarvestAllSites(eurolub10w40);
+
+                //region 10W60
+                LinkedList<String> eurolub10w60 = new LinkedList<>();
+
+                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-1l?source=2&refertype=1&referid=2144");
+                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-208l-Fass?source=2&refertype=1&referid=2144");
+                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-20l-Kanister?source=2&refertype=1&referid=2144");
+                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-60l-Fass?source=2&refertype=1&referid=2144");
+
+
+                //endregion
+
+                this.HarvestAllSites(eurolub10w60);
+
+                //region 15w40
+                LinkedList<String> eurolub15w40 = new LinkedList<>();
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-5l?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-1l?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-5l?source=2&refertype=1&referid=2145");
+                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2145");
+                //endregion
+
+                this.HarvestAllSites(eurolub15w40);
+
+                //region 20W50
+                LinkedList<String> eurolub20w50 = new LinkedList<>();
+
+                eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-1l?source=2&refertype=1&referid=2393");
+                eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-60l-Fass?source=2&refertype=1&referid=2393");
+
+                //endregion
+
+                this.HarvestAllSites(eurolub20w50);
+
+            //endregion
+
+
+        //endregion
 
         System.out.println("Complete End");
     }
@@ -1599,7 +1777,7 @@ public class MotoroilDirektHarvester {
         Elements pic = artikelDetailBox;
 
         p.setTitle(title.select("h1").text().replace("W-","W").replace(" ml","ml"));
-        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("CASTROL","Castrol").replace("SOFFITTE","Soffitte").replace("FOLIATEC","Foliatec").replace("OSRAM","Osram").replace("PHILIPS","Philips").replace("SONAX","Sonax").replace("NIGRIN","Nigrin").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
+        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("CASTROL","Castrol").replace("EUROLUB","Eurolub   ").replace("SOFFITTE","Soffitte").replace("FOLIATEC","Foliatec").replace("OSRAM","Osram").replace("PHILIPS","Philips").replace("SONAX","Sonax").replace("NIGRIN","Nigrin").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
 
         //region Get Brands
         if(p.getTitle().toLowerCase().contains("mannol")) {
@@ -1649,6 +1827,9 @@ public class MotoroilDirektHarvester {
         }
         else if (p.getTitle().toLowerCase().contains("castrol")) {
             p.setBrand("Castrol");
+        }
+        else if (p.getTitle().toLowerCase().contains("eurolub")) {
+            p.setBrand("Eurolub");
         }
         else {
             System.out.print(p.getTitle());

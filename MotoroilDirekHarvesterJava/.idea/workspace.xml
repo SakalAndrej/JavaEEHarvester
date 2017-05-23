@@ -56,7 +56,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,9 +66,11 @@
       <file leaf-file-name="ProductEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="585">
               <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,9 +78,11 @@
       <file leaf-file-name="SeoAudit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/seo/SeoAudit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
+            <state relative-caret-position="255">
               <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,63 +90,25 @@
       <file leaf-file-name="MotoroilDirektHarvester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="2008" column="0" lean-forward="false" selection-start-line="2008" selection-start-column="0" selection-end-line="2008" selection-end-column="0" />
+            <state relative-caret-position="-3026">
+              <caret line="1514" column="2" lean-forward="false" selection-start-line="1514" selection-start-column="2" selection-end-line="1514" selection-end-column="2" />
               <folding>
-                <element signature="e#650#665#0" expanded="false" />
-                <element signature="e#674#709#0" expanded="false" />
-                <element signature="e#31161#31187#0" expanded="false" />
-                <element signature="e#34479#34502#0" expanded="false" />
-                <element signature="e#38338#38366#0" expanded="false" />
-                <element signature="e#40267#40279#0" expanded="false" />
-                <element signature="e#44116#44145#0" expanded="false" />
-                <element signature="e#47678#47691#0" expanded="false" />
-                <element signature="e#48387#48405#0" expanded="false" />
-                <element signature="e#51820#51843#0" expanded="false" />
-                <element signature="e#52753#52776#0" expanded="false" />
-                <element signature="e#54118#54140#0" expanded="false" />
-                <element signature="e#57032#57047#0" expanded="false" />
-                <element signature="e#57464#57491#0" expanded="false" />
-                <element signature="e#57959#57982#0" expanded="false" />
-                <element signature="e#63055#63080#0" expanded="false" />
-                <element signature="e#65194#65217#0" expanded="false" />
-                <element signature="e#66874#66889#0" expanded="false" />
-                <element signature="e#66898#66926#0" expanded="false" />
-                <element signature="e#74781#74811#0" expanded="false" />
-                <element signature="e#81028#81055#0" expanded="false" />
-                <element signature="e#102434#102462#0" expanded="false" />
-                <element signature="e#120189#120223#0" expanded="false" />
-                <element signature="e#123221#123236#0" expanded="false" />
-                <element signature="e#123245#123276#0" expanded="false" />
-                <element signature="e#128594#128618#0" expanded="false" />
-                <element signature="e#130025#130039#0" expanded="false" />
-                <element signature="e#130049#130061#0" expanded="false" />
-                <element signature="e#130493#130505#0" expanded="false" />
-                <element signature="e#130788#130800#0" expanded="false" />
-                <element signature="e#131211#131223#0" expanded="false" />
-                <element signature="e#131791#131803#0" expanded="false" />
-                <element signature="e#132087#132099#0" expanded="false" />
-                <element signature="e#132383#132395#0" expanded="false" />
-                <element signature="e#132694#132715#0" expanded="false" />
-                <element signature="e#133197#133209#0" expanded="false" />
-                <element signature="e#133219#133231#0" expanded="false" />
-                <element signature="e#134212#134224#0" expanded="false" />
-                <element signature="e#134671#134685#0" expanded="false" />
-                <element signature="e#135850#135861#0" expanded="false" />
-                <element signature="e#136647#136659#0" expanded="false" />
-                <element signature="e#137457#137469#0" expanded="false" />
-                <element signature="e#138451#138465#0" expanded="false" />
-                <element signature="e#138750#138763#0" expanded="false" />
-                <element signature="e#139651#139668#0" expanded="false" />
-                <element signature="e#140281#140293#0" expanded="false" />
-                <element signature="e#143745#143757#0" expanded="false" />
-                <element signature="e#146834#146850#0" expanded="false" />
+                <element signature="e#179070#179083#0" expanded="false" />
+                <element signature="e#179147#179155#0" expanded="true" />
+                <element signature="e#179439#179452#0" expanded="false" />
+                <element signature="e#180534#180547#0" expanded="false" />
+                <element signature="e#182625#182638#0" expanded="false" />
+                <element signature="e#183565#183578#0" expanded="false" />
+                <element signature="e#190240#190253#0" expanded="false" />
+                <element signature="e#192795#192809#0" expanded="false" />
+                <element signature="e#194622#194636#0" expanded="false" />
+                <element signature="e#195535#195549#0" expanded="false" />
+                <element signature="e#197403#197417#0" expanded="false" />
                 <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
-                <element signature="e#179392#179417#0" expanded="false" />
-                <element signature="e#183488#183507#0" expanded="false" />
-                <element signature="e#185427#185477#0" expanded="false" />
-                <element signature="e#187425#187549#0" expanded="false" />
-                <element signature="e#188438#188543#0" expanded="false" />
+                <element signature="e#198421#198446#0" expanded="false" />
+                <element signature="e#204600#204650#0" expanded="false" />
+                <element signature="e#206598#206722#0" expanded="false" />
+                <element signature="e#207611#207716#0" expanded="false" />
                 <element signature="docComment;method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
                 <element signature="method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
                 <element signature="docComment;method#isNumeric#0;class#MotoroilDirektHarvester#0" expanded="false" />
@@ -155,8 +123,56 @@
                 <element signature="method#getSingleResultOrNull#0;class#MotoroilDirektHarvester#0" expanded="false" />
                 <element signature="method#GetProductsNoCustomDescription#0;class#MotoroilDirektHarvester#0" expanded="false" />
                 <element signature="method#MakeFileNamePretty#0;class#MotoroilDirektHarvester#0" expanded="false" />
-                <marker date="1495479707000" expanded="false" signature="774:782" ph="&lt;~&gt;" />
-                <marker date="1495479707000" expanded="false" signature="31249:31257" ph="&lt;~&gt;" />
+                <marker date="1495531108000" expanded="false" signature="652:66866" ph="Part 1" />
+                <marker date="1495531108000" expanded="false" signature="676:31101" ph="Motoroil &amp; Additives Links" />
+                <marker date="1495531108000" expanded="false" signature="776:784" ph="&lt;~&gt;" />
+                <marker date="1495531108000" expanded="false" signature="31163:34422" ph="Automatikgetriebe" />
+                <marker date="1495531108000" expanded="false" signature="31251:31259" ph="&lt;~&gt;" />
+                <marker date="1495531108000" expanded="false" signature="34481:38284" ph="Schaltgetriebe" />
+                <marker date="1495531108000" expanded="false" signature="38340:40208" ph="TrektorBaumaschinen" />
+                <marker date="1495531108000" expanded="false" signature="40269:44072" ph="LKW" />
+                <marker date="1495531108000" expanded="false" signature="44118:47630" ph="Motorrad/Motorroller" />
+                <marker date="1495531108000" expanded="false" signature="47680:48343" ph="Boot" />
+                <marker date="1495531108000" expanded="false" signature="48389:51771" ph="Hydraulik" />
+                <marker date="1495531108000" expanded="false" signature="51822:52699" ph="Kompressorenöl" />
+                <marker date="1495531108000" expanded="false" signature="52755:54067" ph="Saegenkettenöl" />
+                <marker date="1495531108000" expanded="false" signature="54120:56979" ph="Kuehlerschutz" />
+                <marker date="1495531108000" expanded="false" signature="57034:57418" ph="AdBlue" />
+                <marker date="1495531108000" expanded="false" signature="57466:57900" ph="Bremsflüssigkeiten" />
+                <marker date="1495531108000" expanded="false" signature="57961:62999" ph="Fahrzeugpflege" />
+                <marker date="1495531108000" expanded="false" signature="63057:65142" ph="Kleben &amp; Dichten" />
+                <marker date="1495531108000" expanded="false" signature="65196:66811" ph="Fette &amp; Pasten" />
+                <marker date="1495531108000" expanded="false" signature="66876:123213" ph="Part 2" />
+                <marker date="1495531108000" expanded="false" signature="66900:74723" ph="Liqui Moly Additive" />
+                <marker date="1495531108000" expanded="false" signature="74783:80981" ph="meguiars Pflegemittel" />
+                <marker date="1495531108000" expanded="false" signature="81030:102389" ph="Sonax Pflegemittel" />
+                <marker date="1495531108000" expanded="false" signature="102436:120143" ph="Nigrin Pflegemittel" />
+                <marker date="1495531108000" expanded="false" signature="120191:123150" ph="Auto Finesse Pflegemittel" />
+                <marker date="1495531108000" expanded="false" signature="123223:178986" ph="Part 3" />
+                <marker date="1495531108000" expanded="false" signature="123247:128546" ph="armor all Pflegemittel" />
+                <marker date="1495531108000" expanded="false" signature="128596:129970" ph="Bremsenreiniger" />
+                <marker date="1495531108000" expanded="false" signature="130027:133189" ph="Xenon" />
+                <marker date="1495531108000" expanded="false" signature="130051:130449" ph="D1S" />
+                <marker date="1495531108000" expanded="false" signature="130495:130744" ph="D1R" />
+                <marker date="1495531108000" expanded="false" signature="130790:131167" ph="D2S" />
+                <marker date="1495531108000" expanded="false" signature="131213:131747" ph="d2r" />
+                <marker date="1495531108000" expanded="false" signature="131793:132043" ph="D3S" />
+                <marker date="1495531108000" expanded="false" signature="132089:132339" ph="d4s" />
+                <marker date="1495531108000" expanded="false" signature="132385:132650" ph="d4r" />
+                <marker date="1495531108000" expanded="false" signature="132696:133133" ph="H7 HID Xenon" />
+                <marker date="1495531108000" expanded="false" signature="133199:146826" ph="LED" />
+                <marker date="1495531108000" expanded="false" signature="133221:134168" ph="HB4" />
+                <marker date="1495531108000" expanded="false" signature="134214:134627" ph="H6W" />
+                <marker date="1495531108000" expanded="false" signature="134673:135804" ph="LedH7" />
+                <marker date="1495531108000" expanded="false" signature="135852:136604" ph="H8" />
+                <marker date="1495531108000" expanded="false" signature="136649:137413" ph="H10" />
+                <marker date="1495531108000" expanded="false" signature="137459:138407" ph="H11" />
+                <marker date="1495531108000" expanded="false" signature="138453:138704" ph="PY21W" />
+                <marker date="1495531108000" expanded="false" signature="138752:139606" ph="p21W" />
+                <marker date="1495531108000" expanded="false" signature="139653:140233" ph="T20 W21W" />
+                <marker date="1495531108000" expanded="false" signature="140283:143699" ph="W5W" />
+                <marker date="1495531108000" expanded="false" signature="143747:146769" ph="C5W" />
+                <marker date="1495531108000" expanded="false" signature="146836:178530" ph="castrol" />
               </folding>
             </state>
           </provider>
@@ -167,25 +183,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="11" column="111" lean-forward="false" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
-              <folding>
-                <element signature="e#3058#3059#0" expanded="true" />
-                <element signature="e#3117#3118#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="APP.PRODUCTS" pinned="false" current-in-tab="true">
         <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -221,7 +234,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Motor</find>
       <find>this.</find>
       <find>St</find>
       <find>Das Passwort oder die</find>
@@ -251,6 +263,7 @@
       <find>HArvestA</find>
       <find>replace</find>
       <find>getProducts</find>
+      <find>Castrol</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -278,8 +291,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/024d0371-c327-4eae-abab-0df4a228fa0a/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/model/HarvestClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Products.java" />
+        <option value="$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java" />
       </list>
     </option>
   </component>
@@ -434,7 +447,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -660,6 +672,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1233,6 +1246,7 @@
       <workItem from="1495119880427" duration="1614000" />
       <workItem from="1495291945340" duration="3918000" />
       <workItem from="1495475395958" duration="3303000" />
+      <workItem from="1495528525502" duration="2376000" />
     </task>
     <servers />
   </component>
@@ -1269,7 +1283,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148957000" />
+    <option name="totallyTimeSpent" value="151333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1292,20 +1306,20 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19063005" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30546075" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30546075" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24232082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32148626" sideWeight="0.49172577" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3263328" sideWeight="0.49172577" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15185784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31911263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21405493" sideWeight="0.50827426" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31911263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1337,7 +1351,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,60 +1362,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#650#665#0" expanded="false" />
-            <element signature="e#674#709#0" expanded="false" />
-            <element signature="e#31161#31187#0" expanded="false" />
-            <element signature="e#34479#34502#0" expanded="false" />
-            <element signature="e#38338#38366#0" expanded="false" />
-            <element signature="e#40267#40279#0" expanded="false" />
-            <element signature="e#44116#44145#0" expanded="false" />
-            <element signature="e#47678#47691#0" expanded="false" />
-            <element signature="e#48387#48405#0" expanded="false" />
-            <element signature="e#51820#51843#0" expanded="false" />
-            <element signature="e#52753#52776#0" expanded="false" />
-            <element signature="e#54118#54140#0" expanded="false" />
-            <element signature="e#57032#57047#0" expanded="false" />
-            <element signature="e#57464#57491#0" expanded="false" />
-            <element signature="e#57959#57982#0" expanded="false" />
-            <element signature="e#63055#63080#0" expanded="false" />
-            <element signature="e#65194#65217#0" expanded="false" />
-            <element signature="e#66874#66889#0" expanded="false" />
-            <element signature="e#66898#66926#0" expanded="false" />
-            <element signature="e#74781#74811#0" expanded="false" />
-            <element signature="e#81028#81055#0" expanded="false" />
-            <element signature="e#102434#102462#0" expanded="false" />
-            <element signature="e#120189#120223#0" expanded="false" />
-            <element signature="e#123221#123236#0" expanded="false" />
-            <element signature="e#123245#123276#0" expanded="false" />
-            <element signature="e#128594#128618#0" expanded="false" />
-            <element signature="e#130025#130039#0" expanded="false" />
-            <element signature="e#130049#130061#0" expanded="false" />
-            <element signature="e#130493#130505#0" expanded="false" />
-            <element signature="e#130788#130800#0" expanded="false" />
-            <element signature="e#131211#131223#0" expanded="false" />
-            <element signature="e#131791#131803#0" expanded="false" />
-            <element signature="e#132087#132099#0" expanded="false" />
-            <element signature="e#132383#132395#0" expanded="false" />
-            <element signature="e#132694#132715#0" expanded="false" />
-            <element signature="e#133197#133209#0" expanded="false" />
-            <element signature="e#133219#133231#0" expanded="false" />
-            <element signature="e#134212#134224#0" expanded="false" />
-            <element signature="e#134671#134685#0" expanded="false" />
-            <element signature="e#135850#135861#0" expanded="false" />
-            <element signature="e#136647#136659#0" expanded="false" />
-            <element signature="e#137457#137469#0" expanded="false" />
-            <element signature="e#138451#138465#0" expanded="false" />
-            <element signature="e#138750#138763#0" expanded="false" />
-            <element signature="e#139651#139668#0" expanded="false" />
-            <element signature="e#140281#140293#0" expanded="false" />
-            <element signature="e#143745#143757#0" expanded="false" />
-            <element signature="e#146834#146850#0" expanded="false" />
+            <element signature="e#179070#179083#0" expanded="false" />
+            <element signature="e#179147#179155#0" expanded="true" />
+            <element signature="e#179439#179452#0" expanded="false" />
+            <element signature="e#180534#180547#0" expanded="false" />
+            <element signature="e#182625#182638#0" expanded="false" />
+            <element signature="e#183565#183578#0" expanded="false" />
+            <element signature="e#190240#190253#0" expanded="false" />
+            <element signature="e#192795#192809#0" expanded="false" />
+            <element signature="e#194622#194636#0" expanded="false" />
+            <element signature="e#195535#195549#0" expanded="false" />
+            <element signature="e#197403#197417#0" expanded="false" />
             <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <element signature="e#179392#179417#0" expanded="false" />
-            <element signature="e#183488#183507#0" expanded="false" />
-            <element signature="e#185427#185477#0" expanded="false" />
-            <element signature="e#187425#187549#0" expanded="false" />
-            <element signature="e#188438#188543#0" expanded="false" />
+            <element signature="e#198421#198446#0" expanded="false" />
+            <element signature="e#204600#204650#0" expanded="false" />
+            <element signature="e#206598#206722#0" expanded="false" />
+            <element signature="e#207611#207716#0" expanded="false" />
             <element signature="docComment;method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="docComment;method#isNumeric#0;class#MotoroilDirektHarvester#0" expanded="false" />
@@ -1414,8 +1392,56 @@
             <element signature="method#getSingleResultOrNull#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#GetProductsNoCustomDescription#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#MakeFileNamePretty#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <marker date="1495479707000" expanded="false" signature="774:782" ph="&lt;~&gt;" />
-            <marker date="1495479707000" expanded="false" signature="31249:31257" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="652:66866" ph="Part 1" />
+            <marker date="1495531108000" expanded="false" signature="676:31101" ph="Motoroil &amp; Additives Links" />
+            <marker date="1495531108000" expanded="false" signature="776:784" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="31163:34422" ph="Automatikgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="31251:31259" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="34481:38284" ph="Schaltgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="38340:40208" ph="TrektorBaumaschinen" />
+            <marker date="1495531108000" expanded="false" signature="40269:44072" ph="LKW" />
+            <marker date="1495531108000" expanded="false" signature="44118:47630" ph="Motorrad/Motorroller" />
+            <marker date="1495531108000" expanded="false" signature="47680:48343" ph="Boot" />
+            <marker date="1495531108000" expanded="false" signature="48389:51771" ph="Hydraulik" />
+            <marker date="1495531108000" expanded="false" signature="51822:52699" ph="Kompressorenöl" />
+            <marker date="1495531108000" expanded="false" signature="52755:54067" ph="Saegenkettenöl" />
+            <marker date="1495531108000" expanded="false" signature="54120:56979" ph="Kuehlerschutz" />
+            <marker date="1495531108000" expanded="false" signature="57034:57418" ph="AdBlue" />
+            <marker date="1495531108000" expanded="false" signature="57466:57900" ph="Bremsflüssigkeiten" />
+            <marker date="1495531108000" expanded="false" signature="57961:62999" ph="Fahrzeugpflege" />
+            <marker date="1495531108000" expanded="false" signature="63057:65142" ph="Kleben &amp; Dichten" />
+            <marker date="1495531108000" expanded="false" signature="65196:66811" ph="Fette &amp; Pasten" />
+            <marker date="1495531108000" expanded="false" signature="66876:123213" ph="Part 2" />
+            <marker date="1495531108000" expanded="false" signature="66900:74723" ph="Liqui Moly Additive" />
+            <marker date="1495531108000" expanded="false" signature="74783:80981" ph="meguiars Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="81030:102389" ph="Sonax Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="102436:120143" ph="Nigrin Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="120191:123150" ph="Auto Finesse Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="123223:178986" ph="Part 3" />
+            <marker date="1495531108000" expanded="false" signature="123247:128546" ph="armor all Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="128596:129970" ph="Bremsenreiniger" />
+            <marker date="1495531108000" expanded="false" signature="130027:133189" ph="Xenon" />
+            <marker date="1495531108000" expanded="false" signature="130051:130449" ph="D1S" />
+            <marker date="1495531108000" expanded="false" signature="130495:130744" ph="D1R" />
+            <marker date="1495531108000" expanded="false" signature="130790:131167" ph="D2S" />
+            <marker date="1495531108000" expanded="false" signature="131213:131747" ph="d2r" />
+            <marker date="1495531108000" expanded="false" signature="131793:132043" ph="D3S" />
+            <marker date="1495531108000" expanded="false" signature="132089:132339" ph="d4s" />
+            <marker date="1495531108000" expanded="false" signature="132385:132650" ph="d4r" />
+            <marker date="1495531108000" expanded="false" signature="132696:133133" ph="H7 HID Xenon" />
+            <marker date="1495531108000" expanded="false" signature="133199:146826" ph="LED" />
+            <marker date="1495531108000" expanded="false" signature="133221:134168" ph="HB4" />
+            <marker date="1495531108000" expanded="false" signature="134214:134627" ph="H6W" />
+            <marker date="1495531108000" expanded="false" signature="134673:135804" ph="LedH7" />
+            <marker date="1495531108000" expanded="false" signature="135852:136604" ph="H8" />
+            <marker date="1495531108000" expanded="false" signature="136649:137413" ph="H10" />
+            <marker date="1495531108000" expanded="false" signature="137459:138407" ph="H11" />
+            <marker date="1495531108000" expanded="false" signature="138453:138704" ph="PY21W" />
+            <marker date="1495531108000" expanded="false" signature="138752:139606" ph="p21W" />
+            <marker date="1495531108000" expanded="false" signature="139653:140233" ph="T20 W21W" />
+            <marker date="1495531108000" expanded="false" signature="140283:143699" ph="W5W" />
+            <marker date="1495531108000" expanded="false" signature="143747:146769" ph="C5W" />
+            <marker date="1495531108000" expanded="false" signature="146836:178530" ph="castrol" />
           </folding>
         </state>
       </provider>
@@ -1424,10 +1450,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="6" column="77" lean-forward="false" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
-          <folding>
-            <element signature="e#3058#3059#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1435,7 +1458,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1451,7 +1476,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1459,7 +1486,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1468,60 +1497,22 @@
         <state relative-caret-position="14985">
           <caret line="999" column="0" lean-forward="false" selection-start-line="999" selection-start-column="0" selection-end-line="999" selection-end-column="0" />
           <folding>
-            <element signature="e#650#665#0" expanded="false" />
-            <element signature="e#674#709#0" expanded="false" />
-            <element signature="e#31161#31187#0" expanded="false" />
-            <element signature="e#34479#34502#0" expanded="false" />
-            <element signature="e#38338#38366#0" expanded="false" />
-            <element signature="e#40267#40279#0" expanded="false" />
-            <element signature="e#44116#44145#0" expanded="false" />
-            <element signature="e#47678#47691#0" expanded="false" />
-            <element signature="e#48387#48405#0" expanded="false" />
-            <element signature="e#51820#51843#0" expanded="false" />
-            <element signature="e#52753#52776#0" expanded="false" />
-            <element signature="e#54118#54140#0" expanded="false" />
-            <element signature="e#57032#57047#0" expanded="false" />
-            <element signature="e#57464#57491#0" expanded="false" />
-            <element signature="e#57959#57982#0" expanded="false" />
-            <element signature="e#63055#63080#0" expanded="false" />
-            <element signature="e#65194#65217#0" expanded="false" />
-            <element signature="e#66874#66889#0" expanded="false" />
-            <element signature="e#66898#66926#0" expanded="false" />
-            <element signature="e#74781#74811#0" expanded="false" />
-            <element signature="e#81028#81055#0" expanded="false" />
-            <element signature="e#102434#102462#0" expanded="false" />
-            <element signature="e#120189#120223#0" expanded="false" />
-            <element signature="e#123221#123236#0" expanded="false" />
-            <element signature="e#123245#123276#0" expanded="false" />
-            <element signature="e#128594#128618#0" expanded="false" />
-            <element signature="e#130025#130039#0" expanded="false" />
-            <element signature="e#130049#130061#0" expanded="false" />
-            <element signature="e#130493#130505#0" expanded="false" />
-            <element signature="e#130788#130800#0" expanded="false" />
-            <element signature="e#131211#131223#0" expanded="false" />
-            <element signature="e#131791#131803#0" expanded="false" />
-            <element signature="e#132087#132099#0" expanded="false" />
-            <element signature="e#132383#132395#0" expanded="false" />
-            <element signature="e#132694#132715#0" expanded="false" />
-            <element signature="e#133197#133209#0" expanded="false" />
-            <element signature="e#133219#133231#0" expanded="false" />
-            <element signature="e#134212#134224#0" expanded="false" />
-            <element signature="e#134671#134685#0" expanded="false" />
-            <element signature="e#135850#135861#0" expanded="false" />
-            <element signature="e#136647#136659#0" expanded="false" />
-            <element signature="e#137457#137469#0" expanded="false" />
-            <element signature="e#138451#138465#0" expanded="false" />
-            <element signature="e#138750#138763#0" expanded="false" />
-            <element signature="e#139651#139668#0" expanded="false" />
-            <element signature="e#140281#140293#0" expanded="false" />
-            <element signature="e#143745#143757#0" expanded="false" />
-            <element signature="e#146834#146850#0" expanded="false" />
+            <element signature="e#179070#179083#0" expanded="false" />
+            <element signature="e#179147#179155#0" expanded="true" />
+            <element signature="e#179439#179452#0" expanded="false" />
+            <element signature="e#180534#180547#0" expanded="false" />
+            <element signature="e#182625#182638#0" expanded="false" />
+            <element signature="e#183565#183578#0" expanded="false" />
+            <element signature="e#190240#190253#0" expanded="false" />
+            <element signature="e#192795#192809#0" expanded="false" />
+            <element signature="e#194622#194636#0" expanded="false" />
+            <element signature="e#195535#195549#0" expanded="false" />
+            <element signature="e#197403#197417#0" expanded="false" />
             <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <element signature="e#179392#179417#0" expanded="false" />
-            <element signature="e#183488#183507#0" expanded="false" />
-            <element signature="e#185427#185477#0" expanded="false" />
-            <element signature="e#187425#187549#0" expanded="false" />
-            <element signature="e#188438#188543#0" expanded="false" />
+            <element signature="e#198421#198446#0" expanded="false" />
+            <element signature="e#204600#204650#0" expanded="false" />
+            <element signature="e#206598#206722#0" expanded="false" />
+            <element signature="e#207611#207716#0" expanded="false" />
             <element signature="docComment;method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="docComment;method#isNumeric#0;class#MotoroilDirektHarvester#0" expanded="false" />
@@ -1536,8 +1527,56 @@
             <element signature="method#getSingleResultOrNull#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#GetProductsNoCustomDescription#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#MakeFileNamePretty#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <marker date="1495479707000" expanded="false" signature="774:782" ph="&lt;~&gt;" />
-            <marker date="1495479707000" expanded="false" signature="31249:31257" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="652:66866" ph="Part 1" />
+            <marker date="1495531108000" expanded="false" signature="676:31101" ph="Motoroil &amp; Additives Links" />
+            <marker date="1495531108000" expanded="false" signature="776:784" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="31163:34422" ph="Automatikgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="31251:31259" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="34481:38284" ph="Schaltgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="38340:40208" ph="TrektorBaumaschinen" />
+            <marker date="1495531108000" expanded="false" signature="40269:44072" ph="LKW" />
+            <marker date="1495531108000" expanded="false" signature="44118:47630" ph="Motorrad/Motorroller" />
+            <marker date="1495531108000" expanded="false" signature="47680:48343" ph="Boot" />
+            <marker date="1495531108000" expanded="false" signature="48389:51771" ph="Hydraulik" />
+            <marker date="1495531108000" expanded="false" signature="51822:52699" ph="Kompressorenöl" />
+            <marker date="1495531108000" expanded="false" signature="52755:54067" ph="Saegenkettenöl" />
+            <marker date="1495531108000" expanded="false" signature="54120:56979" ph="Kuehlerschutz" />
+            <marker date="1495531108000" expanded="false" signature="57034:57418" ph="AdBlue" />
+            <marker date="1495531108000" expanded="false" signature="57466:57900" ph="Bremsflüssigkeiten" />
+            <marker date="1495531108000" expanded="false" signature="57961:62999" ph="Fahrzeugpflege" />
+            <marker date="1495531108000" expanded="false" signature="63057:65142" ph="Kleben &amp; Dichten" />
+            <marker date="1495531108000" expanded="false" signature="65196:66811" ph="Fette &amp; Pasten" />
+            <marker date="1495531108000" expanded="false" signature="66876:123213" ph="Part 2" />
+            <marker date="1495531108000" expanded="false" signature="66900:74723" ph="Liqui Moly Additive" />
+            <marker date="1495531108000" expanded="false" signature="74783:80981" ph="meguiars Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="81030:102389" ph="Sonax Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="102436:120143" ph="Nigrin Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="120191:123150" ph="Auto Finesse Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="123223:178986" ph="Part 3" />
+            <marker date="1495531108000" expanded="false" signature="123247:128546" ph="armor all Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="128596:129970" ph="Bremsenreiniger" />
+            <marker date="1495531108000" expanded="false" signature="130027:133189" ph="Xenon" />
+            <marker date="1495531108000" expanded="false" signature="130051:130449" ph="D1S" />
+            <marker date="1495531108000" expanded="false" signature="130495:130744" ph="D1R" />
+            <marker date="1495531108000" expanded="false" signature="130790:131167" ph="D2S" />
+            <marker date="1495531108000" expanded="false" signature="131213:131747" ph="d2r" />
+            <marker date="1495531108000" expanded="false" signature="131793:132043" ph="D3S" />
+            <marker date="1495531108000" expanded="false" signature="132089:132339" ph="d4s" />
+            <marker date="1495531108000" expanded="false" signature="132385:132650" ph="d4r" />
+            <marker date="1495531108000" expanded="false" signature="132696:133133" ph="H7 HID Xenon" />
+            <marker date="1495531108000" expanded="false" signature="133199:146826" ph="LED" />
+            <marker date="1495531108000" expanded="false" signature="133221:134168" ph="HB4" />
+            <marker date="1495531108000" expanded="false" signature="134214:134627" ph="H6W" />
+            <marker date="1495531108000" expanded="false" signature="134673:135804" ph="LedH7" />
+            <marker date="1495531108000" expanded="false" signature="135852:136604" ph="H8" />
+            <marker date="1495531108000" expanded="false" signature="136649:137413" ph="H10" />
+            <marker date="1495531108000" expanded="false" signature="137459:138407" ph="H11" />
+            <marker date="1495531108000" expanded="false" signature="138453:138704" ph="PY21W" />
+            <marker date="1495531108000" expanded="false" signature="138752:139606" ph="p21W" />
+            <marker date="1495531108000" expanded="false" signature="139653:140233" ph="T20 W21W" />
+            <marker date="1495531108000" expanded="false" signature="140283:143699" ph="W5W" />
+            <marker date="1495531108000" expanded="false" signature="143747:146769" ph="C5W" />
+            <marker date="1495531108000" expanded="false" signature="146836:178530" ph="castrol" />
           </folding>
         </state>
       </provider>
@@ -1546,22 +1585,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="e#3058#3059#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1569,7 +1605,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1585,7 +1623,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1593,7 +1633,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1602,60 +1644,22 @@
         <state relative-caret-position="14985">
           <caret line="999" column="0" lean-forward="false" selection-start-line="999" selection-start-column="0" selection-end-line="999" selection-end-column="0" />
           <folding>
-            <element signature="e#650#665#0" expanded="false" />
-            <element signature="e#674#709#0" expanded="false" />
-            <element signature="e#31161#31187#0" expanded="false" />
-            <element signature="e#34479#34502#0" expanded="false" />
-            <element signature="e#38338#38366#0" expanded="false" />
-            <element signature="e#40267#40279#0" expanded="false" />
-            <element signature="e#44116#44145#0" expanded="false" />
-            <element signature="e#47678#47691#0" expanded="false" />
-            <element signature="e#48387#48405#0" expanded="false" />
-            <element signature="e#51820#51843#0" expanded="false" />
-            <element signature="e#52753#52776#0" expanded="false" />
-            <element signature="e#54118#54140#0" expanded="false" />
-            <element signature="e#57032#57047#0" expanded="false" />
-            <element signature="e#57464#57491#0" expanded="false" />
-            <element signature="e#57959#57982#0" expanded="false" />
-            <element signature="e#63055#63080#0" expanded="false" />
-            <element signature="e#65194#65217#0" expanded="false" />
-            <element signature="e#66874#66889#0" expanded="false" />
-            <element signature="e#66898#66926#0" expanded="false" />
-            <element signature="e#74781#74811#0" expanded="false" />
-            <element signature="e#81028#81055#0" expanded="false" />
-            <element signature="e#102434#102462#0" expanded="false" />
-            <element signature="e#120189#120223#0" expanded="false" />
-            <element signature="e#123221#123236#0" expanded="false" />
-            <element signature="e#123245#123276#0" expanded="false" />
-            <element signature="e#128594#128618#0" expanded="false" />
-            <element signature="e#130025#130039#0" expanded="false" />
-            <element signature="e#130049#130061#0" expanded="false" />
-            <element signature="e#130493#130505#0" expanded="false" />
-            <element signature="e#130788#130800#0" expanded="false" />
-            <element signature="e#131211#131223#0" expanded="false" />
-            <element signature="e#131791#131803#0" expanded="false" />
-            <element signature="e#132087#132099#0" expanded="false" />
-            <element signature="e#132383#132395#0" expanded="false" />
-            <element signature="e#132694#132715#0" expanded="false" />
-            <element signature="e#133197#133209#0" expanded="false" />
-            <element signature="e#133219#133231#0" expanded="false" />
-            <element signature="e#134212#134224#0" expanded="false" />
-            <element signature="e#134671#134685#0" expanded="false" />
-            <element signature="e#135850#135861#0" expanded="false" />
-            <element signature="e#136647#136659#0" expanded="false" />
-            <element signature="e#137457#137469#0" expanded="false" />
-            <element signature="e#138451#138465#0" expanded="false" />
-            <element signature="e#138750#138763#0" expanded="false" />
-            <element signature="e#139651#139668#0" expanded="false" />
-            <element signature="e#140281#140293#0" expanded="false" />
-            <element signature="e#143745#143757#0" expanded="false" />
-            <element signature="e#146834#146850#0" expanded="false" />
+            <element signature="e#179070#179083#0" expanded="false" />
+            <element signature="e#179147#179155#0" expanded="true" />
+            <element signature="e#179439#179452#0" expanded="false" />
+            <element signature="e#180534#180547#0" expanded="false" />
+            <element signature="e#182625#182638#0" expanded="false" />
+            <element signature="e#183565#183578#0" expanded="false" />
+            <element signature="e#190240#190253#0" expanded="false" />
+            <element signature="e#192795#192809#0" expanded="false" />
+            <element signature="e#194622#194636#0" expanded="false" />
+            <element signature="e#195535#195549#0" expanded="false" />
+            <element signature="e#197403#197417#0" expanded="false" />
             <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <element signature="e#179392#179417#0" expanded="false" />
-            <element signature="e#183488#183507#0" expanded="false" />
-            <element signature="e#185427#185477#0" expanded="false" />
-            <element signature="e#187425#187549#0" expanded="false" />
-            <element signature="e#188438#188543#0" expanded="false" />
+            <element signature="e#198421#198446#0" expanded="false" />
+            <element signature="e#204600#204650#0" expanded="false" />
+            <element signature="e#206598#206722#0" expanded="false" />
+            <element signature="e#207611#207716#0" expanded="false" />
             <element signature="docComment;method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="docComment;method#isNumeric#0;class#MotoroilDirektHarvester#0" expanded="false" />
@@ -1670,8 +1674,56 @@
             <element signature="method#getSingleResultOrNull#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#GetProductsNoCustomDescription#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#MakeFileNamePretty#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <marker date="1495479707000" expanded="false" signature="774:782" ph="&lt;~&gt;" />
-            <marker date="1495479707000" expanded="false" signature="31249:31257" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="652:66866" ph="Part 1" />
+            <marker date="1495531108000" expanded="false" signature="676:31101" ph="Motoroil &amp; Additives Links" />
+            <marker date="1495531108000" expanded="false" signature="776:784" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="31163:34422" ph="Automatikgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="31251:31259" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="34481:38284" ph="Schaltgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="38340:40208" ph="TrektorBaumaschinen" />
+            <marker date="1495531108000" expanded="false" signature="40269:44072" ph="LKW" />
+            <marker date="1495531108000" expanded="false" signature="44118:47630" ph="Motorrad/Motorroller" />
+            <marker date="1495531108000" expanded="false" signature="47680:48343" ph="Boot" />
+            <marker date="1495531108000" expanded="false" signature="48389:51771" ph="Hydraulik" />
+            <marker date="1495531108000" expanded="false" signature="51822:52699" ph="Kompressorenöl" />
+            <marker date="1495531108000" expanded="false" signature="52755:54067" ph="Saegenkettenöl" />
+            <marker date="1495531108000" expanded="false" signature="54120:56979" ph="Kuehlerschutz" />
+            <marker date="1495531108000" expanded="false" signature="57034:57418" ph="AdBlue" />
+            <marker date="1495531108000" expanded="false" signature="57466:57900" ph="Bremsflüssigkeiten" />
+            <marker date="1495531108000" expanded="false" signature="57961:62999" ph="Fahrzeugpflege" />
+            <marker date="1495531108000" expanded="false" signature="63057:65142" ph="Kleben &amp; Dichten" />
+            <marker date="1495531108000" expanded="false" signature="65196:66811" ph="Fette &amp; Pasten" />
+            <marker date="1495531108000" expanded="false" signature="66876:123213" ph="Part 2" />
+            <marker date="1495531108000" expanded="false" signature="66900:74723" ph="Liqui Moly Additive" />
+            <marker date="1495531108000" expanded="false" signature="74783:80981" ph="meguiars Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="81030:102389" ph="Sonax Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="102436:120143" ph="Nigrin Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="120191:123150" ph="Auto Finesse Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="123223:178986" ph="Part 3" />
+            <marker date="1495531108000" expanded="false" signature="123247:128546" ph="armor all Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="128596:129970" ph="Bremsenreiniger" />
+            <marker date="1495531108000" expanded="false" signature="130027:133189" ph="Xenon" />
+            <marker date="1495531108000" expanded="false" signature="130051:130449" ph="D1S" />
+            <marker date="1495531108000" expanded="false" signature="130495:130744" ph="D1R" />
+            <marker date="1495531108000" expanded="false" signature="130790:131167" ph="D2S" />
+            <marker date="1495531108000" expanded="false" signature="131213:131747" ph="d2r" />
+            <marker date="1495531108000" expanded="false" signature="131793:132043" ph="D3S" />
+            <marker date="1495531108000" expanded="false" signature="132089:132339" ph="d4s" />
+            <marker date="1495531108000" expanded="false" signature="132385:132650" ph="d4r" />
+            <marker date="1495531108000" expanded="false" signature="132696:133133" ph="H7 HID Xenon" />
+            <marker date="1495531108000" expanded="false" signature="133199:146826" ph="LED" />
+            <marker date="1495531108000" expanded="false" signature="133221:134168" ph="HB4" />
+            <marker date="1495531108000" expanded="false" signature="134214:134627" ph="H6W" />
+            <marker date="1495531108000" expanded="false" signature="134673:135804" ph="LedH7" />
+            <marker date="1495531108000" expanded="false" signature="135852:136604" ph="H8" />
+            <marker date="1495531108000" expanded="false" signature="136649:137413" ph="H10" />
+            <marker date="1495531108000" expanded="false" signature="137459:138407" ph="H11" />
+            <marker date="1495531108000" expanded="false" signature="138453:138704" ph="PY21W" />
+            <marker date="1495531108000" expanded="false" signature="138752:139606" ph="p21W" />
+            <marker date="1495531108000" expanded="false" signature="139653:140233" ph="T20 W21W" />
+            <marker date="1495531108000" expanded="false" signature="140283:143699" ph="W5W" />
+            <marker date="1495531108000" expanded="false" signature="143747:146769" ph="C5W" />
+            <marker date="1495531108000" expanded="false" signature="146836:178530" ph="castrol" />
           </folding>
         </state>
       </provider>
@@ -1680,22 +1732,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="e#3058#3059#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1703,19 +1752,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1723,7 +1774,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1731,199 +1784,201 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCT">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1943,41 +1998,73 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Product.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/HarvestClass.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/RestConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/seo/SeoAudit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1985,22 +2072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-928">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/HarvestClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2013,100 +2084,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/RestConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/seo/SeoAudit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Products.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="11" column="111" lean-forward="false" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
-          <folding>
-            <element signature="e#3058#3059#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="2008" column="0" lean-forward="false" selection-start-line="2008" selection-start-column="0" selection-end-line="2008" selection-end-column="0" />
+        <state relative-caret-position="-3026">
+          <caret line="1514" column="2" lean-forward="false" selection-start-line="1514" selection-start-column="2" selection-end-line="1514" selection-end-column="2" />
           <folding>
-            <element signature="e#650#665#0" expanded="false" />
-            <element signature="e#674#709#0" expanded="false" />
-            <element signature="e#31161#31187#0" expanded="false" />
-            <element signature="e#34479#34502#0" expanded="false" />
-            <element signature="e#38338#38366#0" expanded="false" />
-            <element signature="e#40267#40279#0" expanded="false" />
-            <element signature="e#44116#44145#0" expanded="false" />
-            <element signature="e#47678#47691#0" expanded="false" />
-            <element signature="e#48387#48405#0" expanded="false" />
-            <element signature="e#51820#51843#0" expanded="false" />
-            <element signature="e#52753#52776#0" expanded="false" />
-            <element signature="e#54118#54140#0" expanded="false" />
-            <element signature="e#57032#57047#0" expanded="false" />
-            <element signature="e#57464#57491#0" expanded="false" />
-            <element signature="e#57959#57982#0" expanded="false" />
-            <element signature="e#63055#63080#0" expanded="false" />
-            <element signature="e#65194#65217#0" expanded="false" />
-            <element signature="e#66874#66889#0" expanded="false" />
-            <element signature="e#66898#66926#0" expanded="false" />
-            <element signature="e#74781#74811#0" expanded="false" />
-            <element signature="e#81028#81055#0" expanded="false" />
-            <element signature="e#102434#102462#0" expanded="false" />
-            <element signature="e#120189#120223#0" expanded="false" />
-            <element signature="e#123221#123236#0" expanded="false" />
-            <element signature="e#123245#123276#0" expanded="false" />
-            <element signature="e#128594#128618#0" expanded="false" />
-            <element signature="e#130025#130039#0" expanded="false" />
-            <element signature="e#130049#130061#0" expanded="false" />
-            <element signature="e#130493#130505#0" expanded="false" />
-            <element signature="e#130788#130800#0" expanded="false" />
-            <element signature="e#131211#131223#0" expanded="false" />
-            <element signature="e#131791#131803#0" expanded="false" />
-            <element signature="e#132087#132099#0" expanded="false" />
-            <element signature="e#132383#132395#0" expanded="false" />
-            <element signature="e#132694#132715#0" expanded="false" />
-            <element signature="e#133197#133209#0" expanded="false" />
-            <element signature="e#133219#133231#0" expanded="false" />
-            <element signature="e#134212#134224#0" expanded="false" />
-            <element signature="e#134671#134685#0" expanded="false" />
-            <element signature="e#135850#135861#0" expanded="false" />
-            <element signature="e#136647#136659#0" expanded="false" />
-            <element signature="e#137457#137469#0" expanded="false" />
-            <element signature="e#138451#138465#0" expanded="false" />
-            <element signature="e#138750#138763#0" expanded="false" />
-            <element signature="e#139651#139668#0" expanded="false" />
-            <element signature="e#140281#140293#0" expanded="false" />
-            <element signature="e#143745#143757#0" expanded="false" />
-            <element signature="e#146834#146850#0" expanded="false" />
+            <element signature="e#179070#179083#0" expanded="false" />
+            <element signature="e#179147#179155#0" expanded="true" />
+            <element signature="e#179439#179452#0" expanded="false" />
+            <element signature="e#180534#180547#0" expanded="false" />
+            <element signature="e#182625#182638#0" expanded="false" />
+            <element signature="e#183565#183578#0" expanded="false" />
+            <element signature="e#190240#190253#0" expanded="false" />
+            <element signature="e#192795#192809#0" expanded="false" />
+            <element signature="e#194622#194636#0" expanded="false" />
+            <element signature="e#195535#195549#0" expanded="false" />
+            <element signature="e#197403#197417#0" expanded="false" />
             <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <element signature="e#179392#179417#0" expanded="false" />
-            <element signature="e#183488#183507#0" expanded="false" />
-            <element signature="e#185427#185477#0" expanded="false" />
-            <element signature="e#187425#187549#0" expanded="false" />
-            <element signature="e#188438#188543#0" expanded="false" />
+            <element signature="e#198421#198446#0" expanded="false" />
+            <element signature="e#204600#204650#0" expanded="false" />
+            <element signature="e#206598#206722#0" expanded="false" />
+            <element signature="e#207611#207716#0" expanded="false" />
             <element signature="docComment;method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="docComment;method#isNumeric#0;class#MotoroilDirektHarvester#0" expanded="false" />
@@ -2121,22 +2127,70 @@
             <element signature="method#getSingleResultOrNull#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#GetProductsNoCustomDescription#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#MakeFileNamePretty#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <marker date="1495479707000" expanded="false" signature="774:782" ph="&lt;~&gt;" />
-            <marker date="1495479707000" expanded="false" signature="31249:31257" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="652:66866" ph="Part 1" />
+            <marker date="1495531108000" expanded="false" signature="676:31101" ph="Motoroil &amp; Additives Links" />
+            <marker date="1495531108000" expanded="false" signature="776:784" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="31163:34422" ph="Automatikgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="31251:31259" ph="&lt;~&gt;" />
+            <marker date="1495531108000" expanded="false" signature="34481:38284" ph="Schaltgetriebe" />
+            <marker date="1495531108000" expanded="false" signature="38340:40208" ph="TrektorBaumaschinen" />
+            <marker date="1495531108000" expanded="false" signature="40269:44072" ph="LKW" />
+            <marker date="1495531108000" expanded="false" signature="44118:47630" ph="Motorrad/Motorroller" />
+            <marker date="1495531108000" expanded="false" signature="47680:48343" ph="Boot" />
+            <marker date="1495531108000" expanded="false" signature="48389:51771" ph="Hydraulik" />
+            <marker date="1495531108000" expanded="false" signature="51822:52699" ph="Kompressorenöl" />
+            <marker date="1495531108000" expanded="false" signature="52755:54067" ph="Saegenkettenöl" />
+            <marker date="1495531108000" expanded="false" signature="54120:56979" ph="Kuehlerschutz" />
+            <marker date="1495531108000" expanded="false" signature="57034:57418" ph="AdBlue" />
+            <marker date="1495531108000" expanded="false" signature="57466:57900" ph="Bremsflüssigkeiten" />
+            <marker date="1495531108000" expanded="false" signature="57961:62999" ph="Fahrzeugpflege" />
+            <marker date="1495531108000" expanded="false" signature="63057:65142" ph="Kleben &amp; Dichten" />
+            <marker date="1495531108000" expanded="false" signature="65196:66811" ph="Fette &amp; Pasten" />
+            <marker date="1495531108000" expanded="false" signature="66876:123213" ph="Part 2" />
+            <marker date="1495531108000" expanded="false" signature="66900:74723" ph="Liqui Moly Additive" />
+            <marker date="1495531108000" expanded="false" signature="74783:80981" ph="meguiars Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="81030:102389" ph="Sonax Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="102436:120143" ph="Nigrin Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="120191:123150" ph="Auto Finesse Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="123223:178986" ph="Part 3" />
+            <marker date="1495531108000" expanded="false" signature="123247:128546" ph="armor all Pflegemittel" />
+            <marker date="1495531108000" expanded="false" signature="128596:129970" ph="Bremsenreiniger" />
+            <marker date="1495531108000" expanded="false" signature="130027:133189" ph="Xenon" />
+            <marker date="1495531108000" expanded="false" signature="130051:130449" ph="D1S" />
+            <marker date="1495531108000" expanded="false" signature="130495:130744" ph="D1R" />
+            <marker date="1495531108000" expanded="false" signature="130790:131167" ph="D2S" />
+            <marker date="1495531108000" expanded="false" signature="131213:131747" ph="d2r" />
+            <marker date="1495531108000" expanded="false" signature="131793:132043" ph="D3S" />
+            <marker date="1495531108000" expanded="false" signature="132089:132339" ph="d4s" />
+            <marker date="1495531108000" expanded="false" signature="132385:132650" ph="d4r" />
+            <marker date="1495531108000" expanded="false" signature="132696:133133" ph="H7 HID Xenon" />
+            <marker date="1495531108000" expanded="false" signature="133199:146826" ph="LED" />
+            <marker date="1495531108000" expanded="false" signature="133221:134168" ph="HB4" />
+            <marker date="1495531108000" expanded="false" signature="134214:134627" ph="H6W" />
+            <marker date="1495531108000" expanded="false" signature="134673:135804" ph="LedH7" />
+            <marker date="1495531108000" expanded="false" signature="135852:136604" ph="H8" />
+            <marker date="1495531108000" expanded="false" signature="136649:137413" ph="H10" />
+            <marker date="1495531108000" expanded="false" signature="137459:138407" ph="H11" />
+            <marker date="1495531108000" expanded="false" signature="138453:138704" ph="PY21W" />
+            <marker date="1495531108000" expanded="false" signature="138752:139606" ph="p21W" />
+            <marker date="1495531108000" expanded="false" signature="139653:140233" ph="T20 W21W" />
+            <marker date="1495531108000" expanded="false" signature="140283:143699" ph="W5W" />
+            <marker date="1495531108000" expanded="false" signature="143747:146769" ph="C5W" />
+            <marker date="1495531108000" expanded="false" signature="146836:178530" ph="castrol" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

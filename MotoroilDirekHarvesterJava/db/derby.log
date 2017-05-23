@@ -1,14 +1,2 @@
-Mon May 22 20:21:34 CEST 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
-----------------------------------------------------------------
-Mon May 22 20:21:36 CEST 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015c-3164-95ca-000006f13498 
-on database directory /Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/db/db with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/db/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_121-b13
-user.dir=/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/db
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.12.4
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
+Tue May 23 11:18:48 CEST 2017 : Could not listen on port 1527 on host localhost:
+ java.net.BindException: Address already in use (Bind failed)
