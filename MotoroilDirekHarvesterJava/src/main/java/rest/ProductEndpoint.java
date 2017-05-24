@@ -22,9 +22,9 @@ public class ProductEndpoint {
     MotoroilDirektHarvester md;
 
     @Path("start")
-    public Response startHarvest() {
+    public Response startHarvest(@QueryParam("part") int part) {
         md.initializeLinks();
-        System.out.println("works");
+        System.out.println(md.getAllLinks().size());
         return Response.ok().build();
     }
 
@@ -35,37 +35,20 @@ public class ProductEndpoint {
     }
 
     @Path("export")
-    public Response exportAll() {
-        ArrayList<Products> all = md.GetProducts();
-        for (int i = 0; i < all.size(); i++) {
-            md.WriteToCSV(all.get(i));
-        }
-        return Response.ok().build();
-    }
+    public Response exportStockByBrand(@QueryParam("brand") String brand, @QueryParam("type") int type) {
+        ArrayList<Products> all = new ArrayList<Products>();
 
-    @Path("export/{brand}")
-    public Response exportByBrand(@PathParam("brand") String brand) {
-        ArrayList<Products> all = md.GetProductsByBrand(brand);
-        for (int i = 0; i < all.size(); i++) {
-            md.WriteToCSV(all.get(i));
+        if (brand!="")
+            all = md.GetProductsByBrand(brand);
+        if(all.size()<=0) {
+            all = md.GetProducts();
+            brand = "";
         }
-        return Response.ok().build();
-    }
+        else
+            brand = "_" + brand;
 
-    @Path("exportStock")
-    public Response exportStock() {
-        ArrayList<Products> all = md.GetProducts();
         for (int i = 0; i < all.size(); i++) {
-            md.WriteChangedToCSV(all.get(i));
-        }
-        return Response.ok().build();
-    }
-
-    @Path("exportStock/{brand}")
-    public Response exportStockByBrand(@PathParam("brand") String brand) {
-        ArrayList<Products> all = md.GetProductsByBrand(brand);
-        for (int i = 0; i < all.size(); i++) {
-            md.WriteChangedToCSV(all.get(i));
+            md.WriteToCSV(brand,type, all.get(i));
         }
         return Response.ok().build();
     }
@@ -73,6 +56,15 @@ public class ProductEndpoint {
     @Path("imagename")
     public Response imagename() {
         md.MakeFileNamePrettyDb();
+        return Response.ok().build();
+    }
+
+    @Path("setRelated")
+    public Response setRelated() {
+        ArrayList<Products> all = md.GetProducts();
+        for (int i = 0; i < all.size(); i++) {
+            md.CalculateRelatedProducts(all.get(i), all);
+        }
         return Response.ok().build();
     }
 }

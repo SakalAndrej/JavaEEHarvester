@@ -13,6 +13,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -23,9 +24,12 @@ public class MotoroilDirektHarvester {
     EntityManager em;
 
 
+    private LinkedList<String> allLinks = new LinkedList<>();
+
     public void initializeLinks() {
         LinkedList<Products> products = new LinkedList<>();
-/*
+
+
         //region Part 1
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
@@ -226,7 +230,6 @@ public class MotoroilDirektHarvester {
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/Meguin-megol-Motoroel-Syntech-Premium-SAE-10W-40-5l?source=2&refertype=1&referid=2780");
         MotoroilAndAdditives.add("http://www.motoroeldirekt.at/Meguin-megol-Motoroel-Syntech-Premium-SAE-10W-40-60l-Fass?source=2&refertype=1&referid=2780");
         //endregion
-        this.HarvestAllSites(MotoroilAndAdditives);
 
         //region Automatikgetriebe
         LinkedList<String> Automatikgetriebe = new LinkedList<String>();
@@ -251,7 +254,6 @@ public class MotoroilDirektHarvester {
         Automatikgetriebe.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8318&kategorieid=4013&source=2&refertype=1&referid=4013");
         Automatikgetriebe.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8506&kategorieid=4013&source=2&refertype=1&referid=4013");
         //endregion
-        this.HarvestAllSites(Automatikgetriebe);
 
         //region Schaltgetriebe
         LinkedList<String> Schaltgetriebe = new LinkedList<>();
@@ -280,7 +282,6 @@ public class MotoroilDirektHarvester {
         Schaltgetriebe.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8421&kategorieid=4014&source=2&refertype=1&referid=4014");
         Schaltgetriebe.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8733&kategorieid=4014&source=2&refertype=1&referid=4014");
         //endregion
-        this.HarvestAllSites(Schaltgetriebe);
 
         //region TrektorBaumaschinen
         LinkedList<String> TraktorBaumaschinen = new LinkedList<>();
@@ -296,7 +297,6 @@ public class MotoroilDirektHarvester {
         TraktorBaumaschinen.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8489&kategorieid=3998&source=2&refertype=1&referid=3998");
         TraktorBaumaschinen.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=11181&kategorieid=3998&source=2&refertype=1&referid=3998");
         //endregion
-        this.HarvestAllSites(TraktorBaumaschinen);
 
         //region LKW
         LinkedList<String> Lkw = new LinkedList<>();
@@ -327,8 +327,6 @@ public class MotoroilDirektHarvester {
         Lkw.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8560&kategorieid=3999&source=2&refertype=1&referid=3999");
         Lkw.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8561&kategorieid=3999&source=2&refertype=1&referid=3999");
         //endregion
-        this.HarvestAllSites(Lkw);
-
 
         //region Motorrad/Motorroller
         LinkedList<String> Motorrad = new LinkedList<>();
@@ -356,7 +354,6 @@ public class MotoroilDirektHarvester {
         Motorrad.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8298&kategorieid=4011&source=2&refertype=1&referid=4011");
         Motorrad.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8495&kategorieid=4001&source=2&refertype=1&referid=4001");
         //endregion
-        this.HarvestAllSites(Motorrad);
 
         //region Boot
         LinkedList<String> Boot = new LinkedList<>();
@@ -365,7 +362,6 @@ public class MotoroilDirektHarvester {
         Boot.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8312&kategorieid=4002&source=2&refertype=1&referid=4002");
         Boot.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8520&kategorieid=4002&source=2&refertype=1&referid=4002");
         //endregion
-        this.HarvestAllSites(Boot);
 
         //region Hydraulik
         LinkedList<String> Hydraulik = new LinkedList<>();
@@ -392,7 +388,6 @@ public class MotoroilDirektHarvester {
         Hydraulik.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8430&kategorieid=3946&source=2&refertype=1&referid=3946");
         Hydraulik.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8429&kategorieid=3946&source=2&refertype=1&referid=3946");
         //endregion
-        this.HarvestAllSites(Hydraulik);
 
         //region Kompressorenöl
         LinkedList<String> Kompressorenöl = new LinkedList<>();
@@ -402,7 +397,6 @@ public class MotoroilDirektHarvester {
         Kompressorenöl.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8466&kategorieid=4004&source=2&refertype=1&referid=4004");
         Kompressorenöl.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8468&kategorieid=4004&source=2&refertype=1&referid=4004");
         //endregion
-        this.HarvestAllSites(Kompressorenöl);
 
         //region Saegenkettenöl
         LinkedList<String> Saegeketten = new LinkedList<>();
@@ -414,7 +408,6 @@ public class MotoroilDirektHarvester {
         Saegeketten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8294&kategorieid=3994&source=2&refertype=1&referid=3994");
         Saegeketten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8292&kategorieid=3994&source=2&refertype=1&referid=3994");
         Saegeketten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8295&kategorieid=3994&source=2&refertype=1&referid=3994");        //endregion
-        this.HarvestAllSites(Saegeketten);
 
         //region Kuehlerschutz
         LinkedList<String> Kuehlerschutz = new LinkedList<>();
@@ -437,21 +430,18 @@ public class MotoroilDirektHarvester {
         Kuehlerschutz.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8403&kategorieid=3945&source=2&refertype=1&referid=3945");
         Kuehlerschutz.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8404&kategorieid=3945&source=2&refertype=1&referid=3945");
         //endregion
-        this.HarvestAllSites(Kuehlerschutz);
 
         //region AdBlue
         LinkedList<String> AdBlue = new LinkedList<>();
         AdBlue.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8098&kategorieid=3809&source=2&refertype=1&referid=3809");
         AdBlue.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=11192&kategorieid=3809&source=2&refertype=1&referid=3809");
         //endregion
-        this.HarvestAllSites(AdBlue);
 
         //region Bremsflüssigkeiten
         LinkedList<String> Bremsfluessigkeiten = new LinkedList<>();
         Bremsfluessigkeiten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8117&kategorieid=3948&source=2&refertype=1&referid=3948");
         Bremsfluessigkeiten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8119&kategorieid=3948&source=2&refertype=1&referid=3948");
         //endregion
-        this.HarvestAllSites(Bremsfluessigkeiten);
 
         //region Fahrzeugpflege
         LinkedList<String> Fahrzeugpflege = new LinkedList<>();
@@ -488,7 +478,6 @@ public class MotoroilDirektHarvester {
         Fahrzeugpflege.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8388&kategorieid=4006&source=2&refertype=1&referid=4006");
         Fahrzeugpflege.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8396&kategorieid=4006&source=2&refertype=1&referid=4006");
         //endregion
-        //this.HarvestAllSites(Fahrzeugpflege);
 
         //region Kleben & Dichten
         LinkedList<String> KlebenDichte = new LinkedList<>();
@@ -508,7 +497,6 @@ public class MotoroilDirektHarvester {
         KlebenDichte.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8375&kategorieid=4007&source=2&refertype=1&referid=4007");
 
         //endregion
-        this.HarvestAllSites(KlebenDichte);
 
         //region Fette & Pasten
         LinkedList<String> FettePasten = new LinkedList<>();
@@ -523,7 +511,23 @@ public class MotoroilDirektHarvester {
         FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8337&kategorieid=4009&source=2&refertype=1&referid=4009");
         FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8356&kategorieid=4009&source=2&refertype=1&referid=4009");
         //endregion
-        this.HarvestAllSites(FettePasten);
+/*
+        this.HarvestAllSites(MotoroilAndAdditives);
+        this.HarvestAllSites(Automatikgetriebe);
+        this.HarvestAllSites(Schaltgetriebe);
+        this.HarvestAllSites(TraktorBaumaschinen);
+        this.HarvestAllSites(Lkw);
+        this.HarvestAllSites(Motorrad);
+        this.HarvestAllSites(Boot);
+        this.HarvestAllSites(Hydraulik);
+        this.HarvestAllSites(Kompressorenöl);
+        this.HarvestAllSites(Saegeketten);
+        this.HarvestAllSites(Kuehlerschutz);
+        this.HarvestAllSites(AdBlue);
+        this.HarvestAllSites(Bremsfluessigkeiten);
+        this.HarvestAllSites(Fahrzeugpflege);
+        this.HarvestAllSites(KlebenDichte);
+        this.HarvestAllSites(FettePasten);*/
 //endregion
 
         //region Part 2
@@ -595,8 +599,6 @@ public class MotoroilDirektHarvester {
         //endregion
         LiquiMolyAdditive.addAll(KraftstoffAdditiveDiesel);
         //endregion
-        this.HarvestAllSites(LiquiMolyAdditive);
-
 
         //region meguiars Pflegemittel
         LinkedList<String> meguars = new LinkedList<>();
@@ -646,7 +648,6 @@ public class MotoroilDirektHarvester {
         meguars.add("https://www.motoroeldirekt.at/Meguiars-Spray-Schnell-Wachs-M-59-%C3%A0-473-ml?source=2&refertype=5&referid=182238");
 
         //endregion
-        this.HarvestAllSites(meguars);
 
         //region Sonax Pflegemittel
 
@@ -822,7 +823,6 @@ public class MotoroilDirektHarvester {
 
 
         //endregion
-        this.HarvestAllSites(sonax);
 
         //region Nigrin Pflegemittel
 
@@ -971,7 +971,6 @@ public class MotoroilDirektHarvester {
         nigrin.add("https://www.motoroeldirekt.at/Nigrin-Hartwachs-Colorpolitur-gruen-300ml?source=2&refertype=5&referid=182269");
 
         //endregion
-        this.HarvestAllSites(nigrin);
 
         //region Auto Finesse Pflegemittel
         LinkedList<String> autoFinesse = new LinkedList<>();
@@ -998,7 +997,15 @@ public class MotoroilDirektHarvester {
         autoFinesse.add("https://www.motoroeldirekt.at/Auto-Finesse---Iron-Out-500ml-%28Reaktiver-Flugrostentferner%29?source=2&refertype=5&referid=182290");
 
         //endregion
+
+        /*
+        this.HarvestAllSites(LiquiMolyAdditive);
+        this.HarvestAllSites(meguars);
+        this.HarvestAllSites(sonax);
+        this.HarvestAllSites(nigrin);
         this.HarvestAllSites(autoFinesse);
+        */
+
         //endregion
 
         //region Part 3
@@ -1046,7 +1053,6 @@ public class MotoroilDirektHarvester {
         armorAll.add("https://www.motoroeldirekt.at/Armor-All-Heavy-Duty-Car-Wash-1000ml?source=2&refertype=5&referid=182292");
 
         //endregion
-        this.HarvestAllSites(armorAll);
 
         //region Bremsenreiniger
         LinkedList<String> bremsenreiniger = new LinkedList<>();
@@ -1062,7 +1068,6 @@ public class MotoroilDirektHarvester {
         bremsenreiniger.add("https://www.motoroeldirekt.at/CRC-Braklen-Bremsenreiniger-20l-Kanister-%28extrem-ergiebig%29?source=2&refertype=5&referid=182294");
 
         //endregion
-        this.HarvestAllSites(bremsenreiniger);
 
         //region Xenon
 
@@ -1074,16 +1079,12 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(d1s);
-
         //region D1R
         LinkedList<String> d1r = new LinkedList<>();
 
         d1r.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D1R/Osram-D1R-XENARC-electronic-CLASSIC-66154CLC?source=2&refertype=1&referid=3123");
 
         //endregion
-
-        this.HarvestAllSites(d1r);
 
         //region D2S
         LinkedList<String> d2s = new LinkedList<>();
@@ -1092,8 +1093,6 @@ public class MotoroilDirektHarvester {
         d2s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D2S/Xenon-Brenner-D2S-10.000K?source=2&refertype=1&referid=1896");
 
         //endregion
-
-        this.HarvestAllSites(d2s);
 
         //region d2r
         LinkedList<String> d2r = new LinkedList<>();
@@ -1104,14 +1103,10 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(d2r);
-
         //region D3S
         LinkedList<String> d3s = new LinkedList<>();
         d3s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D3S/OSRAM-D3S-66340-Xenarc-electronic-Xenon-Brenner?source=2&refertype=1&referid=3706");
         //endregion
-
-        this.HarvestAllSites(d3s);
 
         //region d4s
         LinkedList<String> d4s = new LinkedList<>();
@@ -1119,8 +1114,6 @@ public class MotoroilDirektHarvester {
         d4s.add("https://www.motoroeldirekt.at/BeleuchtungLED/Xenon-Brenner/D4S/OSRAM-D4S-66440-Xenarc-ORIGINAL-Xenon-Brenner?source=2&refertype=1&referid=3708");
 
         //endregion
-
-        this.HarvestAllSites(d4s);
 
         //region d4r
         LinkedList<String> d4r = new LinkedList<>();
@@ -1130,8 +1123,6 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(d4r);
-
         //region H7 HID Xenon
         LinkedList<String> h7 = new LinkedList<>();
 
@@ -1140,8 +1131,6 @@ public class MotoroilDirektHarvester {
 
 
         //endregion
-
-        this.HarvestAllSites(h7);
 
         //endregion
 
@@ -1158,16 +1147,12 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(hb4);
-
         //region H6W
         LinkedList<String> h6w = new LinkedList<>();
         h6w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H6W/Metalsockel-H6W-Bax9s-8x-3030-SMD-Weiss-Canbus?source=2&refertype=1&referid=4119");
         h6w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H6W/Metalsockel-T4W-Ba9s-8x-3030-SMD-Weiss-Canbus?source=2&refertype=1&referid=4119");
 
         //endregion
-
-        this.HarvestAllSites(h6w);
 
         //region LedH7
         LinkedList<String> LedH7 = new LinkedList<>();
@@ -1181,8 +1166,6 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(LedH7);
-
         //region H8
         LinkedList<String> h8 = new LinkedList<>();
         h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-100-Watt-Cree-LED-860-Lumen?source=2&refertype=1&referid=4397");
@@ -1191,8 +1174,6 @@ public class MotoroilDirektHarvester {
         h8.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H8/LED-Nebelscheinwerfer-Birne-Lampe-H8-4G-Weiss?source=2&refertype=1&referid=4397");
 
         //endregion
-
-        this.HarvestAllSites(h8);
 
         //region H10
         LinkedList<String> h10 = new LinkedList<>();
@@ -1203,8 +1184,6 @@ public class MotoroilDirektHarvester {
         h10.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-H10/LED-Nebelscheinwerfer-Birne-Lampe-H10-4G-Weiss?source=2&refertype=1&referid=4395");
 
         //endregion
-
-        this.HarvestAllSites(h10);
 
         //region H11
         LinkedList<String> h11 = new LinkedList<>();
@@ -1218,14 +1197,10 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        this.HarvestAllSites(h11);
-
         //region PY21W
         LinkedList<String> py21w = new LinkedList<>();
         py21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-PY21W/LED-Lampe-BAU15S-PY21W-4G-Technik-Orange?source=2&refertype=1&referid=4401");
         //endregion
-
-        this.HarvestAllSites(py21w);
 
         //region p21W
         LinkedList<String> p21w = new LinkedList<>();
@@ -1237,8 +1212,6 @@ public class MotoroilDirektHarvester {
         p21w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-P21W/LED-Signallampe-P21W5W-Weiss?source=2&refertype=1&referid=4403");
         //endregion
 
-        this.HarvestAllSites(p21w);
-
         //region T20 W21W
         LinkedList<String> t20w21w = new LinkedList<>();
 
@@ -1248,8 +1221,6 @@ public class MotoroilDirektHarvester {
 
 
         //endregion
-
-        this.HarvestAllSites(t20w21w);
 
         //region W5W
         LinkedList<String> w5w = new LinkedList<>();
@@ -1278,8 +1249,6 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        //this.HarvestAllSites(w5w);
-
         //region C5W
         LinkedList<String> c5w = new LinkedList<>();
         c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Foliatec-SMD-LED-Cab-LightSoffitte%2C-ultraweiss%2C-mit-Widerstand?source=2&refertype=1&referid=3128");
@@ -1300,8 +1269,6 @@ public class MotoroilDirektHarvester {
         c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-36mm-6x-5630-SMD-Blau?source=2&refertype=1&referid=3128");
         c5w.add("https://www.motoroeldirekt.at/BeleuchtungLED/LIMOX-LED/LED-C5W/Soffitte-C5W-36mm-6x-5630-SMD-Gelb?source=2&refertype=1&referid=3128");
         //endregion
-
-        this.HarvestAllSites(c5w);
 
         //endregion
 
@@ -1500,6 +1467,28 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        /*
+        this.HarvestAllSites(t20w21w);
+        this.HarvestAllSites(p21w);
+        this.HarvestAllSites(py21w);
+        this.HarvestAllSites(h11);
+        this.HarvestAllSites(h10);
+        this.HarvestAllSites(h8);
+        this.HarvestAllSites(LedH7);
+        this.HarvestAllSites(hb4);
+        this.HarvestAllSites(h6w);
+        this.HarvestAllSites(c5w);
+        this.HarvestAllSites(w5w);
+        this.HarvestAllSites(d1s);
+        this.HarvestAllSites(d1r);
+        this.HarvestAllSites(d2s);
+        this.HarvestAllSites(h7);
+        this.HarvestAllSites(d4r);
+        this.HarvestAllSites(d4s);
+        this.HarvestAllSites(d3s);
+        this.HarvestAllSites(d2r);
+        this.HarvestAllSites(armorAll);
+        this.HarvestAllSites(bremsenreiniger);
         this.HarvestAllSites(castrol0w20);
         this.HarvestAllSites(castrol0w30);
         this.HarvestAllSites(castrol0w40);
@@ -1510,19 +1499,17 @@ public class MotoroilDirektHarvester {
         this.HarvestAllSites(castrol15w40);
         this.HarvestAllSites(castrol20w50);
         this.HarvestAllSites(castrol10w60);
-
-        //endregion
 */
+        //endregion
+
         //region Part 4
 
             //region Eurolub Motoroil
 
-                //region 0W16
+        //region 0W16
                 LinkedList<String> eurolub0w16 = new LinkedList<String>();
                 eurolub0w16.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-16/Eurolub-SUPER-ECO-SAE-0W-16-Motoroel-1l?source=2&refertype=1&referid=4114");
                 //endregion
-
-                this.HarvestAllSites(eurolub0w16);
 
                 //region 0W20
                 LinkedList<String> eurolub0w20 = new LinkedList<>();
@@ -1532,8 +1519,6 @@ public class MotoroilDirektHarvester {
                 eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-20l-Kanister?source=2&refertype=1&referid=2140");
                 eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2140");
                 //endregion
-
-                this.HarvestAllSites(eurolub0w20);
 
                 //region 0W30
                 LinkedList<String> eurolub0w30 = new LinkedList<>();
@@ -1552,8 +1537,6 @@ public class MotoroilDirektHarvester {
 
                 //endregion
 
-                this.HarvestAllSites(eurolub0w30);
-
                 //region 5W20
                 LinkedList<String> eurolub5w20 = new LinkedList<>();
                 eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-1l?source=2&refertype=1&referid=2683");
@@ -1562,8 +1545,6 @@ public class MotoroilDirektHarvester {
                 eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2683");
 
                 //endregion
-
-                this.HarvestAllSites(eurolub5w20);
 
                 //region 5W30
                 LinkedList<String> eurolub5w30 = new LinkedList<>();
@@ -1606,8 +1587,6 @@ public class MotoroilDirektHarvester {
 
                 //endregion
 
-                this.HarvestAllSites(eurolub5w30);
-
                 //region 5W40
                 LinkedList<String> eurolub5w40 = new LinkedList<>();
 
@@ -1628,8 +1607,6 @@ public class MotoroilDirektHarvester {
 
                 //endregion
 
-                this.HarvestAllSites(eurolub5w40);
-
                 //region 10W40
                 LinkedList<String> eurolub10w40 = new LinkedList<>();
 
@@ -1646,8 +1623,6 @@ public class MotoroilDirektHarvester {
 
                 //endregion
 
-                this.HarvestAllSites(eurolub10w40);
-
                 //region 10W60
                 LinkedList<String> eurolub10w60 = new LinkedList<>();
 
@@ -1658,8 +1633,6 @@ public class MotoroilDirektHarvester {
 
 
                 //endregion
-
-                this.HarvestAllSites(eurolub10w60);
 
                 //region 15w40
                 LinkedList<String> eurolub15w40 = new LinkedList<>();
@@ -1674,8 +1647,6 @@ public class MotoroilDirektHarvester {
                 eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2145");
                 //endregion
 
-                this.HarvestAllSites(eurolub15w40);
-
                 //region 20W50
                 LinkedList<String> eurolub20w50 = new LinkedList<>();
 
@@ -1683,13 +1654,90 @@ public class MotoroilDirektHarvester {
                 eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-60l-Fass?source=2&refertype=1&referid=2393");
 
                 //endregion
-
-                this.HarvestAllSites(eurolub20w50);
-
+/*
+        this.HarvestAllSites(eurolub0w16);
+        this.HarvestAllSites(eurolub0w20);
+        this.HarvestAllSites(eurolub0w30);
+        this.HarvestAllSites(eurolub5w20);
+        this.HarvestAllSites(eurolub5w30);
+        this.HarvestAllSites(eurolub5w40);
+        this.HarvestAllSites(eurolub10w40);
+        this.HarvestAllSites(eurolub10w60);
+        this.HarvestAllSites(eurolub15w40);
+        this.HarvestAllSites(eurolub20w50);
+*/
             //endregion
 
 
+
+
         //endregion
+
+        allLinks.addAll(c5w);
+        this.HarvestAllSites(c5w);
+        allLinks.addAll(AdBlue);
+        allLinks.addAll(armorAll);
+        allLinks.addAll(autoFinesse);
+        allLinks.addAll(Automatikgetriebe);
+        allLinks.addAll(Boot);
+        allLinks.addAll(bremsenreiniger);
+        allLinks.addAll(Bremsfluessigkeiten);
+        allLinks.addAll(castrol0w20);
+        allLinks.addAll(castrol0w30);
+        allLinks.addAll(castrol0w40);
+        allLinks.addAll(castrol5w20);
+        allLinks.addAll(castrol5w30);
+        allLinks.addAll(castrol5w40);
+        allLinks.addAll(castrol10w40);
+        allLinks.addAll(castrol10w60);
+        allLinks.addAll(castrol15w40);
+        allLinks.addAll(castrol20w50);
+        allLinks.addAll(d1r);
+        allLinks.addAll(d1s);
+        allLinks.addAll(d2r);
+        allLinks.addAll(d2s);
+        allLinks.addAll(d3s);
+        allLinks.addAll(d4r);
+        allLinks.addAll(d4s);
+        allLinks.addAll(eurolub0w16);
+        allLinks.addAll(eurolub0w20);
+        allLinks.addAll(eurolub0w30);
+        allLinks.addAll(eurolub5w20);
+        allLinks.addAll(eurolub5w30);
+        allLinks.addAll(eurolub5w40);
+        allLinks.addAll(eurolub10w40);
+        allLinks.addAll(eurolub15w40);
+        allLinks.addAll(eurolub20w50);
+        allLinks.addAll(Fahrzeugpflege);
+        allLinks.addAll(FettePasten);
+        allLinks.addAll(h6w);
+        allLinks.addAll(h7);
+        allLinks.addAll(h8);
+        allLinks.addAll(h10);
+        allLinks.addAll(h11);
+        allLinks.addAll(hb4);
+        allLinks.addAll(Hydraulik);
+        allLinks.addAll(KlebenDichte);
+        allLinks.addAll(Kompressorenöl);
+        allLinks.addAll(KraftstoffAdditiveBenzin);
+        allLinks.addAll(KraftstoffAdditiveDiesel);
+        allLinks.addAll(Kuehlerschutz);
+        allLinks.addAll(LedH7);
+        allLinks.addAll(LiquiMolyAdditive);
+        allLinks.addAll(Lkw);
+        allLinks.addAll(meguars);
+        allLinks.addAll(MotoroilAndAdditives);
+        allLinks.addAll(Motorrad);
+        allLinks.addAll(nigrin);
+        allLinks.addAll(OilAdditive);
+        allLinks.addAll(p21w);
+        allLinks.addAll(py21w);
+        allLinks.addAll(Saegeketten);
+        allLinks.addAll(Schaltgetriebe);
+        allLinks.addAll(sonax);
+        allLinks.addAll(t20w21w);
+        allLinks.addAll(TraktorBaumaschinen);
+        allLinks.addAll(w5w);
 
         System.out.println("Complete End");
     }
@@ -1702,6 +1750,10 @@ public class MotoroilDirektHarvester {
      * @throws InterruptedException
      */
     private Products HarvestInnerProduct(String justLink) throws InterruptedException {
+
+        Date date1 = new Date();
+
+        long l1 = date1.getTime();
 
         //region Build Connection
         String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36";
@@ -1978,6 +2030,7 @@ public class MotoroilDirektHarvester {
 
         if (stock.contains("0 Stk. verfügbar in Filiale Wr Neustadt") && stock.contains("0 Stk. verfügbar in Filiale Schwechat")) {
             p.setInStock(0);
+            p.setDeliveryTime("14 Werktage");
         } else {
             //Go through the string an get the stock out
             String helper = stock.substring(stock.indexOf("Schwechat") + 10, stock.length());
@@ -1987,10 +2040,44 @@ public class MotoroilDirektHarvester {
                 p.setInStock(100);
             else
                 p.setInStock(Integer.parseInt(helper));
+
+            p.setDeliveryTime("1-2 Werktage");
         }
         //endregion
 
+        //CalculateRelatedProducts(p);
+        Date date2 = new Date();
+        System.out.println( "End: " + date2.getTime());
+        long l2 = date2.getTime();
+
+        long difference = l2 - l1;
+
+        System.out.println(difference);
+
         return p;
+    }
+
+    public void CalculateRelatedProducts(Products p, ArrayList<Products> plist) {
+
+
+        if (p.getRelated() == null) {
+            p.setRelated("");
+            if (p.getRelated().length()<=100) {
+                ArrayList<Products> all = plist;
+
+                for (int i = 0; i < 15; i++) {
+                    Random randomGenerator = new Random();
+                    int randomInt = randomGenerator.nextInt(all.size());
+
+                    if (p.getRelated().length()<=0)
+                        p.setRelated(all.get(randomInt).getSku());
+                    else
+                        p.setRelated(all.get(randomInt).getSku() + "," + p.getRelated());
+
+                    this.SaveToDatabase(p);
+                }
+            }
+        }
     }
 
     /**
@@ -2072,10 +2159,10 @@ public class MotoroilDirektHarvester {
                 allProducts.add(p);
                 int mode = 0;
                 if((mode = SaveToDatabase(p))==1) {
-                    WriteToCSV(p);
+                    WriteToCSV("",1,p);
                 }
                 else if (mode == 2) {
-                    WriteChangedToCSV(p);
+                    WriteToCSV("",3,p);
                 }
 
                 System.out.print("Waitin 4 Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + "\n");
@@ -2097,40 +2184,40 @@ public class MotoroilDirektHarvester {
 
     /**
      * Writing all new Products to the new.csv file
-     * @param c
      */
-    public void WriteToCSV(Products c) {
+    public void WriteToCSV(String brandName, int type, Products c) {
 
         FileWriter writer = null;
-        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;short_description;description;name;qty;price;image;small_image;thumbnail;weight
-        try(FileWriter fw = new FileWriter("/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/New.csv", true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw))
-        {
-            Products p = (Products) c;
-            out.print(p.toStringShort());
-            //more code
-        } catch (IOException e) {
-            //exception handling left as an exercise for the reader
+        String filename;
+
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer
+        if (type==1) {
+            filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/FullExport" + brandName + ".csv";
         }
-    }
+        else if (type==2) {
+            filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/WithoutPicturesExport" + brandName + ".csv";
+        }
+        else if (type==4) {
+            filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/RelatedUpdate" + brandName + ".csv";
+        }
+        else {
+            filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
+        }
 
-    /**
-     * We are just printing the products which changed (for update/import purposes to magento)
-     * @param c
-     */
-    public void WriteChangedToCSV(Products c) {
-
-        FileWriter writer = null;
-       //sku;qty;price
-        try(FileWriter fw = new FileWriter("/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/Changed.csv", true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw))
-        {
+        try (FileWriter fw = new FileWriter(filename, true);
+             BufferedWriter bw = new BufferedWriter(fw);
+             PrintWriter out = new PrintWriter(bw)) {
             Products p = (Products) c;
-            out.print("^"+c.getSku()+"^;^"+c.getInStock()+"^;^"+c.getPrice()+"^\n");
+            if (type==1)
+                out.print(p.toStringFullExport());
+            else if(type==2)
+                out.print(p.toStringWithoutPicturesImport());
+            else if(type==4)
+                out.print(p.toStringRelatedExport());
+            else
+                out.print(p.toStringStockExport());
+
         } catch (IOException e) {
-            System.out.println("WriterChangedToCSV->IOException");
         }
     }
 
@@ -2160,6 +2247,7 @@ public class MotoroilDirektHarvester {
                     //p.setMetaTitle(product.getMetaTitle());
                     p.setTitle(product.getTitle());
                     p.setBrand(product.getBrand());
+                    p.setRelated(product.getRelated());
                     return 2;
                 }
                 else {
@@ -2168,6 +2256,7 @@ public class MotoroilDirektHarvester {
                     //p.setMetaTitle(product.getMetaTitle());
                     p.setTitle(product.getTitle());
                     p.setBrand(product.getBrand());
+                    p.setRelated(product.getRelated());
                     return 3;
                 }
             }
@@ -2230,5 +2319,9 @@ public class MotoroilDirektHarvester {
             all.get(i).setSmallImage(filename);
             all.get(i).setBaseImage(filename);
         }
+    }
+
+    public LinkedList<String> getAllLinks() {
+        return allLinks;
     }
 }

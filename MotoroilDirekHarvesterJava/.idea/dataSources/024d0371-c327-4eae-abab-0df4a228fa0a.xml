@@ -70,24 +70,32 @@
       <Position>11</Position>
       <DataType>VARCHAR(255)|12</DataType>
     </column>
-    <key id="26" parent="13" name="SQL170403211139640">
+    <column id="26" parent="13" name="RELATED">
+      <Position>12</Position>
+      <DataType>CLOB(10000)|2005</DataType>
+    </column>
+    <column id="27" parent="13" name="DELIVERYTIME">
+      <Position>13</Position>
+      <DataType>VARCHAR(100)|12</DataType>
+    </column>
+    <key id="28" parent="13" name="SQL170403211139640">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SKU</ColNames>
       <Primary>1</Primary>
     </key>
-    <argument id="27" parent="14">
+    <argument id="29" parent="14">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>VARCHAR(100)|12</DataType>
     </argument>
-    <argument id="28" parent="14" name="STR">
+    <argument id="30" parent="14" name="STR">
       <Position>1</Position>
       <DataType>VARCHAR(100)|12</DataType>
     </argument>
-    <argument id="29" parent="14" name="OLD">
+    <argument id="31" parent="14" name="OLD">
       <Position>2</Position>
       <DataType>CHAR(2)|1</DataType>
     </argument>
-    <argument id="30" parent="14" name="NEW">
+    <argument id="32" parent="14" name="NEW">
       <Position>3</Position>
       <DataType>CHAR(2)|1</DataType>
     </argument>

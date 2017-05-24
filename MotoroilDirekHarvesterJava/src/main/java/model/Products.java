@@ -1,5 +1,6 @@
 package model;
 
+import javax.inject.Named;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -10,7 +11,6 @@ import javax.validation.constraints.NotNull;
         @NamedQuery(name = "Products.UpdatePriceStock", query = "update Products SET price = :price, inStock = :inStock where sku = :sku"),
         @NamedQuery(name = "Products.GetMannolProducts", query = "select p from Products p where UPPER(p.title) LIKE '%MANNOL%' and p.customDescription = false"),
         @NamedQuery(name = "Products.GetProductsByBrand", query = "select p from Products p where UPPER(p.brand) LIKE :brand")
-
 }  )
 
 @Table(name="Products")
@@ -46,6 +46,12 @@ public class Products
     //@Column(name = "TITLE")
     private String title;
 
+    @Column(/*name = "DESCRIPTION", */length = 10000)
+    @Lob
+    private String related;
+
+    private String deliveryTime;
+
     //Verfügbarkeit
     //@Column(name = "INSTOCK")
     private int inStock;
@@ -74,13 +80,47 @@ public class Products
     public String toString() {
         return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ description + "^"+ ";" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand + "^\n";
     }
-    public String toStringShort() {
+    public String toStringWithoutPicturesImport() {
 
-        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;weight;manufacturer;description
         return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"/*+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^"*/ + container + "^;^" + brand +"^" + ";^"+description+"^\n";
     }
+    public String toStringFullExport() {
+
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description
+        return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+"^\n";
+    }
+
+    public String toStringRelatedExport() {
+        //sku;re_skus
+        return "^"+getSku()+"^;^"+getRelated()+"^\n";
+    }
+
+    public String toStringStockExport() {
+        //sku;qty;price
+        return "^"+getSku()+"^;^"+getInStock()+"^;^"+getPrice()+"^\n";
+    }
+
+
 
 //region Getter & Setter
+
+
+    public String getRelated() {
+        return related;
+    }
+
+    public void setRelated(String related) {
+        this.related = related;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
 
     public boolean isCustomDescription() {
         return customDescription;
@@ -173,6 +213,9 @@ public class Products
     public void setMetaTitle(String _metaTitle) {
         this.metaTitle = _metaTitle;
     }
+
+
+
 
     //endregion
 }
