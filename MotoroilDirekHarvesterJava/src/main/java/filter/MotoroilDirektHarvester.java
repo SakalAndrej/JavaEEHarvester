@@ -23,14 +23,29 @@ public class MotoroilDirektHarvester {
     @PersistenceContext(unitName = "myPU")
     EntityManager em;
 
+    public int getAvgDurationPerProduct() {
+        return (int) (duration/allProducts.size());
+    }
+
+    public void setAllLinks(LinkedList<String> allLinks) {
+        this.allLinks = allLinks;
+    }
+
+    private int avgDurationPerProduct;
+
+    private int eat;
 
     private LinkedList<String> allLinks = new LinkedList<>();
+
+    private long duration;
+
+    private LinkedList<Products> allProducts = new LinkedList<>();
 
     public void initializeLinks() {
         LinkedList<Products> products = new LinkedList<>();
 
 
-        //region Part 1
+        //region Part End:
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
 
@@ -1674,7 +1689,6 @@ public class MotoroilDirektHarvester {
         //endregion
 
         allLinks.addAll(c5w);
-        this.HarvestAllSites(c5w);
         allLinks.addAll(AdBlue);
         allLinks.addAll(armorAll);
         allLinks.addAll(autoFinesse);
@@ -2024,6 +2038,12 @@ public class MotoroilDirektHarvester {
         else
             p.setDescription("<h1>"+p.getMetaTitle()+"</h1> <br>" + p.getDescription());
 
+        if (p.getContainer()>=60) {
+            p.setOrderProcessingTime(3);
+        }
+        else {
+            p.setOrderProcessingTime(2);
+        }
 
         //region Save the stock status ------------------------------------------------------------------
         String stock = title.select("div.artikelDetailInfos").select("div#filialBestaende").text();
@@ -2040,12 +2060,22 @@ public class MotoroilDirektHarvester {
                 p.setInStock(100);
             else
                 p.setInStock(Integer.parseInt(helper));
-
+        }
+        if(p.getInStock()<=0) {
+            p.setDeliveryTime("14 Werktage");
+        }
+        else {
             p.setDeliveryTime("1-2 Werktage");
         }
         //endregion
 
-        //CalculateRelatedProducts(p);
+        /*new Thread(new Runnable() {
+            @Override
+            public void run() {
+                CalculateRelatedProducts(p, GetProducts());
+            }
+        });*/
+
         Date date2 = new Date();
         System.out.println( "End: " + date2.getTime());
         long l2 = date2.getTime();
@@ -2053,6 +2083,7 @@ public class MotoroilDirektHarvester {
         long difference = l2 - l1;
 
         System.out.println(difference);
+        duration += difference;
 
         return p;
     }
@@ -2142,7 +2173,6 @@ public class MotoroilDirektHarvester {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         System.out.println("Start: " + sdf.format(cal.getTime()));
 
-        LinkedList<Products> allProducts = new LinkedList<>();
         HashMap<String, Products> write = new HashMap<String, Products>();
 
         for (int i = 0; i < allSites.size(); i++) {
@@ -2165,7 +2195,7 @@ public class MotoroilDirektHarvester {
                     WriteToCSV("",3,p);
                 }
 
-                System.out.print("Waitin 4 Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + "\n");
+                System.out.print("Waitin 4 Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + " EAT: " + ((getEat(allLinks.size())/100.0)/60.0) + " AVG DUR: " + getAvgDurationPerProduct() + "\n");
                 write.clear();
             }
             try {
@@ -2178,7 +2208,7 @@ public class MotoroilDirektHarvester {
         cal = Calendar.getInstance();
         System.out.println("End-Time: " + sdf.format(cal.getTime()));
         System.out.println("Anzahl der Produkte: " + allProducts.size() + "\n");
-        //WriteToCSV(allProducts);
+
         return allProducts;
     }
 
@@ -2242,9 +2272,11 @@ public class MotoroilDirektHarvester {
                 if (p.getPrice()!=product.getPrice() || p.getInStock() != product.getInStock()) {
                     p.setPrice(product.getPrice());
                     p.setInStock(product.getInStock());
+                    p.setDeliveryTime(p.getDeliveryTime());
                     //p.setBaseImage(product.getBaseImage());
                     //p.setSmallImage(product.getBaseImage());
                     //p.setMetaTitle(product.getMetaTitle());
+                    p.setOrderProcessingTime(product.getOrderProcessingTime());
                     p.setTitle(product.getTitle());
                     p.setBrand(product.getBrand());
                     p.setRelated(product.getRelated());
@@ -2254,6 +2286,7 @@ public class MotoroilDirektHarvester {
                     //p.setBaseImage(product.getBaseImage());
                     //p.setSmallImage(product.getBaseImage());
                     //p.setMetaTitle(product.getMetaTitle());
+                    p.setOrderProcessingTime(product.getOrderProcessingTime());
                     p.setTitle(product.getTitle());
                     p.setBrand(product.getBrand());
                     p.setRelated(product.getRelated());
@@ -2323,5 +2356,9 @@ public class MotoroilDirektHarvester {
 
     public LinkedList<String> getAllLinks() {
         return allLinks;
+    }
+
+    public int getEat(int cnt) {
+        return getAvgDurationPerProduct() * (cnt-allProducts.size());
     }
 }

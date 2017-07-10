@@ -12,9 +12,6 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-/**
- * Created by andrejsakal on 27.03.17.
- */
 @Path("product")
 public class ProductEndpoint {
 
@@ -24,7 +21,36 @@ public class ProductEndpoint {
     @Path("start")
     public Response startHarvest(@QueryParam("part") int part) {
         md.initializeLinks();
-        System.out.println(md.getAllLinks().size());
+        LinkedList<String> all = md.getAllLinks();
+        LinkedList<String> harvest = new LinkedList<>();
+
+        if (part==1) {
+            for (int i = 0; i <= 350; i++) {
+                harvest.add(all.get(i));
+            }
+        }
+        if (part==2) {
+            for (int i = 350; i <= 700; i++) {
+                harvest.add(all.get(i));
+            }
+        }
+        if (part==3) {
+            for (int i = 700; i <= 1050; i++) {
+                harvest.add(all.get(i));
+            }
+        }
+        if (part==4) {
+            for (int i = 1050; i <= all.size()-1; i++) {
+                harvest.add(all.get(i));
+            }
+        }
+        if (part==10) {
+            for (int i = 130; i <= 180-1; i++) {
+                harvest.add(all.get(i));
+            }
+        }
+        md.setAllLinks(harvest);
+        md.HarvestAllSites(harvest);
         return Response.ok().build();
     }
 

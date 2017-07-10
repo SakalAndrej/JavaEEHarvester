@@ -76,19 +76,21 @@ public class Products
     //@Column(name ="CUSTOMDESCRIPTION")
     private boolean customDescription;
 
+    private int orderProcessingTime;
+
     @Override
     public String toString() {
         return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" +"^"+ "-"+"^" + ";" + "^"+ description + "^"+ ";" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand + "^\n";
     }
     public String toStringWithoutPicturesImport() {
 
-        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;weight;manufacturer;description
-        return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"/*+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^"*/ + container + "^;^" + brand +"^" + ";^"+description+"^\n";
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;weight;manufacturer;description;cjm_ships_in
+        return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"/*+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^"*/ + container + "^;^" + brand +"^" + ";^"+description+";^"+orderProcessingTime+"^\n";
     }
     public String toStringFullExport() {
 
-        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description
-        return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+"^\n";
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description;cjm_ships_in
+        return  "^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+";^"+orderProcessingTime+"^\n";
     }
 
     public String toStringRelatedExport() {
@@ -105,6 +107,14 @@ public class Products
 
 //region Getter & Setter
 
+
+    public int getOrderProcessingTime() {
+        return orderProcessingTime;
+    }
+
+    public void setOrderProcessingTime(int orderProcessingTime) {
+        this.orderProcessingTime = orderProcessingTime;
+    }
 
     public String getRelated() {
         return related;

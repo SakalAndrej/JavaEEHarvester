@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="jdbc:derby://localhost/db">
-  <database-model serializer="dbm" rdbms="DERBY" format-version="4.0">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="4.2">
     <root id="1"/>
     <schema id="2" parent="1" name="APP">
       <Current>1</Current>
@@ -16,86 +16,168 @@
     <schema id="10" parent="1" name="SYSIBM"/>
     <schema id="11" parent="1" name="SYSPROC"/>
     <schema id="12" parent="1" name="SYSSTAT"/>
-    <table id="13" parent="2" name="PRODUCTS"/>
-    <routine id="14" parent="2" name="REPLACE">
+    <table id="13" parent="2" name="AUTOS"/>
+    <table id="14" parent="2" name="PRODUCTS"/>
+    <routine id="15" parent="2" name="REPLACE">
       <Comment>utils/StringUtils.replace</Comment>
       <RoutineKind>function</RoutineKind>
     </routine>
-    <column id="15" parent="13" name="SKU">
+    <column id="16" parent="13" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="17" parent="13" name="BRAND">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="18" parent="13" name="CARTYPE">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="19" parent="13" name="COLOR">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="20" parent="13" name="DRIVETYPE">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="21" parent="13" name="FIRSTREGISTRATION">
+      <Position>6</Position>
+      <DataType>TIMESTAMP(29,9)|93</DataType>
+    </column>
+    <column id="22" parent="13" name="FUELTYPE">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="23" parent="13" name="KM">
+      <Position>8</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <column id="24" parent="13" name="LINKTOADD">
+      <Position>9</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="25" parent="13" name="LINKTOPICTURE">
+      <Position>10</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="26" parent="13" name="LOCATION">
+      <Position>11</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="27" parent="13" name="MODEL">
+      <Position>12</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="28" parent="13" name="PRICE">
+      <Position>13</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <column id="29" parent="13" name="PS">
+      <Position>14</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <column id="30" parent="13" name="TITLE">
+      <Position>15</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="31" parent="13" name="TRANSMISSION">
+      <Position>16</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="32" parent="13" name="TYPE_OF_SELLER">
+      <Position>17</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <key id="33" parent="13" name="SQL170614154131430">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="14" name="SKU">
       <Position>1</Position>
       <DataType>VARCHAR(255)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="13" name="BASEIMAGE">
+    <column id="35" parent="14" name="BASEIMAGE">
       <Position>2</Position>
       <DataType>VARCHAR(255)|12</DataType>
     </column>
-    <column id="17" parent="13" name="BRAND">
+    <column id="36" parent="14" name="BRAND">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12</DataType>
     </column>
-    <column id="18" parent="13" name="CONTAINER">
+    <column id="37" parent="14" name="CONTAINER">
       <Position>4</Position>
       <DataType>DOUBLE(52)|8</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="13" name="CUSTOMDESCRIPTION">
+    <column id="38" parent="14" name="CUSTOMDESCRIPTION">
       <Position>5</Position>
       <DataType>SMALLINT(5)|5</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="13" name="DESCRIPTION">
+    <column id="39" parent="14" name="DESCRIPTION">
       <Position>6</Position>
       <DataType>CLOB(100000)|2005</DataType>
     </column>
-    <column id="21" parent="13" name="INSTOCK">
+    <column id="40" parent="14" name="INSTOCK">
       <Position>7</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="13" name="METATITLE">
+    <column id="41" parent="14" name="METATITLE">
       <Position>8</Position>
       <DataType>VARCHAR(255)|12</DataType>
     </column>
-    <column id="23" parent="13" name="PRICE">
+    <column id="42" parent="14" name="PRICE">
       <Position>9</Position>
       <DataType>DOUBLE(52)|8</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="13" name="SMALLIMAGE">
+    <column id="43" parent="14" name="SMALLIMAGE">
       <Position>10</Position>
       <DataType>VARCHAR(255)|12</DataType>
     </column>
-    <column id="25" parent="13" name="TITLE">
+    <column id="44" parent="14" name="TITLE">
       <Position>11</Position>
       <DataType>VARCHAR(255)|12</DataType>
     </column>
-    <column id="26" parent="13" name="RELATED">
+    <column id="45" parent="14" name="RELATED">
       <Position>12</Position>
       <DataType>CLOB(10000)|2005</DataType>
     </column>
-    <column id="27" parent="13" name="DELIVERYTIME">
+    <column id="46" parent="14" name="DELIVERYTIME">
       <Position>13</Position>
       <DataType>VARCHAR(100)|12</DataType>
     </column>
-    <key id="28" parent="13" name="SQL170403211139640">
+    <column id="47" parent="14" name="ORDERPROCESSINGTIME">
+      <Position>14</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <DefaultExpression>2</DefaultExpression>
+    </column>
+    <key id="48" parent="14" name="SQL170403211139640">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SKU</ColNames>
       <Primary>1</Primary>
     </key>
-    <argument id="29" parent="14">
+    <argument id="49" parent="15">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>VARCHAR(100)|12</DataType>
     </argument>
-    <argument id="30" parent="14" name="STR">
+    <argument id="50" parent="15" name="STR">
       <Position>1</Position>
       <DataType>VARCHAR(100)|12</DataType>
     </argument>
-    <argument id="31" parent="14" name="OLD">
+    <argument id="51" parent="15" name="OLD">
       <Position>2</Position>
       <DataType>CHAR(2)|1</DataType>
     </argument>
-    <argument id="32" parent="14" name="NEW">
+    <argument id="52" parent="15" name="NEW">
       <Position>3</Position>
       <DataType>CHAR(2)|1</DataType>
     </argument>

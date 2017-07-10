@@ -9,7 +9,6 @@ import java.text.ParseException;
 @Singleton
 public class InitBean {
 
-
     public void init() throws IOException, ParseException {
     }
 
