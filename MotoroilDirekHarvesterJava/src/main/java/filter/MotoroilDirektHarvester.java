@@ -2088,9 +2088,12 @@ public class MotoroilDirektHarvester {
         return p;
     }
 
+    /**
+     * Calculate Related Products
+     * @param p
+     * @param plist
+     */
     public void CalculateRelatedProducts(Products p, ArrayList<Products> plist) {
-
-
         if (p.getRelated() == null) {
             p.setRelated("");
             if (p.getRelated().length()<=100) {
