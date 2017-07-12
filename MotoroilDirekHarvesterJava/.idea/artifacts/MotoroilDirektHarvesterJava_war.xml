@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="motoroil.war">
       <element id="artifact" artifact-name="MotoroilDirektHarvesterJava:war exploded" />
+      <element id="jpa-descriptors" facet="MotoroilDirektHarvesterJava/jpa/JPA" />
     </root>
   </artifact>
 </component>
