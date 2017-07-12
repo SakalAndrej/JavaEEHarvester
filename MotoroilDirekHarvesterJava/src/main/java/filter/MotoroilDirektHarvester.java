@@ -2223,11 +2223,6 @@ public class MotoroilDirektHarvester {
      */
     public void WriteToCSV(String brandName, int type, Products c) {
 
-        File currentDirFile = new File(".");
-        String helper = currentDirFile.getAbsolutePath();
-        System.out.printf(helper);
-        String currentDir = helper.substring(helper.lastIndexOf("\\"), helper.length());
-        //filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
         FileWriter writer = null;
         String filename;
 
@@ -2243,7 +2238,7 @@ public class MotoroilDirektHarvester {
         }
         else {
             filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
-            filename = currentDir + "StockUpdateExport" + brandName + ".csv";
+            //filename = currentDir + "StockUpdateExport" + brandName + ".csv";
 
         }
 
@@ -2268,64 +2263,95 @@ public class MotoroilDirektHarvester {
         }
     }
 
-    public void ExportDatabase(LinkedList<Products> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
+    public void ExportDatabase(ArrayList<Products> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
 
         FileWriter writer = null;
         String filename;
         //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer
-            filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/CustomExport.csv";
+        filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/CustomExport.csv";
         String header = "";
         String actProd = "";
 
+        File currentDirFile = new File("CustomExport.csv");
+        String helper = currentDirFile.getAbsolutePath();
+        System.out.printf(helper);
+        String currentDir = helper.replace(".\\","");
+        //filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
+        System.out.printf(currentDir + " " +  helper);
+        filename = currentDir;
+        System.out.printf(filename);
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description;cjm_ships_in
-          //String.format("^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+";^"+orderprocessingtime+"^\n");
+        //String.format("^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+";^"+orderprocessingtime+"^\n");
 
 
         for (int i = 0; i < p.size(); i++) {
             if (sku) {
                 header += "sku";
-                actProd += "^"+p.get(i).getSku()+"^";
+                actProd += "^" + p.get(i).getSku() + "^";
             }
-            else if (baseImage) {
+            if (baseImage) {
                 header += ";image";
                 header += ";thumbnail";
                 header += ";small_image";
-                actProd += ";^"+p.get(i).getBaseImage()+"^";
-                actProd += ";^"+p.get(i).getBaseImage()+"^";
-                actProd += ";^"+p.get(i).getBaseImage()+"^";
+                actProd += ";^" + p.get(i).getBaseImage() + "^";
+                actProd += ";^" + p.get(i).getBaseImage() + "^";
+                actProd += ";^" + p.get(i).getBaseImage() + "^";
             }
-            else if (brand) {
+            if (brand) {
                 header += ";manufacturer";
-                actProd += ";^"+p.get(i).getBrand()+"^";
+                actProd += ";^" + p.get(i).getBrand() + "^";
             }
-            else if (container) {
+            if (container) {
                 header += ";weight";
-                actProd += ";^"+p.get(i).getContainer()+"^";
+                actProd += ";^" + p.get(i).getContainer() + "^";
             }
-            else if (description) {
+            if (description) {
                 header += ";description";
-                actProd += ";^"+p.get(i).getDescription()+"^";
+                actProd += ";^" + p.get(i).getDescription() + "^";
             }
-            else if (inStock) {
+            if (inStock) {
                 header += ";qty";
-                actProd += ";^"+p.get(i).getInStock()+"^";
+                actProd += ";^" + p.get(i).getInStock() + "^";
             }
-            else if (metaTitle) {
-
+            if (metaTitle) {
+                header += ";name";
+                actProd += ";^" + p.get(i).getMetaTitle() + "^";
             }
-            else if (price) {
-
+            if (price) {
+                header += ";price";
+                actProd += ";^" + p.get(i).getPrice() + "^";
             }
-            else if (related) {
-
+            if (related && p.get(i).getRelated() != null) {
+                actProd += ";^" + p.get(i).getRelated() + "^";
+                header += ";related";
             }
-            else if (deliveryTime) {
-
+            if (deliveryTime) {
+                actProd += ";^" + p.get(i).getDeliveryTime() + "^";
+                header += ";cjm_stockmessage";
             }
-            else if (orderprocessingtime) {
-
+            if (orderprocessingtime) {
+                actProd += ";^" + p.get(i).getOrderProcessingTime() + "^";
+                header += ";cjm_ships_in";
             }
 
+            try {
+                if (!Files.exists(Paths.get(filename))) {
+                }
+                try (FileWriter fw = new FileWriter(filename, true);
+                     BufferedWriter bw = new BufferedWriter(fw);
+                     PrintWriter out = new PrintWriter(bw)) {
+
+                        out.print(actProd+"\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            actProd="";
         }
     }
 
