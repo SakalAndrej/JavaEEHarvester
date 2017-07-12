@@ -73,7 +73,7 @@
       <file leaf-file-name="RestConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/rest/RestConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="68">
               <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
@@ -85,23 +85,26 @@
       <file leaf-file-name="ProductEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="385">
+              <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <marker date="1499852025795" expanded="true" signature="1482:1588" ph="{...}" />
+                <marker date="1499852025795" expanded="true" signature="1714:2145" ph="{...}" />
+                <marker date="1499852025795" expanded="false" signature="1763:1773" ph="&lt;~&gt;" />
+                <marker date="1499852025795" expanded="true" signature="2202:2282" ph="{...}" />
+                <marker date="1499852025795" expanded="true" signature="2341:2553" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SeoAudit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/seo/SeoAudit.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,20 +112,18 @@
       <file leaf-file-name="MotoroilDirektHarvester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30360">
-              <caret line="2044" column="38" lean-forward="false" selection-start-line="2044" selection-start-column="38" selection-end-line="2044" selection-end-column="38" />
+            <state relative-caret-position="2499">
+              <caret line="2250" column="9" lean-forward="false" selection-start-line="2250" selection-start-column="9" selection-end-line="2250" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#619#620#0" expanded="false" />
-                <element signature="e#677#678#0" expanded="false" />
-                <element signature="e#737#738#0" expanded="false" />
-                <element signature="e#777#778#0" expanded="false" />
-                <element signature="e#217614#217615#0" expanded="false" />
-                <element signature="e#217667#217668#0" expanded="false" />
-                <element signature="e#226154#226155#0" expanded="false" />
-                <element signature="e#226185#226186#0" expanded="false" />
-                <element signature="e#226219#226220#0" expanded="false" />
-                <element signature="e#226295#226296#0" expanded="false" />
+                <element signature="method#initializeLinks#0;class#MotoroilDirektHarvester#0" expanded="false" />
+                <element signature="e#1107#1125#0" expanded="false" />
+                <element signature="e#1134#1169#0" expanded="false" />
+                <element signature="e#1234#1242#0" expanded="true" />
+                <element signature="e#1255#1270#0" expanded="false" />
+                <element signature="e#31657#31665#0" expanded="true" />
+                <element signature="e#179612#179620#0" expanded="true" />
+                <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
+                <element signature="e#218339#218357#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,7 +132,7 @@
       <file leaf-file-name="InitBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/business/InitBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="204">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
@@ -140,26 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="APP.AUTOS" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.AUTOS">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Products.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Products.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="122" column="16" lean-forward="false" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
+            <state relative-caret-position="1547">
+              <caret line="93" column="4" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="93" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="false" />
                 <element signature="e#3999#4000#0" expanded="false" />
@@ -168,8 +154,6 @@
                 <element signature="e#4170#4171#0" expanded="false" />
                 <element signature="e#4204#4205#0" expanded="false" />
                 <element signature="e#4234#4235#0" expanded="false" />
-                <element signature="e#4280#4281#0" expanded="false" />
-                <element signature="e#4318#4319#0" expanded="false" />
                 <element signature="e#4357#4358#0" expanded="false" />
                 <element signature="e#4392#4393#0" expanded="false" />
                 <element signature="e#4448#4449#0" expanded="false" />
@@ -222,7 +206,7 @@
       <file leaf-file-name="Site.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Site.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="34">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding>
                 <element signature="e#185#186#0" expanded="false" />
@@ -238,17 +222,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="APP.PRODUCTS" pinned="false" current-in-tab="true">
-        <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+      <file leaf-file-name="APP.AUTOS" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/79a35d0d/024d0371-c327-4eae-abab-0df4a228fa0a/APP.AUTOS">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APP.PRODUCTS" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/79a35d0d/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -310,7 +309,6 @@
         <option value="$PROJECT_DIR$/src/test/java/filter/MyTests.java" />
         <option value="$PROJECT_DIR$/.idea/artifacts/Carvago_war_exploded.xml" />
         <option value="$PROJECT_DIR$/src/main/java/model/Product.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCT" />
         <option value="dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
@@ -323,6 +321,7 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Products.java" />
         <option value="$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -458,8 +457,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -476,14 +475,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -493,7 +489,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -507,7 +503,25 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MotoroilDirekHarvesterJava" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -533,7 +547,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -559,7 +573,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -585,7 +599,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -611,7 +625,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -637,7 +651,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -663,7 +677,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -689,7 +703,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Carvago" />
+              <option name="myItemId" value="JavaEEHarvester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -703,6 +717,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1345,7 +1362,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188572000" />
+    <option name="totallyTimeSpent" value="188814000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1357,39 +1374,69 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19029851" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23827292" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3173242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32553408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30213633" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25025433" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17910448" sideWeight="0.49172577" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21405493" sideWeight="0.50827426" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19063005" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3025568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25142047" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39256865" sideWeight="0.49172577" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23828755" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3173242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21405493" sideWeight="0.50827426" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32586208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="100" y="100" width="1080" height="600" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3025568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25142047" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931036" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39256865" sideWeight="0.49172577" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21405493" sideWeight="0.50827426" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1417,42 +1464,20 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/RestConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14985">
           <caret line="999" column="0" lean-forward="false" selection-start-line="999" selection-start-column="0" selection-end-line="999" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#737#738#0" expanded="false" />
-            <element signature="e#777#778#0" expanded="false" />
-            <element signature="e#217614#217615#0" expanded="false" />
-            <element signature="e#217667#217668#0" expanded="false" />
-            <element signature="e#226154#226155#0" expanded="false" />
-            <element signature="e#226185#226186#0" expanded="false" />
-            <element signature="e#226219#226220#0" expanded="false" />
-            <element signature="e#226295#226296#0" expanded="false" />
+            <element signature="method#initializeLinks#0;class#MotoroilDirektHarvester#0" expanded="false" />
+            <element signature="e#1107#1125#0" expanded="false" />
+            <element signature="e#1134#1169#0" expanded="false" />
+            <element signature="e#1234#1242#0" expanded="true" />
+            <element signature="e#1255#1270#0" expanded="false" />
+            <element signature="e#31657#31665#0" expanded="true" />
+            <element signature="e#179612#179620#0" expanded="true" />
+            <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
+            <element signature="e#218339#218357#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1469,8 +1494,6 @@
             <element signature="e#4170#4171#0" expanded="false" />
             <element signature="e#4204#4205#0" expanded="false" />
             <element signature="e#4234#4235#0" expanded="false" />
-            <element signature="e#4280#4281#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
             <element signature="e#4357#4358#0" expanded="false" />
             <element signature="e#4392#4393#0" expanded="false" />
             <element signature="e#4448#4449#0" expanded="false" />
@@ -1519,18 +1542,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
     <entry file="file://$PROJECT_DIR$/src/main/java/seo/SeoAudit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1564,6 +1576,11 @@
           <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="false" />
+            <marker date="1499852025795" expanded="true" signature="1482:1588" ph="{...}" />
+            <marker date="1499852025795" expanded="true" signature="1714:2145" ph="{...}" />
+            <marker date="1499852025795" expanded="false" signature="1763:1773" ph="&lt;~&gt;" />
+            <marker date="1499852025795" expanded="true" signature="2202:2282" ph="{...}" />
+            <marker date="1499852025795" expanded="true" signature="2341:2553" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1573,17 +1590,15 @@
         <state relative-caret-position="14985">
           <caret line="999" column="0" lean-forward="false" selection-start-line="999" selection-start-column="0" selection-end-line="999" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#737#738#0" expanded="false" />
-            <element signature="e#777#778#0" expanded="false" />
-            <element signature="e#217614#217615#0" expanded="false" />
-            <element signature="e#217667#217668#0" expanded="false" />
-            <element signature="e#226154#226155#0" expanded="false" />
-            <element signature="e#226185#226186#0" expanded="false" />
-            <element signature="e#226219#226220#0" expanded="false" />
-            <element signature="e#226295#226296#0" expanded="false" />
+            <element signature="method#initializeLinks#0;class#MotoroilDirektHarvester#0" expanded="false" />
+            <element signature="e#1107#1125#0" expanded="false" />
+            <element signature="e#1134#1169#0" expanded="false" />
+            <element signature="e#1234#1242#0" expanded="true" />
+            <element signature="e#1255#1270#0" expanded="false" />
+            <element signature="e#31657#31665#0" expanded="true" />
+            <element signature="e#179612#179620#0" expanded="true" />
+            <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
+            <element signature="e#218339#218357#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1600,8 +1615,6 @@
             <element signature="e#4170#4171#0" expanded="false" />
             <element signature="e#4204#4205#0" expanded="false" />
             <element signature="e#4234#4235#0" expanded="false" />
-            <element signature="e#4280#4281#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
             <element signature="e#4357#4358#0" expanded="false" />
             <element signature="e#4392#4393#0" expanded="false" />
             <element signature="e#4448#4449#0" expanded="false" />
@@ -1650,18 +1663,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
     <entry file="file://$PROJECT_DIR$/src/main/java/seo/SeoAudit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1672,18 +1674,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
     <entry file="file://$PROJECT_DIR$/src/main/java/seo/SeoAudit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1704,198 +1695,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCT">
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCT" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1910,61 +1724,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Product.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/HarvestClass.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12195">
-          <caret line="883" column="16" lean-forward="false" selection-start-line="883" selection-start-column="16" selection-end-line="883" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/024d0371-c327-4eae-abab-0df4a228fa0a/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Date.java" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/024d0371-c327-4eae-abab-0df4a228fa0a/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1984,7 +1750,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Site.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="e#185#186#0" expanded="false" />
@@ -2008,7 +1774,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/business/InitBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="204">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -2018,7 +1784,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rest/RestConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="68">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -2028,8 +1794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Products.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="122" column="16" lean-forward="false" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
+        <state relative-caret-position="1547">
+          <caret line="93" column="4" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="93" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="false" />
             <element signature="e#3999#4000#0" expanded="false" />
@@ -2038,8 +1804,6 @@
             <element signature="e#4170#4171#0" expanded="false" />
             <element signature="e#4204#4205#0" expanded="false" />
             <element signature="e#4234#4235#0" expanded="false" />
-            <element signature="e#4280#4281#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
             <element signature="e#4357#4358#0" expanded="false" />
             <element signature="e#4392#4393#0" expanded="false" />
             <element signature="e#4448#4449#0" expanded="false" />
@@ -2090,56 +1854,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30360">
-          <caret line="2044" column="38" lean-forward="false" selection-start-line="2044" selection-start-column="38" selection-end-line="2044" selection-end-column="38" />
+        <state relative-caret-position="2499">
+          <caret line="2250" column="9" lean-forward="false" selection-start-line="2250" selection-start-column="9" selection-end-line="2250" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#737#738#0" expanded="false" />
-            <element signature="e#777#778#0" expanded="false" />
-            <element signature="e#217614#217615#0" expanded="false" />
-            <element signature="e#217667#217668#0" expanded="false" />
-            <element signature="e#226154#226155#0" expanded="false" />
-            <element signature="e#226185#226186#0" expanded="false" />
-            <element signature="e#226219#226220#0" expanded="false" />
-            <element signature="e#226295#226296#0" expanded="false" />
+            <element signature="method#initializeLinks#0;class#MotoroilDirektHarvester#0" expanded="false" />
+            <element signature="e#1107#1125#0" expanded="false" />
+            <element signature="e#1134#1169#0" expanded="false" />
+            <element signature="e#1234#1242#0" expanded="true" />
+            <element signature="e#1255#1270#0" expanded="false" />
+            <element signature="e#31657#31665#0" expanded="true" />
+            <element signature="e#179612#179620#0" expanded="true" />
+            <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
+            <element signature="e#218339#218357#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.AUTOS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.AUTOS" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1499852025795" expanded="true" signature="1482:1588" ph="{...}" />
+            <marker date="1499852025795" expanded="true" signature="1714:2145" ph="{...}" />
+            <marker date="1499852025795" expanded="false" signature="1763:1773" ph="&lt;~&gt;" />
+            <marker date="1499852025795" expanded="true" signature="2202:2282" ph="{...}" />
+            <marker date="1499852025795" expanded="true" signature="2341:2553" ph="{...}" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
+    </entry>
+    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/25efbea5-9a7f-4adc-9fef-a6c86434c9ba/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/21876023/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2163,7 +1922,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>JPA</last-edited>
+          <last-edited>JPA (MotoroilDirektHarvesterJava)|JPA</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2198,12 +1957,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Carvago</last-edited>
+          <last-edited>MotoroilDirektHarvesterJava</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
