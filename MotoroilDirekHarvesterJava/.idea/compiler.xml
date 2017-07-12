@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Carvago" />
-        <module name="MotoroilDirektHarvesterJava" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

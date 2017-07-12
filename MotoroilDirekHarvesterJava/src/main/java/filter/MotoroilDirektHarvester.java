@@ -2064,6 +2064,9 @@ public class MotoroilDirektHarvester {
         if(p.getInStock()<=0) {
             p.setDeliveryTime("14 Werktage");
         }
+        else if (p.getOrderProcessingTime()>2){
+            p.setDeliveryTime("2-3 Werktage");
+        }
         else {
             p.setDeliveryTime("1-2 Werktage");
         }
@@ -2220,6 +2223,11 @@ public class MotoroilDirektHarvester {
      */
     public void WriteToCSV(String brandName, int type, Products c) {
 
+        File currentDirFile = new File(".");
+        String helper = currentDirFile.getAbsolutePath();
+        System.out.printf(helper);
+        String currentDir = helper.substring(helper.lastIndexOf("\\"), helper.length());
+        //filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
         FileWriter writer = null;
         String filename;
 
@@ -2235,6 +2243,12 @@ public class MotoroilDirektHarvester {
         }
         else {
             filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
+            filename = currentDir + "StockUpdateExport" + brandName + ".csv";
+
+        }
+
+        if(Files.exists(Paths.get(filename))) {
+
         }
 
         try (FileWriter fw = new FileWriter(filename, true);
@@ -2251,6 +2265,67 @@ public class MotoroilDirektHarvester {
                 out.print(p.toStringStockExport());
 
         } catch (IOException e) {
+        }
+    }
+
+    public void ExportDatabase(LinkedList<Products> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
+
+        FileWriter writer = null;
+        String filename;
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer
+            filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/CustomExport.csv";
+        String header = "";
+        String actProd = "";
+
+        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description;cjm_ships_in
+          //String.format("^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+";^"+orderprocessingtime+"^\n");
+
+
+        for (int i = 0; i < p.size(); i++) {
+            if (sku) {
+                header += "sku";
+                actProd += "^"+p.get(i).getSku()+"^";
+            }
+            else if (baseImage) {
+                header += ";image";
+                header += ";thumbnail";
+                header += ";small_image";
+                actProd += ";^"+p.get(i).getBaseImage()+"^";
+                actProd += ";^"+p.get(i).getBaseImage()+"^";
+                actProd += ";^"+p.get(i).getBaseImage()+"^";
+            }
+            else if (brand) {
+                header += ";manufacturer";
+                actProd += ";^"+p.get(i).getBrand()+"^";
+            }
+            else if (container) {
+                header += ";weight";
+                actProd += ";^"+p.get(i).getContainer()+"^";
+            }
+            else if (description) {
+                header += ";description";
+                actProd += ";^"+p.get(i).getDescription()+"^";
+            }
+            else if (inStock) {
+                header += ";qty";
+                actProd += ";^"+p.get(i).getInStock()+"^";
+            }
+            else if (metaTitle) {
+
+            }
+            else if (price) {
+
+            }
+            else if (related) {
+
+            }
+            else if (deliveryTime) {
+
+            }
+            else if (orderprocessingtime) {
+
+            }
+
         }
     }
 
@@ -2344,7 +2419,7 @@ public class MotoroilDirektHarvester {
     }
 
     public String MakeFileNamePretty(String name) {
-        name = name.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à","a").replace("ß","ss") + ".jpg";
+        name = name.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à","a").replace("ß","ss").replace("--","-").replace(":"," ") + ".jpg";
         return name;
     }
 

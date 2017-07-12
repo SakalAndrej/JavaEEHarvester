@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Wed Jul 12 14:48:23 CEST 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 Wed Jul 12 14:48:30 CEST 2017 Thread[DRDAConnThread_2,5,main] Cleanup action starting
 ERROR XBM0J: Directory C:\Users\sakaan\Documents\GitHub\JavaEEHarvester\MotoroilDirekHarvesterJava\C:\Users\sakaan\Documents\GitHub\JavaEEHarvester\MotoroilDirekHarvesterJava\db already exists.
@@ -708,6 +709,10 @@ Cleanup action completed
 Wed Jul 12 14:49:31 CEST 2017 Thread[DRDAConnThread_2,5,main] (DATABASE = db), (DRDAID = {6}), Failed to create database 'db', see the next exception for details.
 Wed Jul 12 14:49:31 CEST 2017 Thread[DRDAConnThread_2,5,main] (DATABASE = db), (DRDAID = {6}), Directory C:\Users\sakaan\Documents\GitHub\JavaEEHarvester\MotoroilDirekHarvesterJava\C:\Users\sakaan\Documents\GitHub\JavaEEHarvester\MotoroilDirekHarvesterJava\db already exists.
 Wed Jul 12 14:49:59 CEST 2017 Thread[DRDAConnThread_2,5,main] Cleanup action starting
+=======
+Tue Jul 11 08:58:13 CEST 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+Tue Jul 11 08:58:26 CEST 2017 Thread[DRDAConnThread_2,5,main] Cleanup action starting
+>>>>>>> FTP-Beta
 java.sql.SQLException: Database 'db' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -755,4 +760,8 @@ ERROR XJ004: Database 'db' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
+<<<<<<< HEAD
 Wed Jul 12 14:49:59 CEST 2017 Thread[DRDAConnThread_2,5,main] (DATABASE = db), (DRDAID = {7}), Database 'db' not found.
+=======
+Tue Jul 11 08:58:26 CEST 2017 Thread[DRDAConnThread_2,5,main] (DATABASE = db), (DRDAID = {1}), Database 'db' not found.
+>>>>>>> FTP-Beta

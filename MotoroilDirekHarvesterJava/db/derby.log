@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 Wed Jul 12 14:50:10 CEST 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
 Wed Jul 12 14:50:16 CEST 2017:
 Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015d-36d9-81b4-000029cad1ad 
+=======
+Tue Jul 11 08:59:17 CEST 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue Jul 11 08:59:22 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015d-3071-e5fc-000029cad1ad 
+>>>>>>> FTP-Beta
 on database directory C:\Users\sakaan\Documents\GitHub\JavaEEHarvester\MotoroilDirekHarvesterJava\db\db with class loader sun.misc.Launcher$AppClassLoader@60e53b93 
 Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_131/db/lib/derby.jar
 java.vendor=Oracle Corporation

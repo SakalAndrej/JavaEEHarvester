@@ -24,6 +24,7 @@ public class ProductEndpoint {
         LinkedList<String> all = md.getAllLinks();
         LinkedList<String> harvest = new LinkedList<>();
 
+        /*
         if (part==1) {
             for (int i = 0; i <= 350; i++) {
                 harvest.add(all.get(i));
@@ -48,6 +49,10 @@ public class ProductEndpoint {
             for (int i = 130; i <= 180-1; i++) {
                 harvest.add(all.get(i));
             }
+        }*/
+
+        for (int i = 0; i <= md.getAllLinks().size(); i++) {
+            harvest.add(all.get(i));
         }
         md.setAllLinks(harvest);
         md.HarvestAllSites(harvest);
