@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="MotoroilDirektHarvesterJava:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="motoroil.war">
-      <element id="artifact" artifact-name="MotoroilDirektHarvesterJava:war exploded" />
-    </root>
-  </artifact>
-</component>
