@@ -1,4 +1,5 @@
 package filter;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import model.Products;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -2268,7 +2269,6 @@ public class MotoroilDirektHarvester {
         FileWriter writer = null;
         String filename;
         //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer
-        filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/CustomExport.csv";
         String header = "";
         String actProd = "";
 
@@ -2276,20 +2276,15 @@ public class MotoroilDirektHarvester {
         String helper = currentDirFile.getAbsolutePath();
         System.out.printf(helper);
         String currentDir = helper.replace(".\\","");
-        //filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
-        System.out.printf(currentDir + " " +  helper);
         filename = currentDir;
-        System.out.printf(filename);
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        boolean writeHeader = false;
+
         //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description;cjm_ships_in
         //String.format("^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+";^"+orderprocessingtime+"^\n");
 
 
         for (int i = 0; i < p.size(); i++) {
+            System.out.println(i);
             if (sku) {
                 header += "sku";
                 actProd += "^" + p.get(i).getSku() + "^";
@@ -2340,11 +2335,12 @@ public class MotoroilDirektHarvester {
             }
 
             try {
-                if (!Files.exists(Paths.get(filename))) {
-                }
+                    writeHeader = !Files.exists(Paths.get(filename));
                 try (FileWriter fw = new FileWriter(filename, true);
                      BufferedWriter bw = new BufferedWriter(fw);
                      PrintWriter out = new PrintWriter(bw)) {
+                        if (writeHeader)
+                            out.print(header+"\n");
 
                         out.print(actProd+"\n");
                 }

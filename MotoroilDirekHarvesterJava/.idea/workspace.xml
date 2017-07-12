@@ -70,11 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductEndpoint.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductEndpoint.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="71" column="97" lean-forward="false" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
+            <state relative-caret-position="442">
+              <caret line="68" column="102" lean-forward="false" selection-start-line="68" selection-start-column="102" selection-end-line="68" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -90,22 +90,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MotoroilDirektHarvester.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MotoroilDirektHarvester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="2348" column="25" lean-forward="false" selection-start-line="2348" selection-start-column="25" selection-end-line="2348" selection-end-column="25" />
+            <state relative-caret-position="148">
+              <caret line="2266" column="258" lean-forward="true" selection-start-line="2266" selection-start-column="52" selection-end-line="2266" selection-end-column="258" />
               <folding>
                 <element signature="method#initializeLinks#0;class#MotoroilDirektHarvester#0" expanded="false" />
-                <element signature="e#1107#1125#0" expanded="false" />
-                <element signature="e#1134#1169#0" expanded="false" />
-                <element signature="e#1234#1242#0" expanded="true" />
-                <element signature="e#1255#1270#0" expanded="false" />
-                <element signature="e#31657#31665#0" expanded="true" />
-                <element signature="e#179612#179620#0" expanded="true" />
+                <element signature="e#1160#1178#0" expanded="false" />
+                <element signature="e#1187#1222#0" expanded="false" />
+                <element signature="e#1287#1295#0" expanded="true" />
+                <element signature="e#1308#1323#0" expanded="false" />
+                <element signature="e#31710#31718#0" expanded="true" />
+                <element signature="e#179665#179673#0" expanded="true" />
                 <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
-                <element signature="e#209381#209505#0" expanded="false" />
-                <element signature="e#210394#210499#0" expanded="false" />
+                <element signature="e#209434#209558#0" expanded="false" />
+                <element signature="e#210447#210552#0" expanded="false" />
                 <element signature="docComment;method#CalculateRelatedProducts#0;class#MotoroilDirektHarvester#0" expanded="false" />
                 <element signature="method#CalculateRelatedProducts#0;class#MotoroilDirektHarvester#0" expanded="false" />
                 <element signature="docComment;method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
@@ -124,6 +124,21 @@
                 <element signature="method#MakeFileNamePretty#0;class#MotoroilDirektHarvester#0" expanded="false" />
                 <element signature="method#MakeFileNamePrettyDb#0;class#MotoroilDirektHarvester#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APP.PRODUCTS" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/79a35d0d/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -154,18 +169,6 @@
             <state relative-caret-position="306">
               <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dataSources.local.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/dataSources.local.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#422#428#1" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -271,8 +274,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
-        <option value="$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java" />
       </list>
     </option>
   </component>
@@ -1108,7 +1111,7 @@
       <workItem from="1498686629611" duration="709000" />
       <workItem from="1498853539225" duration="1345000" />
       <workItem from="1499865752945" duration="86000" />
-      <workItem from="1499865963708" duration="2428000" />
+      <workItem from="1499865963708" duration="3313000" />
     </task>
     <servers />
   </component>
@@ -1145,7 +1148,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197816000" />
+    <option name="totallyTimeSpent" value="198701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1169,7 +1172,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23828755" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23827292" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1211,7 +1214,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java</url>
-          <line>26</line>
+          <line>27</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -1450,18 +1453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/79a35d0d/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1486,29 +1477,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="71" column="97" lean-forward="false" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
+    <entry file="dbDummy://dbtable:/79a35d0d/024d0371-c327-4eae-abab-0df4a228fa0a/APP.PRODUCTS">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/filter/MotoroilDirektHarvester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="2348" column="25" lean-forward="false" selection-start-line="2348" selection-start-column="25" selection-end-line="2348" selection-end-column="25" />
+        <state relative-caret-position="148">
+          <caret line="2266" column="258" lean-forward="true" selection-start-line="2266" selection-start-column="52" selection-end-line="2266" selection-end-column="258" />
           <folding>
             <element signature="method#initializeLinks#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <element signature="e#1107#1125#0" expanded="false" />
-            <element signature="e#1134#1169#0" expanded="false" />
-            <element signature="e#1234#1242#0" expanded="true" />
-            <element signature="e#1255#1270#0" expanded="false" />
-            <element signature="e#31657#31665#0" expanded="true" />
-            <element signature="e#179612#179620#0" expanded="true" />
+            <element signature="e#1160#1178#0" expanded="false" />
+            <element signature="e#1187#1222#0" expanded="false" />
+            <element signature="e#1287#1295#0" expanded="true" />
+            <element signature="e#1308#1323#0" expanded="false" />
+            <element signature="e#31710#31718#0" expanded="true" />
+            <element signature="e#179665#179673#0" expanded="true" />
             <element signature="docComment;method#HarvestInnerProduct#0;class#MotoroilDirektHarvester#0" expanded="false" />
-            <element signature="e#209381#209505#0" expanded="false" />
-            <element signature="e#210394#210499#0" expanded="false" />
+            <element signature="e#209434#209558#0" expanded="false" />
+            <element signature="e#210447#210552#0" expanded="false" />
             <element signature="docComment;method#CalculateRelatedProducts#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#CalculateRelatedProducts#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="docComment;method#RecognationOfContainer#0;class#MotoroilDirektHarvester#0" expanded="false" />
@@ -1527,6 +1523,14 @@
             <element signature="method#MakeFileNamePretty#0;class#MotoroilDirektHarvester#0" expanded="false" />
             <element signature="method#MakeFileNamePrettyDb#0;class#MotoroilDirektHarvester#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/ProductEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="68" column="102" lean-forward="false" selection-start-line="68" selection-start-column="102" selection-end-line="68" selection-end-column="102" />
+          <folding />
         </state>
       </provider>
     </entry>
