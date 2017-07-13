@@ -51,11 +51,12 @@ public class ProductEndpoint {
             }
         }*/
 
-        for (int i = 0; i <= md.getAllLinks().size(); i++) {
+        for (int i = 0; i < md.getAllLinks().size(); i++) {
             harvest.add(all.get(i));
+            md.HarvestAllSites(harvest);
+            harvest.clear();
         }
         md.setAllLinks(harvest);
-        md.HarvestAllSites(harvest);
         return Response.ok().build();
     }
 
