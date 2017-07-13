@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Built-By: sakaan
+Class-Path: jsoup-1.9.2.jar javaee-web-api-7.0.jar eclipselink-2.6.4.j
+ ar commonj.sdo-2.1.1.jar validation-api-1.1.0.Final.jar javax.json-1.
+ 0.4.jar javax.persistence-2.1.1.jar derbyclient-10.13.1.1.jar
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_131
+
