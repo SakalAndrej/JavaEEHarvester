@@ -69,11 +69,13 @@
     </build>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>localhost.localdomain-snapshots</name>
-            <url>http://localhost:8082/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>corp1</id>
+            <name>Corporate Repository</name>
+            <url>scp://repo/maven2</url>
+            <layout>default</layout>
+        </repository>
     </distributionManagement>
 
 </project>
