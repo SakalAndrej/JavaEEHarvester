@@ -1916,7 +1916,7 @@ public class MotoroilDirektHarvester {
         imagePath = imagePath.substring(imagePath.indexOf("href=") + 6, imagePath.length()).replace(" ", "");
         imagePath = imagePath.substring(0, imagePath.indexOf("\">"));
         String baseImageForArtikelId = imagePath.substring(imagePath.lastIndexOf("/") + 1, imagePath.length());
-        try (InputStream in = new URL(imagePath).openStream()) {
+        /*try (InputStream in = new URL(imagePath).openStream()) {
                 try {
 
                     //Making pretty filenames for the pictures
@@ -1938,7 +1938,7 @@ public class MotoroilDirektHarvester {
                 System.out.println("InputStream Error MalformedURLException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
             } catch (IOException e) {
                 System.out.println("InputStream Error IOException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
-            }
+            }*/
         //endregion
 
         //region Save the artikelid from the imagename -----------------------------------------------------------------------------
