@@ -51,7 +51,7 @@ public class ProductEndpoint {
             }
         }*/
 
-        for (int i = 0; i < all.size(); i++) {
+        for (int i = 0; i < 10; i++) {
             harvest.add(all.get(i));
             md.HarvestAllSites(harvest);
             harvest.clear();
