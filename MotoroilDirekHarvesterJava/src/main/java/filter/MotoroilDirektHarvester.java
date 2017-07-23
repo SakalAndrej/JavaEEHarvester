@@ -2386,6 +2386,7 @@ public class MotoroilDirektHarvester {
                     //p.setBaseImage(product.getBaseImage());
                     //p.setSmallImage(product.getBaseImage());
                     //p.setMetaTitle(product.getMetaTitle());
+                    p.setDeliveryTime(p.getDeliveryTime());
                     p.setOrderProcessingTime(product.getOrderProcessingTime());
                     p.setTitle(product.getTitle());
                     p.setBrand(product.getBrand());
