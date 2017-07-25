@@ -24,6 +24,9 @@ public class MotoroilDirektHarvester {
     @PersistenceContext(unitName = "myPU")
     EntityManager em;
 
+
+    public final String FILENAME = "/home/manager/www/var/import/";
+
     public int getAvgDurationPerProduct() {
         return (int) (duration/allProducts.size());
     }
@@ -2278,7 +2281,7 @@ public class MotoroilDirektHarvester {
         String currentDir = helper.replace(".\\","");
         filename = currentDir;
         boolean writeHeader = false;
-
+        filename = FILENAME + "CustomExport.csv";
         //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description;cjm_ships_in
         //String.format("^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+";^"+orderprocessingtime+"^\n");
 
