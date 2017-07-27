@@ -27,7 +27,7 @@ public class MotoroilDirektHarvester {
 
     public final String FILENAME = "/home/manager/www/var/import/";
 
-    public final String FILEPATHIMAGE = "/home/manager/www/media/import";
+    public final String FILEPATHIMAGE = "/home/manager/www/media/import/";
 
     public int getAvgDurationPerProduct() {
         return (int) (duration/allProducts.size());
