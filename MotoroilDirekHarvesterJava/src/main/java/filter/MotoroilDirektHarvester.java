@@ -27,6 +27,8 @@ public class MotoroilDirektHarvester {
 
     public final String FILENAME = "/home/manager/www/var/import/";
 
+    public final String FILEPATHIMAGE = "home/manager/www/media/import";
+
     public int getAvgDurationPerProduct() {
         return (int) (duration/allProducts.size());
     }
@@ -1919,12 +1921,12 @@ public class MotoroilDirektHarvester {
         imagePath = imagePath.substring(imagePath.indexOf("href=") + 6, imagePath.length()).replace(" ", "");
         imagePath = imagePath.substring(0, imagePath.indexOf("\">"));
         String baseImageForArtikelId = imagePath.substring(imagePath.lastIndexOf("/") + 1, imagePath.length());
-        /*try (InputStream in = new URL(imagePath).openStream()) {
+        try (InputStream in = new URL(imagePath).openStream()) {
                 try {
 
                     //Making pretty filenames for the pictures
                     String fileName = MakeFileNamePretty(p.getMetaTitle());
-                    String filePath = "/Users/andrejsakal/Downloads/pictures/" + fileName;
+                    String filePath = FILEPATHIMAGE + fileName;
 
                     if (!Files.exists(Paths.get(filePath)))
                         Files.copy(in, Paths.get(filePath));
@@ -1941,12 +1943,13 @@ public class MotoroilDirektHarvester {
                 System.out.println("InputStream Error MalformedURLException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
             } catch (IOException e) {
                 System.out.println("InputStream Error IOException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
-            }*/
+            }
         //endregion
 
         //region Save the artikelid from the imagename -----------------------------------------------------------------------------
-        if(justLink.contains("artikelid="))
+        if (justLink.contains("artikelid=")) {
             p.setSku(justLink.substring(justLink.indexOf("artikelid=") + 10, justLink.indexOf("&")));
+        }
         else {
             baseImageForArtikelId = baseImageForArtikelId.substring(baseImageForArtikelId.indexOf("_")+1,baseImageForArtikelId.length());
             baseImageForArtikelId = baseImageForArtikelId.substring(0,baseImageForArtikelId.indexOf("_"));
