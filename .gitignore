@@ -171,3 +171,9 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/java,macos,maven,windows,netbeans,intellij,java-web,code-java
 MotoroilDirekHarvesterJava/.idea/workspace.xml
+
+MotoroilDirekHarvesterJava/\.idea/dataSources\.xml
+
+MotoroilDirekHarvesterJava/\.idea/dataSources/1898fbdf-1f8c-4415-b7cc-93117230a86a\.xml
+
+MotoroilDirekHarvesterJava/\.idea/dataSources\.local\.xml

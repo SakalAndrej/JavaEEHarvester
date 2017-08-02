@@ -1769,7 +1769,7 @@ public class MotoroilDirektHarvester {
      * @return finished Products with all entities
      * @throws InterruptedException
      */
-    private Products HarvestInnerProduct(String justLink) throws InterruptedException {
+    public Products HarvestInnerProduct(String justLink) throws InterruptedException {
 
         Date date1 = new Date();
 
