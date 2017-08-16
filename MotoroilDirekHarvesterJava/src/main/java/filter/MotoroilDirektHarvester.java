@@ -26,6 +26,7 @@ public class MotoroilDirektHarvester {
 
 
     public final String FILENAME = "/home/manager/www/var/import/";
+    public final String MACFILENAME = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/MotoroilDirekHarvesterJava/src/main/resources/";
 
     public final String FILEPATHIMAGE = "/home/manager/www/media/import/";
 
@@ -1887,15 +1888,21 @@ public class MotoroilDirektHarvester {
         }
         else if (p.getTitle().toLowerCase().contains("osram")) {
             p.setBrand("Osram");
+            p.setPrice(p.getPrice()*1.12);
         }
         else if (p.getTitle().toLowerCase().contains("gread")) {
             p.setBrand("Gread");
+            p.setPrice(p.getPrice()*1.12);
+
         }
         else if (p.getTitle().toLowerCase().contains("foliatec")) {
             p.setBrand("Foliatex");
+            p.setPrice(p.getPrice()*1.12);
+
         }
         else if (p.getTitle().toLowerCase().contains("soffitte")) {
             p.setBrand("Soffitte");
+            p.setPrice(p.getPrice()*1.12);
         }
         else if (p.getTitle().toLowerCase().contains("castrol")) {
             p.setBrand("Castrol");
@@ -2256,7 +2263,7 @@ public class MotoroilDirektHarvester {
         try (FileWriter fw = new FileWriter(filename, true);
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter out = new PrintWriter(bw)) {
-            Products p = (Products) c;
+            Products p = c;
             if (type==1)
                 out.print(p.toStringFullExport());
             else if(type==2)
