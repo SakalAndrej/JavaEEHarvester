@@ -4,10 +4,9 @@ import filter.MotoroilDirektHarvester;
 import model.Products;
 import seo.SeoAudit;
 
-import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Link;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -100,5 +99,12 @@ public class ProductEndpoint {
             md.CalculateRelatedProducts(all.get(i), all);
         }
         return Response.ok().build();
+    }
+
+    @Path("status")
+    @Produces(MediaType.TEXT_PLAIN)
+    @GET
+    public String getStatus() {
+        return md.getStatus();
     }
 }

@@ -2475,4 +2475,40 @@ public class MotoroilDirektHarvester {
     public int getEat(int cnt) {
         return getAvgDurationPerProduct() * (cnt-allProducts.size());
     }
+
+    public String getStatus() {
+        LinkedList<String> products_test = new LinkedList<>();
+        products_test.add("https://www.motoroeldirekt.at/Soffitte-C5W-36mm-6x-5630-SMD-Gelb?source=2&refertype=5&referid=228057");
+        products_test.add("https://www.motoroeldirekt.at/Eurolub-Bremsenreiniger-5l?source=2&refertype=5&referid=228060");
+        products_test.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8252&refertype=16");
+        products_test.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8251&refertype=16");
+        products_test.add("https://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8111&refertype=16");
+        String message = "";
+
+        for (int i = 0; i < products_test.size(); i++) {
+            try {
+                Products p1 = HarvestInnerProduct(products_test.get(i));
+                Products p2 = new Products();
+                message +=  p1.getMetaTitle() + " Stock: " + p1.getInStock() + " Price: " + p1.getPrice() + "\n";
+
+                p2 = this.GetProductBySKU(p1.getSku());
+                if (p2 != null) {
+                    System.out.println(p2.toStringFullExport());
+                    message += p2.getMetaTitle() + " Stock: " + p2.getInStock() + " Price: " + p2.getPrice();
+                    if (p1.getPrice() == p2.getPrice() && p1.getInStock() == p2.getInStock())
+                        message += " ✓";
+
+                    message += "\n";
+                }
+                else {
+                    message += p1.getMetaTitle() + " Not existing in db\n";
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            message+="\n\n";
+        }
+
+        return message;
+    }
 }
