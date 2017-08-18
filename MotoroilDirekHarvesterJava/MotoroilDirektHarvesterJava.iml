@@ -46,5 +46,6 @@
     <orderEntry type="library" name="Maven: org.eclipse.persistence:javax.persistence:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:6.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.derby:derbyclient:10.13.1.1" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.4" level="project" />
   </component>
 </module>

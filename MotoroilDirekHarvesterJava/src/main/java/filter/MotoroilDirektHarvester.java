@@ -1910,6 +1910,9 @@ public class MotoroilDirektHarvester {
         else if (p.getTitle().toLowerCase().contains("eurolub")) {
             p.setBrand("Eurolub");
         }
+        else if (p.getTitle().toLowerCase().contains("led") && p.getTitle().toLowerCase().contains("lampe")) {
+            p.setPrice(p.getPrice()*1.12);
+        }
         else {
             System.out.print(p.getTitle());
         }
