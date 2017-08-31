@@ -69,7 +69,7 @@ public class ProductEndpoint {
     public Response exportStockByBrand(@QueryParam("brand") String brand, @QueryParam("type") int type) {
         ArrayList<Products> all = new ArrayList<Products>();
 
-        md.ExportDatabase(md.GetProducts(),true,false,false,true,true,true,true,true,true,true,true);
+        md.ExportDatabase(md.GetProducts(),true,false,false,true,true,true,true,true,true,false,true);
 
         if (brand!="")
             all = md.GetProductsByBrand(brand);
