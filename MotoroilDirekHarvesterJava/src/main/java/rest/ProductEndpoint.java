@@ -1,6 +1,8 @@
 package rest;
 
 import filter.MotoroilDirektHarvester;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import model.Products;
 import seo.SeoAudit;
 
@@ -12,12 +14,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 @Path("product")
+@Api("Product")
 public class ProductEndpoint {
 
     @Inject
     MotoroilDirektHarvester md;
 
     @Path("start")
+    @ApiOperation("Das Harvesten wird gestartet")
+    @GET
     public Response startHarvest(@QueryParam("part") int part) {
         md.initializeLinks();
         LinkedList<String> all = md.getAllLinks();
@@ -60,12 +65,16 @@ public class ProductEndpoint {
     }
 
     @Path("seo")
+    @ApiOperation("Seo Audit triggern")
+    @GET
     public Response seoAudit() {
         SeoAudit.addOilFinderMannol(md.GetMannolProducts());
         return Response.ok().build();
     }
 
     @Path("export")
+    @ApiOperation("Exportieren des Betandes")
+    @GET
     public Response exportStockByBrand(@QueryParam("brand") String brand, @QueryParam("type") int type) {
         ArrayList<Products> all = new ArrayList<Products>();
 
@@ -87,12 +96,16 @@ public class ProductEndpoint {
     }
 
     @Path("imagename")
+    @ApiOperation("Image Names making pretier")
+    @GET
     public Response imagename() {
         md.MakeFileNamePrettyDb();
         return Response.ok().build();
     }
 
     @Path("setRelated")
+    @ApiOperation("Setting the Related Products")
+    @GET
     public Response setRelated() {
         ArrayList<Products> all = md.GetProducts();
         for (int i = 0; i < all.size(); i++) {
