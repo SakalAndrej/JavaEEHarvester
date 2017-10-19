@@ -1,5 +1,4 @@
 package filter;
-import com.sun.org.apache.xpath.internal.SourceTree;
 import model.Products;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -8,27 +7,25 @@ import org.jsoup.select.Elements;
 
 import javax.ejb.Stateless;
 import javax.persistence.*;
-import javax.ws.rs.core.Cookie;
-import javax.ws.rs.core.Link;
 import java.io.*;
 import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Stateless
 public class MotoroilDirektHarvester {
 
-    @PersistenceContext(unitName = "myPU")
+    @PersistenceContext
     EntityManager em;
 
 
     public final String FILENAME = "/home/manager/www/var/import/";
-    public final String MACFILENAME = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/MotoroilDirekHarvesterJava/src/main/resources/";
+    //public final String MACFILENAME = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/MotoroilDirekHarvesterJava/src/main/resources/";
 
     public final String FILEPATHIMAGE = "/home/manager/www/media/import/";
+    //public final String MACFILEPATHIMAGE = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/media/";
 
     public int getAvgDurationPerProduct() {
         return (int) (duration/allProducts.size());
@@ -48,11 +45,26 @@ public class MotoroilDirektHarvester {
 
     private LinkedList<Products> allProducts = new LinkedList<>();
 
-    public void initializeLinks() {
+    public void InitializeLinks() {
         LinkedList<Products> products = new LinkedList<>();
 
-
         //region Part End:
+
+        //region Fette & Pasten
+        LinkedList<String> FettePasten = new LinkedList<>();
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8358&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=11177&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8359&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8360&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8361&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8362&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8363&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8357&kategorieid=4008&source=2&refertype=1&referid=4008");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8337&kategorieid=4009&source=2&refertype=1&referid=4009");
+        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8356&kategorieid=4009&source=2&refertype=1&referid=4009");
+        //endregion
+
+
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
 
@@ -520,37 +532,6 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        //region Fette & Pasten
-        LinkedList<String> FettePasten = new LinkedList<>();
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8358&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=11177&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8359&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8360&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8361&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8362&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8363&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8357&kategorieid=4008&source=2&refertype=1&referid=4008");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8337&kategorieid=4009&source=2&refertype=1&referid=4009");
-        FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8356&kategorieid=4009&source=2&refertype=1&referid=4009");
-        //endregion
-/*
-        this.HarvestAllSites(MotoroilAndAdditives);
-        this.HarvestAllSites(Automatikgetriebe);
-        this.HarvestAllSites(Schaltgetriebe);
-        this.HarvestAllSites(TraktorBaumaschinen);
-        this.HarvestAllSites(Lkw);
-        this.HarvestAllSites(Motorrad);
-        this.HarvestAllSites(Boot);
-        this.HarvestAllSites(Hydraulik);
-        this.HarvestAllSites(Kompressorenöl);
-        this.HarvestAllSites(Saegeketten);
-        this.HarvestAllSites(Kuehlerschutz);
-        this.HarvestAllSites(AdBlue);
-        this.HarvestAllSites(Bremsfluessigkeiten);
-        this.HarvestAllSites(Fahrzeugpflege);
-        this.HarvestAllSites(KlebenDichte);
-        this.HarvestAllSites(FettePasten);*/
-//endregion
 
         //region Part 2
         //region Liqui Moly Additive
@@ -1695,6 +1676,8 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
+        allLinks.addAll(meguars);
+/*
         allLinks.addAll(c5w);
         allLinks.addAll(AdBlue);
         allLinks.addAll(armorAll);
@@ -1746,7 +1729,6 @@ public class MotoroilDirektHarvester {
         allLinks.addAll(LedH7);
         allLinks.addAll(LiquiMolyAdditive);
         allLinks.addAll(Lkw);
-        allLinks.addAll(meguars);
         allLinks.addAll(MotoroilAndAdditives);
         allLinks.addAll(Motorrad);
         allLinks.addAll(nigrin);
@@ -1759,8 +1741,8 @@ public class MotoroilDirektHarvester {
         allLinks.addAll(t20w21w);
         allLinks.addAll(TraktorBaumaschinen);
         allLinks.addAll(w5w);
-
-        System.out.println("Complete End");
+*/
+        System.out.println("Links: " + allLinks.size());
     }
 
     /**
@@ -1888,21 +1870,15 @@ public class MotoroilDirektHarvester {
         }
         else if (p.getTitle().toLowerCase().contains("osram")) {
             p.setBrand("Osram");
-            p.setPrice(p.getPrice()*1.12);
         }
         else if (p.getTitle().toLowerCase().contains("gread")) {
             p.setBrand("Gread");
-            p.setPrice(p.getPrice()*1.12);
-
         }
         else if (p.getTitle().toLowerCase().contains("foliatec")) {
             p.setBrand("Foliatex");
-            p.setPrice(p.getPrice()*1.12);
-
         }
         else if (p.getTitle().toLowerCase().contains("soffitte")) {
             p.setBrand("Soffitte");
-            p.setPrice(p.getPrice()*1.12);
         }
         else if (p.getTitle().toLowerCase().contains("castrol")) {
             p.setBrand("Castrol");
@@ -1911,12 +1887,10 @@ public class MotoroilDirektHarvester {
             p.setBrand("Eurolub");
         }
         else if (p.getTitle().toLowerCase().contains("led") && p.getTitle().toLowerCase().contains("lampe")) {
-            p.setPrice(p.getPrice()*1.12);
         }
         else {
             System.out.print(p.getTitle());
         }
-
         //endregion
 
         //region Save the pictures (SmallImage, BaseImage)
@@ -1983,6 +1957,11 @@ public class MotoroilDirektHarvester {
         try {
             price = Double.parseDouble(title.select("div.artikelDetailInfos").select("span#artikelPreis").text().replace(" €", "").replace(".", "").replace(",", "."));
             double oldPrice = price;
+
+            /*if (p.getTitle() == "iwas") {
+                price = price * 1,2 * iwasss
+            }*/
+
             if (price <= 1) {
                 price = price * 1.2 * 1.55;
             }
@@ -2020,7 +1999,7 @@ public class MotoroilDirektHarvester {
                 price = price * 1.2 * 1.20;
             }
             else {
-                System.out.println("------------------------------> ERROR IN PRICE CALC <---------------------------------\nThe Problematic Price: " + price);
+                System.out.println("------------------------------> ERROR IN PRICE CALC <---------------------------------\nThe Problematic Price: " + price + " The Problematic Product: " + justLink);
                 return null;
             }
 
@@ -2068,6 +2047,7 @@ public class MotoroilDirektHarvester {
         if (stock.contains("0 Stk. verfügbar in Filiale Wr Neustadt") && stock.contains("0 Stk. verfügbar in Filiale Schwechat")) {
             p.setInStock(0);
             p.setDeliveryTime("14 Werktage");
+            p.setOrderProcessingTime(14);
         } else {
             //Go through the string an get the stock out
             String helper = stock.substring(stock.indexOf("Schwechat") + 10, stock.length());
@@ -2080,12 +2060,14 @@ public class MotoroilDirektHarvester {
         }
         if(p.getInStock()<=0) {
             p.setDeliveryTime("14 Werktage");
+            p.setOrderProcessingTime(14);
         }
         else if (p.getOrderProcessingTime()>2){
             p.setDeliveryTime("2-3 Werktage");
         }
         else {
             p.setDeliveryTime("1-2 Werktage");
+            p.setOrderProcessingTime(2);
         }
         //endregion
 
@@ -2099,9 +2081,7 @@ public class MotoroilDirektHarvester {
         Date date2 = new Date();
         System.out.println( "End: " + date2.getTime());
         long l2 = date2.getTime();
-
         long difference = l2 - l1;
-
         System.out.println(difference);
         duration += difference;
 
@@ -2218,7 +2198,7 @@ public class MotoroilDirektHarvester {
                     WriteToCSV("",3,p);
                 }
 
-                System.out.print("Waitin 4 Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + " EAT: " + ((getEat(allLinks.size())/100.0)/60.0) + " AVG DUR: " + getAvgDurationPerProduct() + "\n");
+                System.out.print("Waitin 4 Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + " EAT: " + ((GetEat(allLinks.size())/100.0)/60.0) + " AVG DUR: " + getAvgDurationPerProduct() + "\n");
                 write.clear();
             }
             try {
@@ -2302,52 +2282,52 @@ public class MotoroilDirektHarvester {
         for (int i = 0; i < p.size(); i++) {
             System.out.println(i);
             if (sku) {
-                header += "sku";
-                actProd += "^" + p.get(i).getSku() + "^";
+                header += "sku;";
+                actProd += "^" + p.get(i).getSku() + "^;";
             }
             if (baseImage) {
-                header += ";image";
-                header += ";thumbnail";
-                header += ";small_image";
-                actProd += ";^" + p.get(i).getBaseImage() + "^";
-                actProd += ";^" + p.get(i).getBaseImage() + "^";
-                actProd += ";^" + p.get(i).getBaseImage() + "^";
+                header += "image;";
+                header += "thumbnail;";
+                header += "small_image;";
+                actProd += "^" + p.get(i).getBaseImage() + "^;";
+                actProd += "^" + p.get(i).getBaseImage() + "^;";
+                actProd += "^" + p.get(i).getBaseImage() + "^;";
             }
             if (brand) {
-                header += ";manufacturer";
-                actProd += ";^" + p.get(i).getBrand() + "^";
+                header += "manufacturer;";
+                actProd += "^" + p.get(i).getBrand() + "^;";
             }
             if (container) {
-                header += ";weight";
-                actProd += ";^" + p.get(i).getContainer() + "^";
+                header += "weight;";
+                actProd += "^" + p.get(i).getContainer() + "^;";
             }
             if (description) {
-                header += ";description";
-                actProd += ";^" + p.get(i).getDescription() + "^";
+                header += "description;";
+                actProd += "^" + p.get(i).getDescription() + "^;";
             }
             if (inStock) {
-                header += ";qty";
-                actProd += ";^" + p.get(i).getInStock() + "^";
+                header += "qty;";
+                actProd += "^" + p.get(i).getInStock() + "^;";
             }
             if (metaTitle) {
-                header += ";name";
-                actProd += ";^" + p.get(i).getMetaTitle() + "^";
+                header += "name;";
+                actProd += "^" + p.get(i).getMetaTitle() + "^;";
             }
             if (price) {
-                header += ";price";
-                actProd += ";^" + p.get(i).getPrice() + "^";
+                header += "price;";
+                actProd += "^" + p.get(i).getPrice() + "^;";
             }
             if (related && p.get(i).getRelated() != null) {
-                actProd += ";^" + p.get(i).getRelated() + "^";
-                header += ";related";
+                actProd += "^" + p.get(i).getRelated() + "^;";
+                header += "related;";
             }
             if (deliveryTime) {
-                actProd += ";^" + p.get(i).getDeliveryTime() + "^";
-                header += ";cjm_stockmessage";
+                actProd += "^" + p.get(i).getDeliveryTime() + "^;";
+                header += "cjm_stockmessage;";
             }
             if (orderprocessingtime) {
-                actProd += ";^" + p.get(i).getOrderProcessingTime() + "^";
-                header += ";cjm_ships_in";
+                actProd += "^" + p.get(i).getOrderProcessingTime() + "^;";
+                header += "cjm_ships_in;";
             }
 
             try {
@@ -2388,7 +2368,7 @@ public class MotoroilDirektHarvester {
                 if (p.getPrice()!=product.getPrice() || p.getInStock() != product.getInStock()) {
                     p.setPrice(product.getPrice());
                     p.setInStock(product.getInStock());
-                    p.setDeliveryTime(p.getDeliveryTime());
+                    p.setDeliveryTime(product.getDeliveryTime());
                     //p.setBaseImage(product.getBaseImage());
                     //p.setSmallImage(product.getBaseImage());
                     //p.setMetaTitle(product.getMetaTitle());
@@ -2402,7 +2382,7 @@ public class MotoroilDirektHarvester {
                     //p.setBaseImage(product.getBaseImage());
                     //p.setSmallImage(product.getBaseImage());
                     //p.setMetaTitle(product.getMetaTitle());
-                    p.setDeliveryTime(p.getDeliveryTime());
+                    p.setDeliveryTime(product.getDeliveryTime());
                     p.setOrderProcessingTime(product.getOrderProcessingTime());
                     p.setTitle(product.getTitle());
                     p.setBrand(product.getBrand());
@@ -2475,11 +2455,11 @@ public class MotoroilDirektHarvester {
         return allLinks;
     }
 
-    public int getEat(int cnt) {
+    public int GetEat(int cnt) {
         return getAvgDurationPerProduct() * (cnt-allProducts.size());
     }
 
-    public String getStatus() {
+    public String GetStatus() {
         LinkedList<String> products_test = new LinkedList<>();
         products_test.add("https://www.motoroeldirekt.at/Soffitte-C5W-36mm-6x-5630-SMD-Gelb?source=2&refertype=5&referid=228057");
         products_test.add("https://www.motoroeldirekt.at/Eurolub-Bremsenreiniger-5l?source=2&refertype=5&referid=228060");

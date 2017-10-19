@@ -7,6 +7,7 @@ import model.Products;
 import seo.SeoAudit;
 
 import javax.inject.Inject;
+import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -23,43 +24,12 @@ public class ProductEndpoint {
     @Path("start")
     @ApiOperation("Das Harvesten wird gestartet")
     @GET
-    public Response startHarvest(@QueryParam("part") int part) {
-        md.initializeLinks();
+    public Response startHarvest() {
+        md.InitializeLinks();
         LinkedList<String> all = md.getAllLinks();
         LinkedList<String> harvest = new LinkedList<>();
 
-        /*
-        if (part==1) {
-            for (int i = 0; i <= 350; i++) {
-                harvest.add(all.get(i));
-            }
-        }
-        if (part==2) {
-            for (int i = 350; i <= 700; i++) {
-                harvest.add(all.get(i));
-            }
-        }
-        if (part==3) {
-            for (int i = 700; i <= 1050; i++) {
-                harvest.add(all.get(i));
-            }
-        }
-        if (part==4) {
-            for (int i = 1050; i <= all.size()-1; i++) {
-                harvest.add(all.get(i));
-            }
-        }
-        if (part==10) {
-            for (int i = 130; i <= 180-1; i++) {
-                harvest.add(all.get(i));
-            }
-        }*/
-
-        for (int i = 0; i < all.size(); i++) {
-            harvest.add(all.get(i));
-            md.HarvestAllSites(harvest);
-            harvest.clear();
-        }
+        md.HarvestAllSites(all);
         md.setAllLinks(harvest);
         return Response.ok().build();
     }
@@ -75,24 +45,12 @@ public class ProductEndpoint {
     @Path("export")
     @ApiOperation("Exportieren des Betandes")
     @GET
-    public Response exportStockByBrand(@QueryParam("brand") String brand, @QueryParam("type") int type) {
-        ArrayList<Products> all = new ArrayList<Products>();
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response exportStockByBrand(@QueryParam("sku") boolean sku,@QueryParam("baseimage") boolean baseimage, @QueryParam("brand") boolean brand, @QueryParam("container") boolean container, @QueryParam("description") boolean description, @QueryParam("instock") boolean instock, @QueryParam("metatitle") boolean metatitle, @QueryParam("price") boolean price, @QueryParam("related") boolean related, @QueryParam("deliverytime") boolean deliverytime, @QueryParam("orderprocessingTime") boolean orderprocessingTime ) {
+        ArrayList<Products> all = md.GetProducts();
 
-        md.ExportDatabase(md.GetProducts(),true,false,false,true,true,true,true,true,true,false,true);
-
-        if (brand!="")
-            all = md.GetProductsByBrand(brand);
-        if(all.size()<=0) {
-            all = md.GetProducts();
-            brand = "";
-        }
-        else
-            brand = "_" + brand;
-
-        for (int i = 0; i < all.size(); i++) {
-            md.WriteToCSV(brand,type, all.get(i));
-        }
-        return Response.ok().build();
+        md.ExportDatabase(all,sku,baseimage,brand,container,description,instock,metatitle,price,related,deliverytime,orderprocessingTime);
+        return Response.ok(all).build();
     }
 
     @Path("imagename")
@@ -118,6 +76,6 @@ public class ProductEndpoint {
     @Produces(MediaType.TEXT_PLAIN)
     @GET
     public String getStatus() {
-        return md.getStatus();
+        return md.GetStatus();
     }
 }
