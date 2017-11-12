@@ -64,7 +64,6 @@ public class MotoroilDirektHarvester {
         FettePasten.add("http://www.motoroeldirekt.at/themes/kategorie/detail.php?artikelid=8356&kategorieid=4009&source=2&refertype=1&referid=4009");
         //endregion
 
-
         //region Motoroil & Additives Links
         LinkedList<String> MotoroilAndAdditives = new LinkedList<String>();
 
@@ -1657,18 +1656,7 @@ public class MotoroilDirektHarvester {
                 eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-60l-Fass?source=2&refertype=1&referid=2393");
 
                 //endregion
-/*
-        this.HarvestAllSites(eurolub0w16);
-        this.HarvestAllSites(eurolub0w20);
-        this.HarvestAllSites(eurolub0w30);
-        this.HarvestAllSites(eurolub5w20);
-        this.HarvestAllSites(eurolub5w30);
-        this.HarvestAllSites(eurolub5w40);
-        this.HarvestAllSites(eurolub10w40);
-        this.HarvestAllSites(eurolub10w60);
-        this.HarvestAllSites(eurolub15w40);
-        this.HarvestAllSites(eurolub20w50);
-*/
+
             //endregion
 
 
@@ -1677,7 +1665,6 @@ public class MotoroilDirektHarvester {
         //endregion
 
         allLinks.addAll(meguars);
-/*
         allLinks.addAll(c5w);
         allLinks.addAll(AdBlue);
         allLinks.addAll(armorAll);
@@ -1741,7 +1728,6 @@ public class MotoroilDirektHarvester {
         allLinks.addAll(t20w21w);
         allLinks.addAll(TraktorBaumaschinen);
         allLinks.addAll(w5w);
-*/
         System.out.println("Links: " + allLinks.size());
     }
 
@@ -1813,10 +1799,10 @@ public class MotoroilDirektHarvester {
             } while(doc.body()==null);
 
         } catch (IOException e) {
-            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + e.getMessage());
+            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nURL:" + justLink + "\nError Message:" + e.getMessage());
             return null;
         } catch (NullPointerException e) {
-            System.out.println("Jsoup Null Pointer Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + e.getMessage());
+            System.out.println("Jsoup Null Pointer Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nURL:" + justLink + "\nError Message:" + e.getMessage());
             return null;
         }
 
@@ -1894,7 +1880,6 @@ public class MotoroilDirektHarvester {
         //endregion
 
         //region Save the pictures (SmallImage, BaseImage)
-
         String imagePath = pic.select("div.artikelDetailBildBox").select("span#artikelDetailBild").outerHtml();
 
         if (!imagePath.contains("href=")) {
@@ -1906,8 +1891,6 @@ public class MotoroilDirektHarvester {
         imagePath = imagePath.substring(0, imagePath.indexOf("\">"));
         String baseImageForArtikelId = imagePath.substring(imagePath.lastIndexOf("/") + 1, imagePath.length());
         try (InputStream in = new URL(imagePath).openStream()) {
-                try {
-
                     //Making pretty filenames for the pictures
                     String fileName = MakeFileNamePretty(p.getMetaTitle());
                     String filePath = FILEPATHIMAGE + fileName;
@@ -1919,10 +1902,6 @@ public class MotoroilDirektHarvester {
 
                     p.setBaseImage(fileName);
                     p.setSmallImage(fileName);
-
-                } catch (IOException e) {
-                    System.out.println("Files Error IOException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
-                }
             } catch (MalformedURLException e) {
                 System.out.println("InputStream Error MalformedURLException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
             } catch (IOException e) {

@@ -27,10 +27,7 @@ public class ProductEndpoint {
     public Response startHarvest() {
         md.InitializeLinks();
         LinkedList<String> all = md.getAllLinks();
-        LinkedList<String> harvest = new LinkedList<>();
-
         md.HarvestAllSites(all);
-        md.setAllLinks(harvest);
         return Response.ok().build();
     }
 
