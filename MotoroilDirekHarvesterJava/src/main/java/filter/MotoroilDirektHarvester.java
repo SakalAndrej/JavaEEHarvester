@@ -2177,7 +2177,7 @@ public class MotoroilDirektHarvester {
                     WriteToCSV("",3,p);
                 }
 
-                System.out.print("Waitin 4 Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + " EAT: " + ((GetEat(allLinks.size())/100.0)/60.0) + " AVG DUR: " + getAvgDurationPerProduct() + "\n");
+                System.out.print("Waitin four Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + " EAT: " + ((GetEat(allLinks.size())/100.0)/60.0) + " AVG DUR: " + getAvgDurationPerProduct() + "\n");
                 write.clear();
             }
             try {
