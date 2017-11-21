@@ -2181,7 +2181,7 @@ public class MotoroilDirektHarvester {
                 write.clear();
             }
             try {
-                Thread.sleep(4 * 1000);
+                Thread.sleep(5 * 1000);
             } catch (InterruptedException e) {
                 System.out.println("ThreadSleep Error InterruptedException -> MotoroilDirektHarvester in the Method HarvestAllSites() -> Sleep the Thread for 4 sec \nError Message:" + e.getMessage());
             }
