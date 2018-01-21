@@ -15,6 +15,7 @@ public class MotoroilDirektHarvesterTest {
     @org.junit.Test
     public void harvestInnerProduct() throws Exception {
         Products p = INSTANCE.HarvestInnerProduct(PRODUCT);
+        assertTrue("Getting Price not working",p.getPrice()!=0.0);
         assertTrue("Log-In not working",p.getPrice()<30);
         System.out.printf(String.valueOf(p.getPrice()));
     }

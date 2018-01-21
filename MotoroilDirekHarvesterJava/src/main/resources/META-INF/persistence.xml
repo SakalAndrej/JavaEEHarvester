@@ -11,7 +11,7 @@
                            <property name="javax.persistence.schema-generation.database.action" value="create"/>
 
     <property name="hibernate.transaction.flush_before_completion" value="true"/>
-    <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
+    <property name="hibernate.dialect" value="org.hibernate.dialect.org.hibernate.dialect.mysqldialect"/>
     <property name="javax.persistence.sql-load-script-source" value="insert.sql"/>-->
         </properties>
     </persistence-unit>

@@ -13,7 +13,7 @@ public class RestConfig extends Application{
 
     public RestConfig() {
         BeanConfig beanConfig = new BeanConfig();
-        beanConfig.setVersion("1.0.0");
+        beanConfig.setVersion("1.0.1");
         beanConfig.setTitle("Motoroil");
         beanConfig.setSchemes(new String[]{"https"});
         beanConfig.setHost("oel-billiger.at:8082");

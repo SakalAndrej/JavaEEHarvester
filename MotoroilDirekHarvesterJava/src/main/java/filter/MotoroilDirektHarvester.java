@@ -1931,6 +1931,10 @@ public class MotoroilDirektHarvester {
         }
         //endregion
 
+
+        //Calculating the Weight of the Products through the String
+        p.setContainer(RecognationOfContainer(p));
+
         //region Save the price ---------------------------------------------------------------------------------
         double price = 0.0;
         try {
@@ -1957,25 +1961,33 @@ public class MotoroilDirektHarvester {
                 price = price * 1.2 * 1.35;
             }
             else if (price <= 12) {
-                price = price * 1.2 * 1.33;
+                price = price * 1.2 * 1.32;
             }
             else if (price <= 20) {
-                price = price * 1.2 * 1.3;
+                price = price * 1.2 * 1.29;
             }
             else if (price <= 30) {
-                price = price * 1.2 * 1.27;
+                price = price * 1.2 * 1.26;
             }
             else if (price <= 50) {
-                price = price * 1.2 * 1.24;
+                if (p.getContainer()<=20.0)
+                    price = price * 1.2 * 1.21;
+                else
+                    price = price * 1.2 * 1.23;
             }
             else if (price <= 100) {
-                price = price * 1.2 * 1.21;
+                if (p.getContainer()<=20.0)
+                    price = price * 1.2 * 1.18;
+                else if (p.getContainer()<=40.0)
+                    price = price * 1.2 * 1.20;
+                else
+                    price = price * 1.2 * 1.22;
             }
             else if (price > 100) {
-                price = price * 1.2 * 1.21;
+                price = price * 1.2 * 1.17;
             }
             else if (price > 1000) {
-                price = price * 1.2 * 1.20;
+                price = price * 1.2 * 1.15;
             }
             else {
                 System.out.println("------------------------------> ERROR IN PRICE CALC <---------------------------------\nThe Problematic Price: " + price + " The Problematic Product: " + justLink);
@@ -1991,8 +2003,6 @@ public class MotoroilDirektHarvester {
         }
         //endregion
 
-        //Calculating the Weight of the Products through the String
-        p.setContainer(RecognationOfContainer(p));
 
         //Save the description -------------------------------------------------------------------
         p.setDescription(descript.select("div.artikelDetailTabBox").html().replace("\n", ""));
