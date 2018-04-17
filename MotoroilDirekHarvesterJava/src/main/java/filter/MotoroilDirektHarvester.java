@@ -2033,13 +2033,13 @@ public class MotoroilDirektHarvester {
         //region Save the stock status ------------------------------------------------------------------
         String stock = title.select("div.artikelDetailInfos").select("div#filialBestaende").text();
 
-        if (stock.contains("0 Stk. verfügbar in Filiale Wr Neustadt") && stock.contains("0 Stk. verfügbar in Filiale Schwechat")) {
+        if (stock.contains("0 Stk. für Versand")) {
             p.setInStock(0);
             p.setDeliveryTime("14 Werktage");
             p.setOrderProcessingTime(14);
         } else {
             //Go through the string an get the stock out
-            String helper = stock.substring(stock.indexOf("Schwechat") + 10, stock.length());
+            String helper = stock.substring(stock.indexOf("Neustadt") + 9, stock.length());
             helper = helper.substring(0, helper.indexOf("Stk.") - 1);
 
             if (helper.contains("mehr als 100"))
