@@ -3,26 +3,39 @@ package facade;
 
 import model.Product;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
+@TransactionManagement(TransactionManagementType.BEAN)
 public class ProductFacade {
 
-    @PersistenceContext
+
     private EntityManager entityManager;
 
+    public EntityManager getEntityManager() {
+        if (entityManager==null) {
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("Products");
+            entityManager = emf.createEntityManager();
+        }
+        return entityManager;
+    }
 
     public void save(Product product) {
-        this.entityManager.persist(product);
+        this.getEntityManager().joinTransaction();
+        this.getEntityManager().getTransaction().begin();
+        this.getEntityManager().persist(product);
+        this.getEntityManager().flush();
+        this.getEntityManager().getTransaction().commit();
     }
 
     public void updateStock(Product productToUpdateStock) {
-        Product fromDb = this.entityManager.find(Product.class, productToUpdateStock.getSku());
+        Product fromDb = this.getEntityManager().find(Product.class, productToUpdateStock.getSku());
 
         fromDb.setTitle(productToUpdateStock.getTitle());
         fromDb.setInStock(productToUpdateStock.getInStock());
@@ -31,25 +44,25 @@ public class ProductFacade {
         fromDb.setPrice(productToUpdateStock.getPrice());
         fromDb.setGewinn(productToUpdateStock.getGewinn());
 
-        this.entityManager.merge(fromDb);
+        this.getEntityManager().merge(fromDb);
     }
 
     public boolean isExisting(String sku) {
-        if (this.entityManager.find(Product.class, sku) != null)
+        if (this.getEntityManager().find(Product.class, sku) != null)
             return true;
         else
             return false;
     }
 
     public List<Product> GetProductsNoCustomDescription() {
-        TypedQuery<Product> query = entityManager.createNamedQuery("Products.NoCustomDescription", Product.class);
+        TypedQuery<Product> query = getEntityManager().createNamedQuery("Products.NoCustomDescription", Product.class);
         List<Product> test = query.getResultList();
         return test;
     }
 
     public Product GetProductBySKU(String sku) {
         try {
-            TypedQuery<Product> query = entityManager.createQuery("select p FROM Product p where p.sku = '"+sku+"'", Product.class);
+            TypedQuery<Product> query = getEntityManager().createQuery("select p FROM Product p where p.sku = '"+sku+"'", Product.class);
             return query.getSingleResult();
         }
         catch (Exception e) {
@@ -59,19 +72,19 @@ public class ProductFacade {
     }
 
     public ArrayList<Product> GetProducts() {
-        TypedQuery<Product> query = entityManager.createNamedQuery("Products.getAll", Product.class);
+        TypedQuery<Product> query = getEntityManager().createNamedQuery("Products.getAll", Product.class);
         ArrayList<Product> test = (ArrayList<Product>) query.getResultList();
         return test;
     }
 
     public List<Product> GetMannolProducts() {
-        TypedQuery<Product> query = entityManager.createNamedQuery("Products.GetMannolProducts", Product.class);
+        TypedQuery<Product> query = getEntityManager().createNamedQuery("Products.GetMannolProducts", Product.class);
         List<Product> test = query.getResultList();
         return test;
     }
 
     public ArrayList<Product> GetProductsByBrand(String brand) {
-        TypedQuery<Product> query = entityManager.createNamedQuery("Products.GetProductsByBrand", Product.class).setParameter("brand",brand.toUpperCase());
+        TypedQuery<Product> query = getEntityManager().createNamedQuery("Products.GetProductsByBrand", Product.class).setParameter("brand",brand.toUpperCase());
         ArrayList<Product> test = (ArrayList<Product>) query.getResultList();
         return test;
     }

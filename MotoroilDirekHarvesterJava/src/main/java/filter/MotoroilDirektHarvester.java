@@ -2001,7 +2001,7 @@ public class MotoroilDirektHarvester {
             p.setOrderProcessingTime(14);
         } else {
             //Go through the string an get the stock out
-            String helper = stock.substring(stock.indexOf("Schwechat") + 10, stock.length());
+            String helper = stock.substring(stock.indexOf("Neustadt") + 9, stock.length());
             helper = helper.substring(0, helper.indexOf("Stk.") - 1);
 
             if (helper.contains("mehr als 100"))
@@ -2033,7 +2033,7 @@ public class MotoroilDirektHarvester {
         long difference = l2 - l1;
         System.out.println(difference);
         Status.setDuration(Status.getDuration() + ((int) difference));
-
+        System.out.println(p.toString());
         return p;
     }
 

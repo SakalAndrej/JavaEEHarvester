@@ -8,5 +8,6 @@ import java.text.ParseException;
 @Startup
 @Singleton
 public class InitBean {
+
     public void init() { }
 }
