@@ -20,14 +20,13 @@ public class ProductFacade {
 
     public EntityManager getEntityManager() {
         if (entityManager==null) {
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("Products");
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("myPU");
             entityManager = emf.createEntityManager();
         }
         return entityManager;
     }
 
     public void save(Product product) {
-        this.getEntityManager().joinTransaction();
         this.getEntityManager().getTransaction().begin();
         this.getEntityManager().persist(product);
         this.getEntityManager().flush();
