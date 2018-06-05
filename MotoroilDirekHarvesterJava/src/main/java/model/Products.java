@@ -60,6 +60,8 @@ public class Products
     //@Column(name = "PRICE")
     private double price;
 
+    private double gewinn;
+
     //Sku
     @NotNull
     @Id
@@ -108,6 +110,14 @@ public class Products
 //region Getter & Setter
 
 
+    public double getGewinn() {
+        return gewinn;
+    }
+
+    public void setGewinn(double gewinn) {
+        this.gewinn = gewinn;
+    }
+
     public int getOrderProcessingTime() {
         return orderProcessingTime;
     }
@@ -135,6 +145,8 @@ public class Products
     public boolean isCustomDescription() {
         return customDescription;
     }
+
+
 
     public void setCustomDescription(boolean _customDescription) {
         this.customDescription = _customDescription;

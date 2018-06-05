@@ -12,6 +12,7 @@ import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Stateless
@@ -21,15 +22,12 @@ public class MotoroilDirektHarvester {
     EntityManager em;
 
 
-    public final String FILENAME = "/home/manager/www/var/import/";
-    //public final String MACFILENAME = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/MotoroilDirekHarvesterJava/src/main/resources/";
+    //public final String ServerPathForExport = "/home/manager/www/var/import/";
+    public final String ServerPathForExport = "/Users/andrejsakal/Downloads/sample/MotoroilDirekHarvesterJava/";
 
-    public final String FILEPATHIMAGE = "/home/manager/www/media/import/";
-    //public final String MACFILEPATHIMAGE = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/media/";
+    //public final String FILEPATHIMAGE = "/home/manager/www/media/import/";
+    public final String FILEPATHIMAGE = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/media/";
 
-    public int getAvgDurationPerProduct() {
-        return (int) (duration/allProducts.size());
-    }
 
     public void setAllLinks(LinkedList<String> allLinks) {
         this.allLinks = allLinks;
@@ -1824,6 +1822,15 @@ public class MotoroilDirektHarvester {
         if(p.getTitle().toLowerCase().contains("mannol")) {
             p.setBrand("Mannol");
         }
+        else if(p.getTitle().toLowerCase().contains("mann")) {
+            p.setBrand("Mann");
+        }
+        else if(p.getTitle().toLowerCase().contains("mahle")) {
+            p.setBrand("Mahle");
+        }
+        else if(p.getTitle().toLowerCase().contains("mahle")) {
+            p.setBrand("Mahle");
+        }
         else if (p.getTitle().toLowerCase().contains("meguin")) {
             p.setBrand("Meguin Megol");
         }
@@ -1997,6 +2004,7 @@ public class MotoroilDirektHarvester {
             int temp = (int) price;
             price = temp + 0.9;
             p.setPrice(price);
+            p.setGewinn(price-oldPrice);
         } catch (NumberFormatException ex) {
             System.out.println("DoubleParse Error NumberFormatException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Calculate the price The Problematic Price: " + price + "\nError Message:" + ex.getMessage());
             return null;
@@ -2033,13 +2041,13 @@ public class MotoroilDirektHarvester {
         //region Save the stock status ------------------------------------------------------------------
         String stock = title.select("div.artikelDetailInfos").select("div#filialBestaende").text();
 
-        if (stock.contains("0 Stk. für Versand")) {
+        if (stock.contains("0 Stk. verfügbar in Filiale Wr Neustadt") && stock.contains("0 Stk. verfügbar in Filiale Schwechat")) {
             p.setInStock(0);
             p.setDeliveryTime("14 Werktage");
             p.setOrderProcessingTime(14);
         } else {
             //Go through the string an get the stock out
-            String helper = stock.substring(stock.indexOf("Neustadt") + 9, stock.length());
+            String helper = stock.substring(stock.indexOf("Schwechat") + 10, stock.length());
             helper = helper.substring(0, helper.indexOf("Stk.") - 1);
 
             if (helper.contains("mehr als 100"))
@@ -2072,7 +2080,7 @@ public class MotoroilDirektHarvester {
         long l2 = date2.getTime();
         long difference = l2 - l1;
         System.out.println(difference);
-        duration += difference;
+        Status.setDuration(Status.getDuration() + ((int) difference));
 
         return p;
     }
@@ -2161,15 +2169,19 @@ public class MotoroilDirektHarvester {
      */
     public List<Products> HarvestAllSites(LinkedList<String> allSites) {
 
+        Status.setIsHarvesting(true);
+        Status.setStartedHarvest(LocalDateTime.now());
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-        System.out.println("Start: " + sdf.format(cal.getTime()));
+        Status.appendLogs("Started Harvesting: " + sdf.format(cal.getTime()));
 
         HashMap<String, Products> write = new HashMap<String, Products>();
-
         for (int i = 0; i < allSites.size(); i++) {
 
-            //Den aktuellen Link des Produktes hinschicken und dann den produkt des linkes zurückkriegen
+            Status.setProductsToHarvest((allSites.size()-i));
+            Status.setProductsHarvested((i+1));
+
+            //Den aktuellen Link des Produktes hinschicken und dann den Produkt des linkes zurückkriegen
             Products p = null;
             try {
                 p = HarvestInnerProduct(allSites.get(i));
@@ -2186,8 +2198,8 @@ public class MotoroilDirektHarvester {
                 else if (mode == 2) {
                     WriteToCSV("",3,p);
                 }
-
-                System.out.print("Waitin four Sec. - Did " + (i + 1) + " Products - Last Products: " + p.getTitle() + " - Link to Pic: " + p.getBaseImage() + " EAT: " + ((GetEat(allLinks.size())/100.0)/60.0) + " AVG DUR: " + getAvgDurationPerProduct() + "\n");
+                Status.appendLogs("Produkt Nr.: " + i + " aktualisiert: " + p.getTitle() + " PictureUrl: " + p.getBaseImage());
+                Status.appendLogs("Dauer: " + Status.getDuration() + "EAT: " + Status.getEstimatedTime());
                 write.clear();
             }
             try {
@@ -2200,7 +2212,7 @@ public class MotoroilDirektHarvester {
         cal = Calendar.getInstance();
         System.out.println("End-Time: " + sdf.format(cal.getTime()));
         System.out.println("Anzahl der Produkte: " + allProducts.size() + "\n");
-
+        Status.setLastHarvest(LocalDateTime.now());
         return allProducts;
     }
 
@@ -2251,22 +2263,22 @@ public class MotoroilDirektHarvester {
 
     public void ExportDatabase(ArrayList<Products> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
 
+        if (new File(ServerPathForExport+"CustomExport.csv").exists()) {
+            try {
+                Files.delete(Paths.get(ServerPathForExport+"CustomExport.csv"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         FileWriter writer = null;
         String filename;
-        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer
         String header = "";
         String actProd = "";
 
         File currentDirFile = new File("CustomExport.csv");
-        String helper = currentDirFile.getAbsolutePath();
-        System.out.printf(helper);
-        String currentDir = helper.replace(".\\","");
-        filename = currentDir;
         boolean writeHeader = false;
-        filename = FILENAME + "CustomExport.csv";
-        //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer;description;cjm_ships_in
-        //String.format("^"+ sku +"^;" + "^1^;" + "^4^;" + "^1^;" + "^0^;" + "^base^;" + "^simple^;" + "^Default^;" + "^"+ metaTitle + "^"+ ";" + "^"+ inStock + "^"+ ";" + "^"+ price +"^;^"+ baseImage +"^;^" + baseImage +"^;^" + baseImage +"^;^" + container + "^;^" + brand +"^" + ";^"+description+";^"+orderprocessingtime+"^\n");
-
+        filename = ServerPathForExport + "CustomExport.csv";
 
         for (int i = 0; i < p.size(); i++) {
             System.out.println(i);
@@ -2348,6 +2360,9 @@ public class MotoroilDirektHarvester {
             if ((p = GetProductBySKU(product.getSku())) == null) {
                 try {
                     em.persist(product);
+                    em.setFlushMode(FlushModeType.COMMIT);
+                    em.flush();
+                    em.clear();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -2400,9 +2415,7 @@ public class MotoroilDirektHarvester {
     }
 
     public Products GetProductBySKU(String sku) {
-
         try {
-            //Products query = em.createNamedQuery("Products.getProductBySku", Products.class).setParameter("sku","'"+sku+"'").getSingleResult();
             Products query = getSingleResultOrNull(em.createQuery("select p FROM Products p where p.sku = '"+sku+"'", Products.class));
             return query;
         }
@@ -2410,7 +2423,6 @@ public class MotoroilDirektHarvester {
             System.out.println("SKU NOT EXISTING" + sku);
             return null;
         }
-
     }
 
     public static Products getSingleResultOrNull(Query query){
@@ -2442,10 +2454,6 @@ public class MotoroilDirektHarvester {
 
     public LinkedList<String> getAllLinks() {
         return allLinks;
-    }
-
-    public int GetEat(int cnt) {
-        return getAvgDurationPerProduct() * (cnt-allProducts.size());
     }
 
     public String GetStatus() {

@@ -40,7 +40,7 @@ public class ProductEndpoint {
     }
 
     @Path("export")
-    @ApiOperation("Exportieren des Betandes")
+    @ApiOperation("Exportieren des Bestandes")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response exportStockByBrand(@QueryParam("sku") boolean sku,@QueryParam("baseimage") boolean baseimage, @QueryParam("brand") boolean brand, @QueryParam("container") boolean container, @QueryParam("description") boolean description, @QueryParam("instock") boolean instock, @QueryParam("metatitle") boolean metatitle, @QueryParam("price") boolean price, @QueryParam("related") boolean related, @QueryParam("deliverytime") boolean deliverytime, @QueryParam("orderprocessingTime") boolean orderprocessingTime ) {
@@ -51,7 +51,7 @@ public class ProductEndpoint {
     }
 
     @Path("imagename")
-    @ApiOperation("Image Names making pretier")
+    @ApiOperation("Image Names making prettier")
     @GET
     public Response imagename() {
         md.MakeFileNamePrettyDb();
