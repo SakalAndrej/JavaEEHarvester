@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.*;
 
+@Stateless
 public class MotoroilDirektHarvester {
 
     @Inject

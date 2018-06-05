@@ -939,313 +939,403 @@
     <table id="238" parent="5" name="ITEM">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="239" parent="5" name="Products">
+    <table id="239" parent="5" name="Product">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="240" parent="233" name="id">
+    <table id="240" parent="5" name="Products">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="241" parent="233" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="233" name="additionalAdress">
+    <column id="242" parent="233" name="additionalAdress">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="233" name="city">
+    <column id="243" parent="233" name="city">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="233" name="country">
+    <column id="244" parent="233" name="country">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="233" name="latitude">
+    <column id="245" parent="233" name="latitude">
       <Position>5</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="233" name="longitude">
+    <column id="246" parent="233" name="longitude">
       <Position>6</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="233" name="street">
+    <column id="247" parent="233" name="street">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="247" parent="233" name="PRIMARY">
+    <key id="248" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="248" parent="234" name="id">
+    <column id="249" parent="234" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="234" name="firstName">
+    <column id="250" parent="234" name="firstName">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="234" name="lastName">
+    <column id="251" parent="234" name="lastName">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="234" name="address_id">
+    <column id="252" parent="234" name="address_id">
       <Position>4</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="252" parent="234" name="FK4q9crxu3nr5nuqfv811r1f9j8">
+    <index id="253" parent="234" name="FK4q9crxu3nr5nuqfv811r1f9j8">
       <ColNames>address_id</ColNames>
     </index>
-    <key id="253" parent="234" name="PRIMARY">
+    <key id="254" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="254" parent="234" name="FK4q9crxu3nr5nuqfv811r1f9j8">
+    <foreign-key id="255" parent="234" name="FK4q9crxu3nr5nuqfv811r1f9j8">
       <ColNames>address_id</ColNames>
       <RefSchemaName>mysqldb</RefSchemaName>
       <RefTableName>ADDRESS</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="255" parent="235" name="id">
+    <column id="256" parent="235" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="235" name="weight">
+    <column id="257" parent="235" name="weight">
       <Position>2</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="235" name="customer_id">
+    <column id="258" parent="235" name="customer_id">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="235" name="destination_id">
+    <column id="259" parent="235" name="destination_id">
       <Position>4</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="259" parent="235" name="FKenyjcohj0i9q75u493mkg5cwc">
+    <index id="260" parent="235" name="FKenyjcohj0i9q75u493mkg5cwc">
       <ColNames>customer_id</ColNames>
     </index>
-    <index id="260" parent="235" name="FKdh8pges2brivk901acib3mwj3">
+    <index id="261" parent="235" name="FKdh8pges2brivk901acib3mwj3">
       <ColNames>destination_id</ColNames>
     </index>
-    <key id="261" parent="235" name="PRIMARY">
+    <key id="262" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="262" parent="235" name="FKenyjcohj0i9q75u493mkg5cwc">
+    <foreign-key id="263" parent="235" name="FKenyjcohj0i9q75u493mkg5cwc">
       <ColNames>customer_id</ColNames>
       <RefSchemaName>mysqldb</RefSchemaName>
       <RefTableName>CUSTOMER</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="263" parent="235" name="FKdh8pges2brivk901acib3mwj3">
+    <foreign-key id="264" parent="235" name="FKdh8pges2brivk901acib3mwj3">
       <ColNames>destination_id</ColNames>
       <RefSchemaName>mysqldb</RefSchemaName>
       <RefTableName>ADDRESS</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="264" parent="236" name="Delivery_id">
+    <column id="265" parent="236" name="Delivery_id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="236" name="deliveryItems_id">
+    <column id="266" parent="236" name="deliveryItems_id">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="266" parent="236" name="UK_bgl0oi1swu3q4fe9qn8jyvt4h">
+    <index id="267" parent="236" name="UK_bgl0oi1swu3q4fe9qn8jyvt4h">
       <ColNames>deliveryItems_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="267" parent="236" name="FKbhohc1q0jl9xl0916281wn4m1">
+    <index id="268" parent="236" name="FKbhohc1q0jl9xl0916281wn4m1">
       <ColNames>Delivery_id</ColNames>
     </index>
-    <key id="268" parent="236" name="UK_bgl0oi1swu3q4fe9qn8jyvt4h">
+    <key id="269" parent="236" name="UK_bgl0oi1swu3q4fe9qn8jyvt4h">
       <ColNames>deliveryItems_id</ColNames>
       <UnderlyingIndexName>UK_bgl0oi1swu3q4fe9qn8jyvt4h</UnderlyingIndexName>
     </key>
-    <foreign-key id="269" parent="236" name="FKbhohc1q0jl9xl0916281wn4m1">
+    <foreign-key id="270" parent="236" name="FKbhohc1q0jl9xl0916281wn4m1">
       <ColNames>Delivery_id</ColNames>
       <RefSchemaName>mysqldb</RefSchemaName>
       <RefTableName>DELIVERY</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="270" parent="236" name="FK6m5y4pufosakqi9kqhj0l9to1">
+    <foreign-key id="271" parent="236" name="FK6m5y4pufosakqi9kqhj0l9to1">
       <ColNames>deliveryItems_id</ColNames>
       <RefSchemaName>mysqldb</RefSchemaName>
       <RefTableName>DELIVERY_ITEM</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="271" parent="237" name="id">
+    <column id="272" parent="237" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="237" name="amount">
+    <column id="273" parent="237" name="amount">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="237" name="item_id">
+    <column id="274" parent="237" name="item_id">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="274" parent="237" name="FK8hs4qhn063ohvxawu1f1o4jtg">
+    <index id="275" parent="237" name="FK8hs4qhn063ohvxawu1f1o4jtg">
       <ColNames>item_id</ColNames>
     </index>
-    <key id="275" parent="237" name="PRIMARY">
+    <key id="276" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="276" parent="237" name="FK8hs4qhn063ohvxawu1f1o4jtg">
+    <foreign-key id="277" parent="237" name="FK8hs4qhn063ohvxawu1f1o4jtg">
       <ColNames>item_id</ColNames>
       <RefSchemaName>mysqldb</RefSchemaName>
       <RefTableName>ITEM</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="277" parent="238" name="id">
+    <column id="278" parent="238" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="238" name="description">
+    <column id="279" parent="238" name="description">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="238" name="name">
+    <column id="280" parent="238" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="238" name="weight">
+    <column id="281" parent="238" name="weight">
       <Position>4</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="281" parent="238" name="PRIMARY">
+    <key id="282" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="282" parent="239" name="sku">
+    <column id="283" parent="239" name="sku">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="239" name="baseImage">
+    <column id="284" parent="239" name="baseImage">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="239" name="brand">
+    <column id="285" parent="239" name="brand">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="239" name="container">
+    <column id="286" parent="239" name="container">
       <Position>4</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="239" name="customDescription">
+    <column id="287" parent="239" name="customDescription">
       <Position>5</Position>
       <DataType>bit(1)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="239" name="deliveryTime">
+    <column id="288" parent="239" name="deliveryTime">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="239" name="description">
+    <column id="289" parent="239" name="description">
       <Position>7</Position>
       <DataType>longtext|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="239" name="gewinn">
+    <column id="290" parent="239" name="gewinn">
       <Position>8</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="239" name="inStock">
+    <column id="291" parent="239" name="inStock">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="239" name="metaTitle">
+    <column id="292" parent="239" name="metaTitle">
       <Position>10</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="239" name="orderProcessingTime">
+    <column id="293" parent="239" name="orderProcessingTime">
       <Position>11</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="239" name="price">
+    <column id="294" parent="239" name="price">
       <Position>12</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="239" name="related">
+    <column id="295" parent="239" name="related">
       <Position>13</Position>
       <DataType>longtext|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="239" name="smallImage">
+    <column id="296" parent="239" name="smallImage">
       <Position>14</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="239" name="title">
+    <column id="297" parent="239" name="title">
       <Position>15</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="297" parent="239" name="PRIMARY">
+    <key id="298" parent="239" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sku</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="299" parent="240" name="sku">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="240" name="baseImage">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="301" parent="240" name="brand">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="302" parent="240" name="container">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="303" parent="240" name="customDescription">
+      <Position>5</Position>
+      <DataType>bit(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="304" parent="240" name="deliveryTime">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="305" parent="240" name="description">
+      <Position>7</Position>
+      <DataType>longtext|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="306" parent="240" name="gewinn">
+      <Position>8</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="307" parent="240" name="inStock">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="308" parent="240" name="metaTitle">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="309" parent="240" name="orderProcessingTime">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="310" parent="240" name="price">
+      <Position>12</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="311" parent="240" name="related">
+      <Position>13</Position>
+      <DataType>longtext|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="312" parent="240" name="smallImage">
+      <Position>14</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="313" parent="240" name="title">
+      <Position>15</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="314" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>sku</ColNames>
       <Primary>1</Primary>

@@ -3,7 +3,6 @@ package web;
 import facade.ProductFacade;
 import filter.MotoroilDirektHarvester;
 import filter.Status;
-import model.Product;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
