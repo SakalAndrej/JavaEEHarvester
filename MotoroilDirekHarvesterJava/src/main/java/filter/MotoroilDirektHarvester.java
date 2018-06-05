@@ -1,11 +1,14 @@
 package filter;
-import model.Products;
+
+import facade.ProductFacade;
+import model.Product;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.*;
 import java.io.*;
 import java.net.*;
@@ -15,11 +18,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.*;
 
-@Stateless
 public class MotoroilDirektHarvester {
 
-    @PersistenceContext
-    EntityManager em;
+    @Inject
+    ProductFacade productFacade;
 
 
     //public final String ServerPathForExport = "/home/manager/www/var/import/";
@@ -28,23 +30,11 @@ public class MotoroilDirektHarvester {
     //public final String FILEPATHIMAGE = "/home/manager/www/media/import/";
     public final String FILEPATHIMAGE = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/media/";
 
-
-    public void setAllLinks(LinkedList<String> allLinks) {
-        this.allLinks = allLinks;
-    }
-
-    private int avgDurationPerProduct;
-
-    private int eat;
-
     private LinkedList<String> allLinks = new LinkedList<>();
 
-    private long duration;
-
-    private LinkedList<Products> allProducts = new LinkedList<>();
+    private LinkedList<Product> allProducts = new LinkedList<>();
 
     public void InitializeLinks() {
-        LinkedList<Products> products = new LinkedList<>();
 
         //region Part End:
 
@@ -1285,7 +1275,6 @@ public class MotoroilDirektHarvester {
         LinkedList<String> castrol5w20 = new LinkedList<>();
 
 
-
         castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-1l?source=2&refertype=1&referid=1987");
         castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=1987");
         castrol5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Castrol/PKW-Motoroele/SAE-5W-40/Castrol-Edge-Titanium-FST-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=1987");
@@ -1504,160 +1493,158 @@ public class MotoroilDirektHarvester {
 
         //region Part 4
 
-            //region Eurolub Motoroil
+        //region Eurolub Motoroil
 
         //region 0W16
-                LinkedList<String> eurolub0w16 = new LinkedList<String>();
-                eurolub0w16.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-16/Eurolub-SUPER-ECO-SAE-0W-16-Motoroel-1l?source=2&refertype=1&referid=4114");
-                //endregion
+        LinkedList<String> eurolub0w16 = new LinkedList<String>();
+        eurolub0w16.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-16/Eurolub-SUPER-ECO-SAE-0W-16-Motoroel-1l?source=2&refertype=1&referid=4114");
+        //endregion
 
-                //region 0W20
-                LinkedList<String> eurolub0w20 = new LinkedList<>();
-                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-ECO-VO-SAE-0W-20-Motoroel-1l?source=2&refertype=1&referid=2140");
-                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-1l-Flasche?source=2&refertype=1&referid=2140");
-                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-208l-Fass?source=2&refertype=1&referid=2140");
-                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-20l-Kanister?source=2&refertype=1&referid=2140");
-                eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2140");
-                //endregion
+        //region 0W20
+        LinkedList<String> eurolub0w20 = new LinkedList<>();
+        eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-ECO-VO-SAE-0W-20-Motoroel-1l?source=2&refertype=1&referid=2140");
+        eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-1l-Flasche?source=2&refertype=1&referid=2140");
+        eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-208l-Fass?source=2&refertype=1&referid=2140");
+        eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-20l-Kanister?source=2&refertype=1&referid=2140");
+        eurolub0w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-20/Eurolub-FE-LL4-0W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2140");
+        //endregion
 
-                //region 0W30
-                LinkedList<String> eurolub0w30 = new LinkedList<>();
+        //region 0W30
+        LinkedList<String> eurolub0w30 = new LinkedList<>();
 
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-1l-Flasche?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-ECO-LL-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-ECO-PS-C-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-1l?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-20l-Kanister?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-60l-Fass?source=2&refertype=1&referid=4111");
-                eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-MULTITEC-FO-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
-
-
-                //endregion
-
-                //region 5W20
-                LinkedList<String> eurolub5w20 = new LinkedList<>();
-                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-1l?source=2&refertype=1&referid=2683");
-                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-208l-Fass?source=2&refertype=1&referid=2683");
-                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-20l-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=2683");
-                eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2683");
-
-                //endregion
-
-                //region 5W30
-                LinkedList<String> eurolub5w30 = new LinkedList<>();
-
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-1l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
-                eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
-
-                //endregion
-
-                //region 5W40
-                LinkedList<String> eurolub5w40 = new LinkedList<>();
-
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-1l?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-1l?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
-                eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-1l-Flasche?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Eco-B12-0W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-ECO-LL-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-ECO-PS-C-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-1l?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-20l-Kanister?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-Motor-VO-SAE-0W-30--ACEA-A5B5%2C-Volvo-Motoroel-60l-Fass?source=2&refertype=1&referid=4111");
+        eurolub0w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-0W-30/Eurolub-MULTITEC-FO-SAE-0W-30-Motoroel-1l?source=2&refertype=1&referid=4111");
 
 
-                //endregion
+        //endregion
 
-                //region 10W40
-                LinkedList<String> eurolub10w40 = new LinkedList<>();
+        //region 5W20
+        LinkedList<String> eurolub5w20 = new LinkedList<>();
+        eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-1l?source=2&refertype=1&referid=2683");
+        eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-208l-Fass?source=2&refertype=1&referid=2683");
+        eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-20l-%28Ford-EcoBoost-WSS-M2C948-B%29?source=2&refertype=1&referid=2683");
+        eurolub5w20.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-20/Eurolub-Supertec-5W-20-Motoroel-60l-Fass?source=2&refertype=1&referid=2683");
+
+        //endregion
+
+        //region 5W30
+        LinkedList<String> eurolub5w30 = new LinkedList<>();
+
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanpower-C1-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleanstar-C2-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-CLEANTEC-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Cleantop-C4-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-1l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-20l-Kanister?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-Multitec-5W-30-%28Ford%29-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-1l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-208l-Fass?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-5l?source=2&refertype=1&referid=2141");
+        eurolub5w30.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-30/Eurolub-WIV-ECO-5W-30-Motoroel-60l-Fass?source=2&refertype=1&referid=2141");
+
+        //endregion
+
+        //region 5W40
+        LinkedList<String> eurolub5w40 = new LinkedList<>();
+
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-Formel-1-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-1l?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-1l?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-5l?source=2&refertype=1&referid=2142");
+        eurolub5w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-5W-40/Eurolub-SYNT-PDI-SAE-5W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2142");
 
 
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-5l?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-1l?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-5l?source=2&refertype=1&referid=2143");
-                eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2143");
+        //endregion
 
-                //endregion
-
-                //region 10W60
-                LinkedList<String> eurolub10w60 = new LinkedList<>();
-
-                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-1l?source=2&refertype=1&referid=2144");
-                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-208l-Fass?source=2&refertype=1&referid=2144");
-                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-20l-Kanister?source=2&refertype=1&referid=2144");
-                eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-60l-Fass?source=2&refertype=1&referid=2144");
+        //region 10W40
+        LinkedList<String> eurolub10w40 = new LinkedList<>();
 
 
-                //endregion
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-5l?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-Formel2-10W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-1l?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-5l?source=2&refertype=1&referid=2143");
+        eurolub10w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-40/Eurolub-GT-10W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2143");
 
-                //region 15w40
-                LinkedList<String> eurolub15w40 = new LinkedList<>();
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-5l?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-1l?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-5l?source=2&refertype=1&referid=2145");
-                eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2145");
-                //endregion
+        //endregion
 
-                //region 20W50
-                LinkedList<String> eurolub20w50 = new LinkedList<>();
+        //region 10W60
+        LinkedList<String> eurolub10w60 = new LinkedList<>();
 
-                eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-1l?source=2&refertype=1&referid=2393");
-                eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-60l-Fass?source=2&refertype=1&referid=2393");
-
-                //endregion
-
-            //endregion
+        eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-1l?source=2&refertype=1&referid=2144");
+        eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-208l-Fass?source=2&refertype=1&referid=2144");
+        eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-20l-Kanister?source=2&refertype=1&referid=2144");
+        eurolub10w60.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-10W-60/Eurolub-GT2-10W-60-Motoroel-60l-Fass?source=2&refertype=1&referid=2144");
 
 
+        //endregion
+
+        //region 15w40
+        LinkedList<String> eurolub15w40 = new LinkedList<>();
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-5l?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Formel-V-15W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-1l?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-208l-Fass?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-20l-Kanister?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-5l?source=2&refertype=1&referid=2145");
+        eurolub15w40.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-15W-40/Eurolub-Turbo-Star-15W-40-Motoroel-60l-Fass?source=2&refertype=1&referid=2145");
+        //endregion
+
+        //region 20W50
+        LinkedList<String> eurolub20w50 = new LinkedList<>();
+
+        eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-1l?source=2&refertype=1&referid=2393");
+        eurolub20w50.add("https://www.motoroeldirekt.at/Oel-Marken/Eurolub/PKW-Motoroele/SAE-20W-50/Eurolub-Multigrade-SAE-20W-50-Classic-Motoroel-60l-Fass?source=2&refertype=1&referid=2393");
+
+        //endregion
+
+        //endregion
 
 
         //endregion
@@ -1732,11 +1719,12 @@ public class MotoroilDirektHarvester {
     /**
      * Harvest the given product in shape of a link and
      * returns the finished product filled with all entities
+     *
      * @param justLink ProductAd Link
-     * @return finished Products with all entities
+     * @return finished Product with all entities
      * @throws InterruptedException
      */
-    public Products HarvestInnerProduct(String justLink) throws InterruptedException {
+    public Product HarvestInnerProduct(String justLink) throws InterruptedException {
 
         Date date1 = new Date();
 
@@ -1755,11 +1743,11 @@ public class MotoroilDirektHarvester {
                     .method(Connection.Method.GET)
                     .execute();
         } catch (Exception ex) {
-            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + ex.getMessage());
+            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nError Message:" + ex.getMessage());
         }
         try {
             CookieManager initalCookies = null;
-             login = Jsoup
+            login = Jsoup
                     .connect("https://www.motoroeldirekt.at/themes/user/index.php")
                     //.userAgent(USER_AGENT)
                     .cookies(res.cookies())
@@ -1775,11 +1763,11 @@ public class MotoroilDirektHarvester {
                     .data("email", "office@oel-billiger.at")
                     .data("passwort", "andiiana1")
                     .data("einloggen", "Login")
-                     //.data("c_user","100001372713592")
+                    //.data("c_user","100001372713592")
                     .method(Connection.Method.POST)
                     .execute();
         } catch (Exception ex) {
-            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nError Message:" + ex.getMessage());
+            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nError Message:" + ex.getMessage());
         }
         //The downloaded Productpage
         Document doc = null;
@@ -1788,19 +1776,19 @@ public class MotoroilDirektHarvester {
         try {
 
             do {
-                if (success==true)
+                if (success == true)
                     Thread.sleep(3000);
 
                 doc = Jsoup.connect(justLink).cookies(res.cookies()).get();
 
                 success = true;
-            } while(doc.body()==null);
+            } while (doc.body() == null);
 
         } catch (IOException e) {
-            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nURL:" + justLink + "\nError Message:" + e.getMessage());
+            System.out.println("Jsoup Connect Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nURL:" + justLink + "\nError Message:" + e.getMessage());
             return null;
         } catch (NullPointerException e) {
-            System.out.println("Jsoup Null Pointer Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Products Page \nURL:" + justLink + "\nError Message:" + e.getMessage());
+            System.out.println("Jsoup Null Pointer Error -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Download the Product Page \nURL:" + justLink + "\nError Message:" + e.getMessage());
             return null;
         }
 
@@ -1811,77 +1799,56 @@ public class MotoroilDirektHarvester {
         //endregion
 
         //Here I am going to save all infos ------------------------------------------------------------------
-        Products p = new Products();
+        Product p = new Product();
         Elements title = artikelDetailBox;
         Elements pic = artikelDetailBox;
 
-        p.setTitle(title.select("h1").text().replace("W-","W").replace(" ml","ml"));
-        p.setMetaTitle(p.getTitle().replace("Motoröl","").replace("CASTROL","Castrol").replace("EUROLUB","Eurolub   ").replace("SOFFITTE","Soffitte").replace("FOLIATEC","Foliatec").replace("OSRAM","Osram").replace("PHILIPS","Philips").replace("SONAX","Sonax").replace("NIGRIN","Nigrin").replace("MANNOL","Mannol").replace("Kanister","").replace("Fass","").replace("mororöl","").replace("Blechdose","").replace("Flasche","").replace("Kanne","").replace("LongLife","LL").replace("for","für").replace("  60l "," 60l").replace("  1l "," 1l").replace("  10l "," 10l").replace("  208l "," 208l").replace("  5l "," 5l").replace("  20l "," 20l"));
+        p.setTitle(title.select("h1").text().replace("W-", "W").replace(" ml", "ml"));
+        p.setMetaTitle(p.getTitle().replace("Motoröl", "").replace("CASTROL", "Castrol").replace("EUROLUB", "Eurolub   ").replace("SOFFITTE", "Soffitte").replace("FOLIATEC", "Foliatec").replace("OSRAM", "Osram").replace("PHILIPS", "Philips").replace("SONAX", "Sonax").replace("NIGRIN", "Nigrin").replace("MANNOL", "Mannol").replace("Kanister", "").replace("Fass", "").replace("mororöl", "").replace("Blechdose", "").replace("Flasche", "").replace("Kanne", "").replace("LongLife", "LL").replace("for", "für").replace("  60l ", " 60l").replace("  1l ", " 1l").replace("  10l ", " 10l").replace("  208l ", " 208l").replace("  5l ", " 5l").replace("  20l ", " 20l"));
 
         //region Get Brands
-        if(p.getTitle().toLowerCase().contains("mannol")) {
+        if (p.getTitle().toLowerCase().contains("mannol")) {
             p.setBrand("Mannol");
-        }
-        else if(p.getTitle().toLowerCase().contains("mann")) {
+        } else if (p.getTitle().toLowerCase().contains("mann")) {
             p.setBrand("Mann");
-        }
-        else if(p.getTitle().toLowerCase().contains("mahle")) {
+        } else if (p.getTitle().toLowerCase().contains("mahle")) {
             p.setBrand("Mahle");
-        }
-        else if(p.getTitle().toLowerCase().contains("mahle")) {
+        } else if (p.getTitle().toLowerCase().contains("mahle")) {
             p.setBrand("Mahle");
-        }
-        else if (p.getTitle().toLowerCase().contains("meguin")) {
+        } else if (p.getTitle().toLowerCase().contains("meguin")) {
             p.setBrand("Meguin Megol");
-        }
-        else if (p.getTitle().toLowerCase().contains("liqui moly")) {
+        } else if (p.getTitle().toLowerCase().contains("liqui moly")) {
             p.setBrand("Liqui Moly");
-        }
-        else if (p.getTitle().toLowerCase().contains("sonax")) {
+        } else if (p.getTitle().toLowerCase().contains("sonax")) {
             p.setBrand("Sonax");
-        }
-        else if (p.getTitle().toLowerCase().contains("meguiars")) {
+        } else if (p.getTitle().toLowerCase().contains("meguiars")) {
             p.setBrand("Meguiars");
-        }
-        else if (p.getTitle().toLowerCase().contains("nigrin")) {
+        } else if (p.getTitle().toLowerCase().contains("nigrin")) {
             p.setBrand("Nigrin");
-        }
-        else if (p.getTitle().toLowerCase().contains("auto finesse")) {
+        } else if (p.getTitle().toLowerCase().contains("auto finesse")) {
             p.setBrand("Auto Finesse");
-        }
-        else if (p.getTitle().toLowerCase().contains("armor all")) {
+        } else if (p.getTitle().toLowerCase().contains("armor all")) {
             p.setBrand("Armor All");
-        }
-        else if (p.getTitle().toLowerCase().contains("eurolub")) {
+        } else if (p.getTitle().toLowerCase().contains("eurolub")) {
             p.setBrand("Eurolub");
-        }
-        else if (p.getTitle().toLowerCase().contains("würth sabesto")) {
+        } else if (p.getTitle().toLowerCase().contains("würth sabesto")) {
             p.setBrand("Würth saBesto");
-        }
-        else if (p.getTitle().toLowerCase().contains("crc braklen")) {
+        } else if (p.getTitle().toLowerCase().contains("crc braklen")) {
             p.setBrand("CRC Braklen");
-        }
-        else if (p.getTitle().toLowerCase().contains("osram")) {
+        } else if (p.getTitle().toLowerCase().contains("osram")) {
             p.setBrand("Osram");
-        }
-        else if (p.getTitle().toLowerCase().contains("gread")) {
+        } else if (p.getTitle().toLowerCase().contains("gread")) {
             p.setBrand("Gread");
-        }
-        else if (p.getTitle().toLowerCase().contains("foliatec")) {
+        } else if (p.getTitle().toLowerCase().contains("foliatec")) {
             p.setBrand("Foliatex");
-        }
-        else if (p.getTitle().toLowerCase().contains("soffitte")) {
+        } else if (p.getTitle().toLowerCase().contains("soffitte")) {
             p.setBrand("Soffitte");
-        }
-        else if (p.getTitle().toLowerCase().contains("castrol")) {
+        } else if (p.getTitle().toLowerCase().contains("castrol")) {
             p.setBrand("Castrol");
-        }
-        else if (p.getTitle().toLowerCase().contains("eurolub")) {
+        } else if (p.getTitle().toLowerCase().contains("eurolub")) {
             p.setBrand("Eurolub");
-        }
-        else if (p.getTitle().toLowerCase().contains("led") && p.getTitle().toLowerCase().contains("lampe")) {
-        }
-        else {
+        } else if (p.getTitle().toLowerCase().contains("led") && p.getTitle().toLowerCase().contains("lampe")) {
+        } else {
             System.out.print(p.getTitle());
         }
         //endregion
@@ -1898,48 +1865,48 @@ public class MotoroilDirektHarvester {
         imagePath = imagePath.substring(0, imagePath.indexOf("\">"));
         String baseImageForArtikelId = imagePath.substring(imagePath.lastIndexOf("/") + 1, imagePath.length());
         try (InputStream in = new URL(imagePath).openStream()) {
-                    //Making pretty filenames for the pictures
-                    String fileName = MakeFileNamePretty(p.getMetaTitle());
-                    String filePath = FILEPATHIMAGE + fileName;
+            //Making pretty filenames for the pictures
+            String fileName = MakeFileNamePretty(p.getMetaTitle());
+            String filePath = FILEPATHIMAGE + fileName;
 
-                    if (!Files.exists(Paths.get(filePath)))
-                        Files.copy(in, Paths.get(filePath));
-                    else
-                        System.out.print("Picture already exists\n");
+            if (!Files.exists(Paths.get(filePath)))
+                Files.copy(in, Paths.get(filePath));
+            else
+                System.out.print("Picture already exists\n");
 
-                    p.setBaseImage(fileName);
-                    p.setSmallImage(fileName);
-            } catch (MalformedURLException e) {
-                System.out.println("InputStream Error MalformedURLException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
-            } catch (IOException e) {
-                System.out.println("InputStream Error IOException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
-            }
+            fileName = fileName.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à", "a").replace("ß", "ss").replace("--", "-").replace(":", " ") + ".jpg";
+
+            p.setBaseImage(fileName);
+            p.setSmallImage(fileName);
+        } catch (MalformedURLException e) {
+            System.out.println("InputStream Error MalformedURLException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("InputStream Error IOException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Save the downloaded Image \nError Message:" + e.getMessage());
+        }
         //endregion
 
         //region Save the artikelid from the imagename -----------------------------------------------------------------------------
         if (justLink.contains("artikelid=")) {
             p.setSku(justLink.substring(justLink.indexOf("artikelid=") + 10, justLink.indexOf("&")));
-        }
-        else {
-            baseImageForArtikelId = baseImageForArtikelId.substring(baseImageForArtikelId.indexOf("_")+1,baseImageForArtikelId.length());
-            baseImageForArtikelId = baseImageForArtikelId.substring(0,baseImageForArtikelId.indexOf("_"));
+        } else {
+            baseImageForArtikelId = baseImageForArtikelId.substring(baseImageForArtikelId.indexOf("_") + 1, baseImageForArtikelId.length());
+            baseImageForArtikelId = baseImageForArtikelId.substring(0, baseImageForArtikelId.indexOf("_"));
             boolean numberFound = false;
             int i = 0;
             while (!numberFound) {
-                if (baseImageForArtikelId.charAt(i)=='0') {
+                if (baseImageForArtikelId.charAt(i) == '0') {
                     i++;
-                }
-                else {
-                    numberFound=true;
+                } else {
+                    numberFound = true;
                 }
             }
-            baseImageForArtikelId = baseImageForArtikelId.substring(i,baseImageForArtikelId.length());
+            baseImageForArtikelId = baseImageForArtikelId.substring(i, baseImageForArtikelId.length());
             p.setSku(baseImageForArtikelId);
         }
         //endregion
 
 
-        //Calculating the Weight of the Products through the String
+        //Calculating the Weight of the Product through the String
         p.setContainer(RecognationOfContainer(p));
 
         //region Save the price ---------------------------------------------------------------------------------
@@ -1954,49 +1921,37 @@ public class MotoroilDirektHarvester {
 
             if (price <= 1) {
                 price = price * 1.2 * 1.55;
-            }
-            else if (price <= 2) {
+            } else if (price <= 2) {
                 price = price * 1.2 * 1.50;
-            }
-            else if (price <= 3) {
+            } else if (price <= 3) {
                 price = price * 1.2 * 1.45;
-            }
-            else if (price <= 4) {
+            } else if (price <= 4) {
                 price = price * 1.2 * 1.40;
-            }
-            else if (price <= 5) {
+            } else if (price <= 5) {
                 price = price * 1.2 * 1.35;
-            }
-            else if (price <= 12) {
+            } else if (price <= 12) {
                 price = price * 1.2 * 1.32;
-            }
-            else if (price <= 20) {
+            } else if (price <= 20) {
                 price = price * 1.2 * 1.29;
-            }
-            else if (price <= 30) {
+            } else if (price <= 30) {
                 price = price * 1.2 * 1.26;
-            }
-            else if (price <= 50) {
-                if (p.getContainer()<=20.0)
+            } else if (price <= 50) {
+                if (p.getContainer() <= 20.0)
                     price = price * 1.2 * 1.21;
                 else
                     price = price * 1.2 * 1.23;
-            }
-            else if (price <= 100) {
-                if (p.getContainer()<=20.0)
+            } else if (price <= 100) {
+                if (p.getContainer() <= 20.0)
                     price = price * 1.2 * 1.18;
-                else if (p.getContainer()<=40.0)
+                else if (p.getContainer() <= 40.0)
                     price = price * 1.2 * 1.20;
                 else
                     price = price * 1.2 * 1.22;
-            }
-            else if (price > 100) {
+            } else if (price > 100) {
                 price = price * 1.2 * 1.17;
-            }
-            else if (price > 1000) {
+            } else if (price > 1000) {
                 price = price * 1.2 * 1.15;
-            }
-            else {
+            } else {
                 System.out.println("------------------------------> ERROR IN PRICE CALC <---------------------------------\nThe Problematic Price: " + price + " The Problematic Product: " + justLink);
                 return null;
             }
@@ -2004,7 +1959,7 @@ public class MotoroilDirektHarvester {
             int temp = (int) price;
             price = temp + 0.9;
             p.setPrice(price);
-            p.setGewinn(price-oldPrice);
+            p.setGewinn(price - oldPrice);
         } catch (NumberFormatException ex) {
             System.out.println("DoubleParse Error NumberFormatException -> MotoroilDirektHarvester in the Method HarvesterInnerProduct() -> Calculate the price The Problematic Price: " + price + "\nError Message:" + ex.getMessage());
             return null;
@@ -2027,14 +1982,12 @@ public class MotoroilDirektHarvester {
             String temp = description.substring(startSplitter, endSplitter - 1);
             temp = temp.substring(0, temp.indexOf("</strong>") + 9);
             p.setDescription(p.getDescription().replace(temp, "<h1>" + betweenStrong + "</h1>"));
-        }
-        else
-            p.setDescription("<h1>"+p.getMetaTitle()+"</h1> <br>" + p.getDescription());
+        } else
+            p.setDescription("<h1>" + p.getMetaTitle() + "</h1> <br>" + p.getDescription());
 
-        if (p.getContainer()>=60) {
+        if (p.getContainer() >= 60) {
             p.setOrderProcessingTime(3);
-        }
-        else {
+        } else {
             p.setOrderProcessingTime(2);
         }
 
@@ -2055,14 +2008,12 @@ public class MotoroilDirektHarvester {
             else
                 p.setInStock(Integer.parseInt(helper));
         }
-        if(p.getInStock()<=0) {
+        if (p.getInStock() <= 0) {
             p.setDeliveryTime("14 Werktage");
             p.setOrderProcessingTime(14);
-        }
-        else if (p.getOrderProcessingTime()>2){
+        } else if (p.getOrderProcessingTime() > 2) {
             p.setDeliveryTime("2-3 Werktage");
-        }
-        else {
+        } else {
             p.setDeliveryTime("1-2 Werktage");
             p.setOrderProcessingTime(2);
         }
@@ -2076,7 +2027,7 @@ public class MotoroilDirektHarvester {
         });*/
 
         Date date2 = new Date();
-        System.out.println( "End: " + date2.getTime());
+        System.out.println("End: " + date2.getTime());
         long l2 = date2.getTime();
         long difference = l2 - l1;
         System.out.println(difference);
@@ -2086,38 +2037,39 @@ public class MotoroilDirektHarvester {
     }
 
     /**
-     * Calculate Related Products
+     * Calculate Related Product
+     *
      * @param p
      * @param plist
      */
-    public void CalculateRelatedProducts(Products p, ArrayList<Products> plist) {
+    public void CalculateRelatedProducts(Product p, ArrayList<Product> plist) {
         if (p.getRelated() == null) {
             p.setRelated("");
-            if (p.getRelated().length()<=100) {
-                ArrayList<Products> all = plist;
+            if (p.getRelated().length() <= 100) {
+                ArrayList<Product> all = plist;
 
                 for (int i = 0; i < 15; i++) {
                     Random randomGenerator = new Random();
                     int randomInt = randomGenerator.nextInt(all.size());
 
-                    if (p.getRelated().length()<=0)
+                    if (p.getRelated().length() <= 0)
                         p.setRelated(all.get(randomInt).getSku());
                     else
                         p.setRelated(all.get(randomInt).getSku() + "," + p.getRelated());
 
-                    this.SaveToDatabase(p);
+                    this.productFacade.save(p);
                 }
             }
         }
     }
 
     /**
-     * Filtering the Weight of the Products
+     * Filtering the Weight of the Product
      *
-     * @param p Give the Products of which have to be calculated the Container
-     * @return The Weigth of the Products
+     * @param p Give the Product of which have to be calculated the Container
+     * @return The Weigth of the Product
      */
-    public double RecognationOfContainer(Products p) {
+    public double RecognationOfContainer(Product p) {
         double container = 0;
         int found = 0;
         boolean lastNumeric = false;
@@ -2164,25 +2116,31 @@ public class MotoroilDirektHarvester {
      * which do prework for Harvest the inner of a product and gives us the finished product
      * then we are saving or updating it in our database and puting it out in a csv file
      *
-     * @return All Harvested Products
+     * @return All Harvested Product
      * @throws IOException
      */
-    public List<Products> HarvestAllSites(LinkedList<String> allSites) {
+    public List<Product> HarvestAllSites(LinkedList<String> allSites) {
 
+        allProducts = new LinkedList<>();
+
+        // Preparations
         Status.setIsHarvesting(true);
         Status.setStartedHarvest(LocalDateTime.now());
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         Status.appendLogs("Started Harvesting: " + sdf.format(cal.getTime()));
 
-        HashMap<String, Products> write = new HashMap<String, Products>();
+
+        HashMap<String, Product> write = new HashMap<String, Product>();
         for (int i = 0; i < allSites.size(); i++) {
 
-            Status.setProductsToHarvest((allSites.size()-i));
-            Status.setProductsHarvested((i+1));
+
+            // Statistic things
+            Status.setProductsToHarvest((allSites.size() - i));
+            Status.setProductsHarvested((i + 1));
 
             //Den aktuellen Link des Produktes hinschicken und dann den Produkt des linkes zurückkriegen
-            Products p = null;
+            Product p = null;
             try {
                 p = HarvestInnerProduct(allSites.get(i));
             } catch (InterruptedException e) {
@@ -2191,13 +2149,14 @@ public class MotoroilDirektHarvester {
 
             if (p != null) {
                 allProducts.add(p);
-                int mode = 0;
-                if((mode = SaveToDatabase(p))==1) {
-                    WriteToCSV("",1,p);
+
+
+                if (productFacade.isExisting(p.getSku())) {
+                    productFacade.updateStock(p);
+                } else {
+                    productFacade.save(p);
                 }
-                else if (mode == 2) {
-                    WriteToCSV("",3,p);
-                }
+
                 Status.appendLogs("Produkt Nr.: " + i + " aktualisiert: " + p.getTitle() + " PictureUrl: " + p.getBaseImage());
                 Status.appendLogs("Dauer: " + Status.getDuration() + "EAT: " + Status.getEstimatedTime());
                 write.clear();
@@ -2217,42 +2176,39 @@ public class MotoroilDirektHarvester {
     }
 
     /**
-     * Writing all new Products to the new.csv file
+     * Writing all new Product to the new.csv file
      */
-    public void WriteToCSV(String brandName, int type, Products c) {
+    public void WriteToCSV(String brandName, int type, Product c) {
 
         FileWriter writer = null;
         String filename;
 
         //sku;tax_class_id;visibility;status;weight;_product_website;_type;_attribute_set;name;qty;price;image;small_image;thumbnail;weight;manufacturer
-        if (type==1) {
+        if (type == 1) {
             filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/FullExport" + brandName + ".csv";
-        }
-        else if (type==2) {
+        } else if (type == 2) {
             filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/WithoutPicturesExport" + brandName + ".csv";
-        }
-        else if (type==4) {
+        } else if (type == 4) {
             filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/RelatedUpdate" + brandName + ".csv";
-        }
-        else {
+        } else {
             filename = "/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/StockUpdateExport" + brandName + ".csv";
             //filename = currentDir + "StockUpdateExport" + brandName + ".csv";
 
         }
 
-        if(Files.exists(Paths.get(filename))) {
+        if (Files.exists(Paths.get(filename))) {
 
         }
 
         try (FileWriter fw = new FileWriter(filename, true);
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter out = new PrintWriter(bw)) {
-            Products p = c;
-            if (type==1)
+            Product p = c;
+            if (type == 1)
                 out.print(p.toStringFullExport());
-            else if(type==2)
+            else if (type == 2)
                 out.print(p.toStringWithoutPicturesImport());
-            else if(type==4)
+            else if (type == 4)
                 out.print(p.toStringRelatedExport());
             else
                 out.print(p.toStringStockExport());
@@ -2261,11 +2217,11 @@ public class MotoroilDirektHarvester {
         }
     }
 
-    public void ExportDatabase(ArrayList<Products> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
+    public void ExportDatabase(ArrayList<Product> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
 
-        if (new File(ServerPathForExport+"CustomExport.csv").exists()) {
+        if (new File(ServerPathForExport + "CustomExport.csv").exists()) {
             try {
-                Files.delete(Paths.get(ServerPathForExport+"CustomExport.csv"));
+                Files.delete(Paths.get(ServerPathForExport + "CustomExport.csv"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -2332,119 +2288,29 @@ public class MotoroilDirektHarvester {
             }
 
             try {
-                    writeHeader = !Files.exists(Paths.get(filename));
+                writeHeader = !Files.exists(Paths.get(filename));
                 try (FileWriter fw = new FileWriter(filename, true);
                      BufferedWriter bw = new BufferedWriter(fw);
                      PrintWriter out = new PrintWriter(bw)) {
-                        if (writeHeader)
-                            out.print(header+"\n");
+                    if (writeHeader)
+                        out.print(header + "\n");
 
-                        out.print(actProd+"\n");
+                    out.print(actProd + "\n");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            actProd="";
+            actProd = "";
         }
-    }
-
-    /**
-     * This method saves the given product to the database if it doesnt exists
-     * if it exists then we are lookin if something changed (import purposes)
-     * if exists and nothing changed we are doing nothing
-     * @param product
-     * @return
-     */
-    public int SaveToDatabase(Products product) {
-        Products p;
-            if ((p = GetProductBySKU(product.getSku())) == null) {
-                try {
-                    em.persist(product);
-                    em.setFlushMode(FlushModeType.COMMIT);
-                    em.flush();
-                    em.clear();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return 1;
-            }
-            else {
-                if (p.getPrice()!=product.getPrice() || p.getInStock() != product.getInStock()) {
-                    p.setPrice(product.getPrice());
-                    p.setInStock(product.getInStock());
-                    p.setDeliveryTime(product.getDeliveryTime());
-                    //p.setBaseImage(product.getBaseImage());
-                    //p.setSmallImage(product.getBaseImage());
-                    //p.setMetaTitle(product.getMetaTitle());
-                    p.setOrderProcessingTime(product.getOrderProcessingTime());
-                    p.setTitle(product.getTitle());
-                    p.setBrand(product.getBrand());
-                    p.setRelated(product.getRelated());
-                    return 2;
-                }
-                else {
-                    //p.setBaseImage(product.getBaseImage());
-                    //p.setSmallImage(product.getBaseImage());
-                    //p.setMetaTitle(product.getMetaTitle());
-                    p.setDeliveryTime(product.getDeliveryTime());
-                    p.setOrderProcessingTime(product.getOrderProcessingTime());
-                    p.setTitle(product.getTitle());
-                    p.setBrand(product.getBrand());
-                    p.setRelated(product.getRelated());
-                    return 3;
-                }
-            }
-    }
-
-    public ArrayList<Products> GetProducts() {
-        TypedQuery<Products> query = em.createNamedQuery("Products.getAll", Products.class);
-        ArrayList<Products> test = (ArrayList<Products>) query.getResultList();
-        return test;
-    }
-
-    public List<Products> GetMannolProducts() {
-        TypedQuery<Products> query = em.createNamedQuery("Products.GetMannolProducts", Products.class);
-        List<Products> test = query.getResultList();
-        return test;
-    }
-
-    public ArrayList<Products> GetProductsByBrand(String brand) {
-        TypedQuery<Products> query = em.createNamedQuery("Products.GetProductsByBrand", Products.class).setParameter("brand",brand.toUpperCase());
-        ArrayList<Products> test = (ArrayList<Products>) query.getResultList();
-        return test;
-    }
-
-    public Products GetProductBySKU(String sku) {
-        try {
-            Products query = getSingleResultOrNull(em.createQuery("select p FROM Products p where p.sku = '"+sku+"'", Products.class));
-            return query;
-        }
-        catch (Exception e) {
-            System.out.println("SKU NOT EXISTING" + sku);
-            return null;
-        }
-    }
-
-    public static Products getSingleResultOrNull(Query query){
-        List<Products> results = query.getResultList();
-        if (results.isEmpty()) return null;
-        else if (results.size() == 1) return results.get(0);
-        throw new NonUniqueResultException();
-    }
-
-    public List<Products> GetProductsNoCustomDescription() {
-        TypedQuery<Products> query = em.createNamedQuery("Products.NoCustomDescription", Products.class);
-        List<Products> test = query.getResultList();
-        return test;
     }
 
     public String MakeFileNamePretty(String name) {
-        name = name.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à","a").replace("ß","ss").replace("--","-").replace(":"," ") + ".jpg";
+        name = name.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à", "a").replace("ß", "ss").replace("--", "-").replace(":", " ") + ".jpg";
         return name;
     }
 
     public void MakeFileNamePrettyDb() {
-        ArrayList<Products> all = GetProducts();
+        ArrayList<Product> all = productFacade.GetProducts();
         for (int i = 0; i < all.size(); i++) {
             String filename = MakeFileNamePretty(all.get(i).getMetaTitle());
             all.get(i).setSmallImage(filename);
@@ -2467,11 +2333,11 @@ public class MotoroilDirektHarvester {
 
         for (int i = 0; i < products_test.size(); i++) {
             try {
-                Products p1 = HarvestInnerProduct(products_test.get(i));
-                Products p2 = new Products();
-                message +=  p1.getMetaTitle() + " Stock: " + p1.getInStock() + " Price: " + p1.getPrice() + "\n";
+                Product p1 = HarvestInnerProduct(products_test.get(i));
+                Product p2 = new Product();
+                message += p1.getMetaTitle() + " Stock: " + p1.getInStock() + " Price: " + p1.getPrice() + "\n";
 
-                p2 = this.GetProductBySKU(p1.getSku());
+                p2 = this.productFacade.GetProductBySKU(p1.getSku());
                 if (p2 != null) {
                     System.out.println(p2.toStringFullExport());
                     message += p2.getMetaTitle() + " Stock: " + p2.getInStock() + " Price: " + p2.getPrice();
@@ -2479,14 +2345,13 @@ public class MotoroilDirektHarvester {
                         message += " ✓";
 
                     message += "\n";
-                }
-                else {
+                } else {
                     message += p1.getMetaTitle() + " Not existing in db\n";
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            message+="\n\n";
+            message += "\n\n";
         }
 
         return message;

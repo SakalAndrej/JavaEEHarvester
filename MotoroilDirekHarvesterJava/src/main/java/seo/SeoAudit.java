@@ -1,6 +1,6 @@
 package seo;
 
-import model.Products;
+import model.Product;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -23,13 +23,13 @@ public class SeoAudit {
 
     public static final String AnkerTextsFileName = " ";
 
-    public static void addOilFinderMannol(List<Products> allMannolProducts) {
+    public static void addOilFinderMannol(List<Product> allMannolProducts) {
 
         int keywordCnt = 0;
         LinkedList<String> title = ReadTags("/Users/andrejsakal/Dokumente/CloudDrive/Git-Repository/MotoroilDirektHarvester/MotoroilDirekHarvesterJava/OilFinderMannolTitle.txt");
 
         for (int i = 0; i < allMannolProducts.size(); i++) {
-            Products actProd = allMannolProducts.get(i);
+            Product actProd = allMannolProducts.get(i);
 
             if (actProd.isCustomDescription() == false) {
                 String descrip = actProd.getDescription();
@@ -48,11 +48,11 @@ public class SeoAudit {
         }
     }
 
-    /*public static LinkedList<Products> addLinksToDescription(int amount) {
+    /*public static LinkedList<Product> addLinksToDescription(int amount) {
 
     }
 
-    public static LinkedList<Products> addTestResultsMannol(int amoutn) {
+    public static LinkedList<Product> addTestResultsMannol(int amoutn) {
 
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="jdbc:derby://localhost/db">
-  <database-model serializer="dbm" rdbms="DERBY" format-version="4.4">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="4.7">
     <root id="1"/>
     <schema id="2" parent="1" name="APP">
       <Current>1</Current>

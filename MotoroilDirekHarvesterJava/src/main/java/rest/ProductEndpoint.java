@@ -1,13 +1,13 @@
 package rest;
 
+import facade.ProductFacade;
 import filter.MotoroilDirektHarvester;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import model.Products;
+import model.Product;
 import seo.SeoAudit;
 
 import javax.inject.Inject;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,6 +20,9 @@ public class ProductEndpoint {
 
     @Inject
     MotoroilDirektHarvester md;
+
+    @Inject
+    ProductFacade productFacade;
 
     @Path("start")
     @ApiOperation("Das Harvesten wird gestartet")
@@ -35,7 +38,7 @@ public class ProductEndpoint {
     @ApiOperation("Seo Audit triggern")
     @GET
     public Response seoAudit() {
-        SeoAudit.addOilFinderMannol(md.GetMannolProducts());
+        SeoAudit.addOilFinderMannol(productFacade.GetMannolProducts());
         return Response.ok().build();
     }
 
@@ -44,7 +47,7 @@ public class ProductEndpoint {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response exportStockByBrand(@QueryParam("sku") boolean sku,@QueryParam("baseimage") boolean baseimage, @QueryParam("brand") boolean brand, @QueryParam("container") boolean container, @QueryParam("description") boolean description, @QueryParam("instock") boolean instock, @QueryParam("metatitle") boolean metatitle, @QueryParam("price") boolean price, @QueryParam("related") boolean related, @QueryParam("deliverytime") boolean deliverytime, @QueryParam("orderprocessingTime") boolean orderprocessingTime ) {
-        ArrayList<Products> all = md.GetProducts();
+        ArrayList<Product> all = productFacade.GetProducts();
 
         md.ExportDatabase(all,sku,baseimage,brand,container,description,instock,metatitle,price,related,deliverytime,orderprocessingTime);
         return Response.ok(all).build();
@@ -59,10 +62,10 @@ public class ProductEndpoint {
     }
 
     @Path("setRelated")
-    @ApiOperation("Setting the Related Products")
+    @ApiOperation("Setting the Related Product")
     @GET
     public Response setRelated() {
-        ArrayList<Products> all = md.GetProducts();
+        ArrayList<Product> all = productFacade.GetProducts();
         for (int i = 0; i < all.size(); i++) {
             md.CalculateRelatedProducts(all.get(i), all);
         }

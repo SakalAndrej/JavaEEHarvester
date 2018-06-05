@@ -5,17 +5,17 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @NamedQueries({
-        @NamedQuery(name = "Products.getAll", query = "select p from Products p"),
-        @NamedQuery(name = "Products.getProductBySku", query = "select q from Products q where q.sku = :sku"),
-        @NamedQuery(name = "Products.NoCustomDescription", query = "select p from Products p where p.customDescription = false"),
-        @NamedQuery(name = "Products.UpdatePriceStock", query = "update Products SET price = :price, inStock = :inStock where sku = :sku"),
-        @NamedQuery(name = "Products.GetMannolProducts", query = "select p from Products p where UPPER(p.title) LIKE '%MANNOL%' and p.customDescription = false"),
-        @NamedQuery(name = "Products.GetProductsByBrand", query = "select p from Products p where UPPER(p.brand) LIKE :brand")
+        @NamedQuery(name = "Products.getAll", query = "select p from Product p"),
+        @NamedQuery(name = "Products.getProductBySku", query = "select q from Product q where q.sku = :sku"),
+        @NamedQuery(name = "Products.NoCustomDescription", query = "select p from Product p where p.customDescription = false"),
+        @NamedQuery(name = "Products.UpdatePriceStock", query = "update Product SET price = :price, inStock = :inStock where sku = :sku"),
+        @NamedQuery(name = "Products.GetMannolProducts", query = "select p from Product p where UPPER(p.title) LIKE '%MANNOL%' and p.customDescription = false"),
+        @NamedQuery(name = "Products.GetProductsByBrand", query = "select p from Product p where UPPER(p.brand) LIKE :brand")
 }  )
 
-@Table(name="Products")
+@Table(name="Product")
 @Entity
-public class Products
+public class Product
 {
     /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

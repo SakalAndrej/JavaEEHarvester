@@ -1,7 +1,9 @@
 package web;
 
+import facade.ProductFacade;
 import filter.MotoroilDirektHarvester;
 import filter.Status;
+import model.Product;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
@@ -13,6 +15,9 @@ public class IndexController {
 
     @Inject
     MotoroilDirektHarvester md;
+
+    @Inject
+    ProductFacade productFacade;
 
     private boolean sku = true;
     private boolean baseimage;
@@ -35,7 +40,7 @@ public class IndexController {
     }
 
     public void doExport() {
-        md.ExportDatabase(md.GetProducts(),sku,baseimage,brand,container,description,instock,metatitle,price,related,deliverytime,orderprocessingTime);
+        md.ExportDatabase(productFacade.GetProducts(),sku,baseimage,brand,container,description,instock,metatitle,price,related,deliverytime,orderprocessingTime);
     }
 
     //region Getter & Setter
@@ -43,8 +48,6 @@ public class IndexController {
     public boolean isHarvesting() {
         return Status.isIsHarvesting();
     }
-
-
 
     public LocalDateTime lastHarvest() {
         return Status.getLastHarvest();
