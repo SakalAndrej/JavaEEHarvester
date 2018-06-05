@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+    <title>Harvester</title>
+</h:head>
+<h:body>
+    <b:container>
+        <h:form id="form">
+            <h1>Importer</h1>
+            <b:panel title="Produktdatenbank aktualisieren">
+                <b:well>
+                    Hier wird die Aktualisierung gestartet! Es sind noch #{indexController.productsToHarvest()} Produkte upzudaten. Das letzte Update wurde am #{indexController.lastHarvest()} gemacht. #{indexController.duration()}
+                </b:well>
+                <b:commandButton style="width: 100%; height: 50px" disabled="#{indexController.isHarvesting()}" look="primary" value="Aktualisierung starten"
+                                 iconAwesome="fa-play" id="doHarvestBtn"
+                                 action="#{indexController.doHarvest}" update="@form"></b:commandButton>
+            </b:panel>
+
+            <b:panel title="CSV-Exportieren">
+                <b:well>
+                    Hier können Sie die Produkte exportieren! Gegebenenfalls für Magento!
+                </b:well>
+                <b:well>
+                    <b:row>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.sku}" id="checkboxSKU"
+                                                 caption="SKU*" update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.brand}" id="checkboxBrnad"
+                                                 caption="Marke" update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.container}"
+                                                 id="checkboxContainer" caption="Gewicht/Gebinde" update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.deliverytime}"
+                                                 id="checkboxdeliveryTime" caption="Lieferzeit" update="@form"/>
+                    </b:row>
+
+                    <b:row>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.description}"
+                                                 id="checkboxDescription" caption="Beschreibung" update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.orderprocessingTime}" id="checkboxOrderProc"
+                                                 caption="Bearbeitungszeit" update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.instock}" id="checkboxInstock"
+                                                 caption="Lagernd Stk." update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.baseimage}" id="checkboxbaseImage"
+                                                 caption="Foto" update="@form"/>
+                    </b:row>
+                    <b:row>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.metatitle}" id="checkboxMetatitle"
+                                                 caption="Metatitle" update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.price}" id="checkboxPrice" caption="Preis"
+                                                 update="@form"/>
+                        <b:selectBooleanCheckbox mediumScreen="3" value="#{indexController.related}" id="checkboxrelated"
+                                                 caption="Related" update="@form"/>
+                    </b:row>
+                </b:well>
+                <b:commandButton style="width: 100%; height: 50px" look="primary" value="CSV - Exportieren"
+                                 iconAwesome="fa-file" id="doExport"
+                                 action="#{indexController.doExport}"></b:commandButton>
+            </b:panel>
+            <b:panel>
+                <p:outputLabel value="#{indexController.logs()}"></p:outputLabel>
+            </b:panel>
+        </h:form>
+    </b:container>
+</h:body>
+</html>
