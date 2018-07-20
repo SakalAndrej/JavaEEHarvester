@@ -2311,7 +2311,7 @@ public class MotoroilDirektHarvester {
     }
 
     public void MakeFileNamePrettyDb() {
-        ArrayList<Product> all = productFacade.GetProducts();
+        LinkedList<Product> all = productFacade.GetProducts();
         for (int i = 0; i < all.size(); i++) {
             String filename = MakeFileNamePretty(all.get(i).getMetaTitle());
             all.get(i).setSmallImage(filename);
