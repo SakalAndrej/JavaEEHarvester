@@ -9,6 +9,7 @@ import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Stateless
@@ -70,9 +71,9 @@ public class ProductFacade {
         }
     }
 
-    public ArrayList<Product> GetProducts() {
+    public LinkedList<Product> GetProducts() {
         TypedQuery<Product> query = getEntityManager().createNamedQuery("Products.getAll", Product.class);
-        ArrayList<Product> test = (ArrayList<Product>) query.getResultList();
+        LinkedList<Product> test = (LinkedList<Product>) query.getResultList();
         return test;
     }
 

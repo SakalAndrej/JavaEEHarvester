@@ -2218,7 +2218,7 @@ public class MotoroilDirektHarvester {
         }
     }
 
-    public void ExportDatabase(ArrayList<Product> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
+    public void ExportDatabase(LinkedList<Product> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
 
         if (new File(ServerPathForExport + "CustomExport.csv").exists()) {
             try {
