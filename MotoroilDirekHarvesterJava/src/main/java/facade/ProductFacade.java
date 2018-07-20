@@ -71,9 +71,9 @@ public class ProductFacade {
         }
     }
 
-    public LinkedList<Product> GetProducts() {
+    public List<Product> GetProducts() {
         TypedQuery<Product> query = getEntityManager().createNamedQuery("Products.getAll", Product.class);
-        LinkedList<Product> test = (LinkedList<Product>) query.getResultList();
+        List<Product> test = query.getResultList();
         return test;
     }
 

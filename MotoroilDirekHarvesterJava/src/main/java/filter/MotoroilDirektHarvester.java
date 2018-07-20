@@ -2043,11 +2043,11 @@ public class MotoroilDirektHarvester {
      * @param p
      * @param plist
      */
-    public void CalculateRelatedProducts(Product p, LinkedList<Product> plist) {
+    public void CalculateRelatedProducts(Product p, List<Product> plist) {
         if (p.getRelated() == null) {
             p.setRelated("");
             if (p.getRelated().length() <= 100) {
-                LinkedList<Product> all = plist;
+                List<Product> all = plist;
 
                 for (int i = 0; i < 15; i++) {
                     Random randomGenerator = new Random();
@@ -2218,7 +2218,7 @@ public class MotoroilDirektHarvester {
         }
     }
 
-    public void ExportDatabase(LinkedList<Product> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
+    public void ExportDatabase(List<Product> p, boolean sku, boolean baseImage, boolean brand, boolean container, boolean description, boolean inStock, boolean metaTitle, boolean price, boolean related, boolean deliveryTime, boolean orderprocessingtime) {
 
         if (new File(ServerPathForExport + "CustomExport.csv").exists()) {
             try {
@@ -2311,7 +2311,7 @@ public class MotoroilDirektHarvester {
     }
 
     public void MakeFileNamePrettyDb() {
-        LinkedList<Product> all = productFacade.GetProducts();
+        List<Product> all = productFacade.GetProducts();
         for (int i = 0; i < all.size(); i++) {
             String filename = MakeFileNamePretty(all.get(i).getMetaTitle());
             all.get(i).setSmallImage(filename);
