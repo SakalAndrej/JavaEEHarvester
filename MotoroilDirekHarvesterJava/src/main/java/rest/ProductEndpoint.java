@@ -47,7 +47,7 @@ public class ProductEndpoint {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response exportStockByBrand(@QueryParam("sku") boolean sku,@QueryParam("baseimage") boolean baseimage, @QueryParam("brand") boolean brand, @QueryParam("container") boolean container, @QueryParam("description") boolean description, @QueryParam("instock") boolean instock, @QueryParam("metatitle") boolean metatitle, @QueryParam("price") boolean price, @QueryParam("related") boolean related, @QueryParam("deliverytime") boolean deliverytime, @QueryParam("orderprocessingTime") boolean orderprocessingTime ) {
-        ArrayList<Product> all = productFacade.GetProducts();
+        LinkedList<Product> all = productFacade.GetProducts();
 
         md.ExportDatabase(all,sku,baseimage,brand,container,description,instock,metatitle,price,related,deliverytime,orderprocessingTime);
         return Response.ok(all).build();
@@ -65,7 +65,7 @@ public class ProductEndpoint {
     @ApiOperation("Setting the Related Product")
     @GET
     public Response setRelated() {
-        ArrayList<Product> all = productFacade.GetProducts();
+        LinkedList<Product> all = productFacade.GetProducts();
         for (int i = 0; i < all.size(); i++) {
             md.CalculateRelatedProducts(all.get(i), all);
         }

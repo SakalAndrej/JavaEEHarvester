@@ -2043,11 +2043,11 @@ public class MotoroilDirektHarvester {
      * @param p
      * @param plist
      */
-    public void CalculateRelatedProducts(Product p, ArrayList<Product> plist) {
+    public void CalculateRelatedProducts(Product p, LinkedList<Product> plist) {
         if (p.getRelated() == null) {
             p.setRelated("");
             if (p.getRelated().length() <= 100) {
-                ArrayList<Product> all = plist;
+                LinkedList<Product> all = plist;
 
                 for (int i = 0; i < 15; i++) {
                     Random randomGenerator = new Random();
@@ -2307,7 +2307,7 @@ public class MotoroilDirektHarvester {
 
     public String MakeFileNamePretty(String name) {
         name = name.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à", "a").replace("ß", "ss").replace("--", "-").replace(":", " ") + ".jpg";
-        return name;    
+        return name;
     }
 
     public void MakeFileNamePrettyDb() {
