@@ -2307,7 +2307,7 @@ public class MotoroilDirektHarvester {
 
     public String MakeFileNamePretty(String name) {
         name = name.replace(" (", "").replace(")", "").replace("/", " ").replace("-", "").replace("vollsynth.", "").replace(".", "-").replace(" for", "").replace(" für", "").replace(" ", "-").replace("ü", "ue").replace("®", "").replace("+", "").replace("ö", "oe").replace("ä", "ae").replace(",", "").replace("à", "a").replace("ß", "ss").replace("--", "-").replace(":", " ") + ".jpg";
-        return name;
+        return name;    
     }
 
     public void MakeFileNamePrettyDb() {
