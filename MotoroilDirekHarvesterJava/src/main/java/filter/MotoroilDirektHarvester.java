@@ -1650,7 +1650,7 @@ public class MotoroilDirektHarvester {
 
         //endregion
 
-        allLinks.addAll(meguars);
+        /*allLinks.addAll(meguars);
         allLinks.addAll(c5w);
         allLinks.addAll(AdBlue);
         allLinks.addAll(armorAll);
@@ -1658,7 +1658,7 @@ public class MotoroilDirektHarvester {
         allLinks.addAll(Automatikgetriebe);
         allLinks.addAll(Boot);
         allLinks.addAll(bremsenreiniger);
-        allLinks.addAll(Bremsfluessigkeiten);
+        allLinks.addAll(Bremsfluessigkeiten);*/
         allLinks.addAll(castrol0w20);
         allLinks.addAll(castrol0w30);
         allLinks.addAll(castrol0w40);
@@ -1668,7 +1668,7 @@ public class MotoroilDirektHarvester {
         allLinks.addAll(castrol10w40);
         allLinks.addAll(castrol10w60);
         allLinks.addAll(castrol15w40);
-        allLinks.addAll(castrol20w50);
+        allLinks.addAll(castrol20w50);/*
         allLinks.addAll(d1r);
         allLinks.addAll(d1s);
         allLinks.addAll(d2r);
@@ -1713,7 +1713,7 @@ public class MotoroilDirektHarvester {
         allLinks.addAll(sonax);
         allLinks.addAll(t20w21w);
         allLinks.addAll(TraktorBaumaschinen);
-        allLinks.addAll(w5w);
+        allLinks.addAll(w5w);*/
         System.out.println("Links: " + allLinks.size());
     }
 
