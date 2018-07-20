@@ -25,8 +25,8 @@ public class MotoroilDirektHarvester {
     ProductFacade productFacade;
 
 
-    //public final String ServerPathForExport = "/home/manager/www/var/import/";
-    public final String ServerPathForExport = "/Users/andrejsakal/Downloads/sample/MotoroilDirekHarvesterJava/";
+    public final String ServerPathForExport = "/home/manager/www/var/import/";
+    //public final String ServerPathForExport = "/Users/andrejsakal/Downloads/sample/MotoroilDirekHarvesterJava/";
 
     //public final String FILEPATHIMAGE = "/home/manager/www/media/import/";
     public final String FILEPATHIMAGE = "/Users/andrejsakal/Dropbox/Projects/JavaEEHarvester/media/";
